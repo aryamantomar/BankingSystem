@@ -29,7 +29,7 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    showToast('Message Transmitted', `Thank you ${name}. Your message has been routed to our Burgundy banking concierge.`, 'success');
+    showToast('Message Transmitted', `Thank you ${name}. Your message has been routed to our priority banking concierge.`, 'success');
   };
 
   return (
@@ -86,7 +86,7 @@ export const ContactPage: React.FC = () => {
                 <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">Email Us</h3>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
                   General Inquiries: <span className="text-slate-900 font-bold">contact@nexbank.com</span><br />
-                  Burgundy Priority: <span className="text-[#97144d] font-bold">burgundy@nexbank.com</span>
+                  Priority Desk: <span className="text-[#97144d] font-bold">priority@nexbank.com</span>
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-[#97144d] font-bold">

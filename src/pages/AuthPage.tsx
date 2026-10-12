@@ -82,7 +82,7 @@ export const AuthPage: React.FC = () => {
                 Nex<span className="text-[#97144d]">Bank</span>
               </h2>
               <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-[#97144d] text-white">
-                BURGUNDY
+                PREMIER
               </span>
             </div>
             <h3 className="text-lg font-extrabold text-slate-900">
@@ -101,7 +101,7 @@ export const AuthPage: React.FC = () => {
             >
               <div className="flex items-center justify-center gap-1.5 text-xs font-black text-[#97144d]">
                 <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-spin" style={{ animationDuration: '6s' }} />
-                <span>Click for 1-Click Burgundy Demo Access</span>
+                <span>Click for 1-Click Premier Demo Access</span>
               </div>
               <p className="text-[10px] text-slate-500 mt-0.5 font-medium">Preloaded with $34,850.75 balance & virtual metal card</p>
             </div>

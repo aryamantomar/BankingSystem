@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Crown, Wifi, Lock, Eye, EyeOff } from 'lucide-react';
+import { Crown, Wifi, Lock, Eye, EyeOff, Sparkles } from 'lucide-react';
 
 interface BankCardArtProps {
   cardNumber?: string;
@@ -7,7 +7,7 @@ interface BankCardArtProps {
   expiry?: string;
   cvv?: string;
   balance?: number;
-  variant?: 'burgundy' | 'obsidian' | 'gold';
+  variant?: 'privilege' | 'obsidian' | 'gold';
   isFrozen?: boolean;
   showDetailsToggle?: boolean;
   className?: string;
@@ -19,28 +19,32 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
   expiry = '10/31',
   cvv = '789',
   balance,
-  variant = 'burgundy',
+  variant = 'privilege',
   isFrozen = false,
   showDetailsToggle = true,
   className = '',
 }) => {
   const [showNumber, setShowNumber] = useState(false);
-  const [activeTheme, setActiveTheme] = useState<'burgundy' | 'obsidian' | 'gold'>(variant);
+  const [activeTheme, setActiveTheme] = useState<'privilege' | 'obsidian' | 'gold'>(variant);
 
   // Background style presets
   const themeStyles = {
-    burgundy: {
+    privilege: {
       bg: 'bg-gradient-to-br from-[#730d3a] via-[#97144d] to-[#420621]',
       border: 'border-amber-400/40',
-      foil: 'stroke-amber-300/25',
+      foil: 'stroke-amber-300/30',
+      flowerStroke: 'stroke-amber-300/40',
+      flowerFill: 'fill-amber-300/10',
       textAccent: 'text-amber-300',
       chipGlow: 'from-amber-200 via-amber-400 to-amber-600',
-      label: 'Burgundy Private Metal',
+      label: 'Privilege Metal Edition',
     },
     obsidian: {
       bg: 'bg-gradient-to-br from-[#1c1822] via-[#2f1124] to-[#0f0b12]',
       border: 'border-[#ea7ea6]/40',
-      foil: 'stroke-rose-300/20',
+      foil: 'stroke-rose-300/25',
+      flowerStroke: 'stroke-rose-300/35',
+      flowerFill: 'fill-rose-300/10',
       textAccent: 'text-rose-300',
       chipGlow: 'from-slate-200 via-rose-300 to-slate-400',
       label: 'Obsidian Titanium',
@@ -48,7 +52,9 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
     gold: {
       bg: 'bg-gradient-to-br from-[#856514] via-[#b88c28] to-[#594208]',
       border: 'border-amber-200/50',
-      foil: 'stroke-white/30',
+      foil: 'stroke-white/35',
+      flowerStroke: 'stroke-amber-100/45',
+      flowerFill: 'fill-amber-100/15',
       textAccent: 'text-amber-100',
       chipGlow: 'from-yellow-100 via-amber-300 to-yellow-600',
       label: 'Sovereign Gold Reserve',
@@ -67,27 +73,76 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
       <div
         className={`relative aspect-[1.586/1] w-full rounded-2xl sm:rounded-3xl p-5 sm:p-7 ${currentTheme.bg} border ${currentTheme.border} text-white shadow-[0_25px_50px_-12px_rgba(151,20,77,0.35)] overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_-10px_rgba(151,20,77,0.45)] group`}
       >
-        {/* Guilloche Security Wave Artwork (SVG Watermark Art) */}
-        <div className="absolute inset-0 pointer-events-none opacity-40 mix-blend-overlay">
+        {/* Guilloche & Ornate Flower Art Watermark (SVG Art) */}
+        <div className="absolute inset-0 pointer-events-none opacity-50 mix-blend-screen">
           <svg className="w-full h-full" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g className={currentTheme.foil} strokeWidth="0.75">
-              {/* Concentric Guilloche Rings */}
-              <circle cx="200" cy="125" r="30" strokeDasharray="3 3" />
-              <circle cx="200" cy="125" r="55" />
-              <circle cx="200" cy="125" r="80" strokeDasharray="4 2" />
-              <circle cx="200" cy="125" r="110" />
-              <circle cx="200" cy="125" r="140" strokeDasharray="2 4" />
-              
-              {/* Hypocycloid Spirograph Waves */}
-              <path d="M 20 125 C 80 40, 140 210, 200 125 C 260 40, 320 210, 380 125" />
-              <path d="M 20 115 C 80 205, 140 45, 200 125 C 260 205, 320 45, 380 125" />
-              <path d="M 30 140 C 90 60, 150 220, 200 125 C 250 30, 310 190, 370 110" opacity="0.6" />
-              
-              {/* Micro-dot security matrix */}
-              <circle cx="50" cy="40" r="1" fill="currentColor" />
-              <circle cx="70" cy="35" r="1" fill="currentColor" />
-              <circle cx="330" cy="40" r="1" fill="currentColor" />
-              <circle cx="350" cy="50" r="1" fill="currentColor" />
+            {/* Concentric Guilloche Security Geometry */}
+            <g className={currentTheme.foil} strokeWidth="0.7">
+              <circle cx="120" cy="125" r="40" strokeDasharray="3 3" />
+              <circle cx="120" cy="125" r="75" />
+              <circle cx="120" cy="125" r="110" strokeDasharray="4 2" />
+              <path d="M 0 125 C 60 40, 120 210, 180 125 C 240 40, 300 210, 360 125" opacity="0.4" />
+            </g>
+
+            {/* EXPANDED LUXURY FLOWER ARTWORK (Botanical Lotus & Blossom Engraving) */}
+            <g transform="translate(290, 125)" className={`${currentTheme.flowerStroke} ${currentTheme.flowerFill}`}>
+              {/* Central Stamen Core */}
+              <circle cx="0" cy="0" r="14" strokeWidth="1.2" />
+              <circle cx="0" cy="0" r="7" strokeWidth="0.8" />
+              <circle cx="0" cy="0" r="2.5" fill="currentColor" />
+              {/* Radiating Flower Pistils */}
+              {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
+                <line
+                  key={`pistil-${deg}`}
+                  x1="0"
+                  y1="0"
+                  x2={11 * Math.cos((deg * Math.PI) / 180)}
+                  y2={11 * Math.sin((deg * Math.PI) / 180)}
+                  strokeWidth="0.8"
+                />
+              ))}
+
+              {/* Inner Petal Tier (8 Petals) */}
+              {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                <g key={`inner-petal-${deg}`} transform={`rotate(${deg})`}>
+                  <path
+                    d="M 0 -14 C -10 -28, -8 -42, 0 -52 C 8 -42, 10 -28, 0 -14 Z"
+                    strokeWidth="1.1"
+                  />
+                  {/* Petal Central Vein */}
+                  <line x1="0" y1="-16" x2="0" y2="-46" strokeWidth="0.6" strokeDasharray="1.5 1.5" />
+                </g>
+              ))}
+
+              {/* Outer Grand Petal Tier (8 Interleaved Blossom Petals) */}
+              {[22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5].map((deg) => (
+                <g key={`outer-petal-${deg}`} transform={`rotate(${deg})`}>
+                  <path
+                    d="M 0 -14 C -16 -35, -14 -60, 0 -76 C 14 -60, 16 -35, 0 -14 Z"
+                    strokeWidth="1.2"
+                  />
+                  <line x1="0" y1="-18" x2="0" y2="-68" strokeWidth="0.7" />
+                  <path d="M -4 -42 Q 0 -50 4 -42" strokeWidth="0.6" fill="none" />
+                </g>
+              ))}
+
+              {/* Graceful Floral Vines & Tendril Art */}
+              <path
+                d="M -30 20 C -60 50, -100 30, -140 60 C -170 85, -200 70, -230 95"
+                strokeWidth="1"
+                fill="none"
+                opacity="0.6"
+              />
+              <path
+                d="M -25 -25 C -55 -60, -90 -45, -130 -70 C -160 -90, -190 -80, -220 -100"
+                strokeWidth="1"
+                fill="none"
+                opacity="0.5"
+              />
+              {/* Ornamental Floating Petal Accents */}
+              <path d="M -80 35 C -90 30, -95 40, -85 45 C -75 42, -75 35, -80 35 Z" strokeWidth="0.8" />
+              <path d="M -150 45 C -160 40, -165 50, -155 55 C -145 52, -145 45, -150 45 Z" strokeWidth="0.8" />
+              <path d="M -60 -45 C -70 -50, -75 -40, -65 -35 C -55 -38, -55 -45, -60 -45 Z" strokeWidth="0.8" />
             </g>
           </svg>
         </div>
@@ -95,7 +150,7 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
         {/* Dynamic Metallic Specular Glare / Hologram Sheen */}
         <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/15 to-transparent rotate-45 pointer-events-none group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
 
-        {/* Card Header: NexBank & Burgundy Badge */}
+        {/* Card Header: NexBank & Privilege Badge */}
         <div className="relative z-10 flex items-start justify-between">
           <div className="flex items-center gap-2">
             {/* Axis-inspired Triangular Emblem */}
@@ -105,9 +160,11 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
               </svg>
             </div>
             <div>
-              <div className="text-xs sm:text-sm font-black tracking-wider flex items-center gap-1">
+              <div className="text-xs sm:text-sm font-black tracking-wider flex items-center gap-1.5">
                 <span>NEXBANK</span>
-                <span className={`text-[10px] font-bold ${currentTheme.textAccent}`}>BURGUNDY</span>
+                <span className={`text-[10px] font-black px-1.5 py-0.2 rounded bg-white/10 ${currentTheme.textAccent}`}>
+                  PREMIER
+                </span>
               </div>
               <span className="text-[9px] uppercase tracking-widest text-pink-100/70 block font-semibold">
                 {currentTheme.label}
@@ -203,18 +260,21 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
 
       {/* Card Theme Switcher Pills */}
       <div className="mt-3 flex items-center justify-between text-[11px] text-slate-500 px-1">
-        <span className="font-medium">Card Edition:</span>
+        <span className="font-medium flex items-center gap-1">
+          <Sparkles className="w-3 h-3 text-[#97144d]" />
+          Card Edition:
+        </span>
         <div className="flex gap-1.5">
           <button
             type="button"
-            onClick={() => setActiveTheme('burgundy')}
+            onClick={() => setActiveTheme('privilege')}
             className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${
-              activeTheme === 'burgundy'
+              activeTheme === 'privilege'
                 ? 'bg-[#97144d] text-white shadow-sm'
                 : 'bg-white border border-slate-200 text-slate-600 hover:border-[#97144d]/40'
             }`}
           >
-            Burgundy
+            Privilege
           </button>
           <button
             type="button"

@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
   const serviceHighlights = [
     'Funds Transfer (NEFT, RTGS, IMPS, UPI)',
     'Bill Payments & Instant Recharge',
-    'Burgundy High Yield Fixed Deposits (7.85%)',
+    'High Yield Fixed Deposits (7.85%)',
     'Home & Education Loans (From 6.85%)',
     'Merchant POS & Corporate Solutions',
     'Biometric Safe Deposit Vaults'
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                   Nex<span className="text-[#97144d]">Bank</span>
                 </span>
                 <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#97144d] text-white">
-                  BURGUNDY
+                  PREMIER
                 </span>
               </div>
               <p className="text-sm leading-relaxed text-slate-600 max-w-sm">

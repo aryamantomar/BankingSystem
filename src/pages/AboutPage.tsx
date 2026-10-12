@@ -36,7 +36,7 @@ export const AboutPage: React.FC = () => {
     { year: '2020', title: '1 Million Accounts', desc: 'Surpassed 1M active customers and achieved full national banking regulatory charter.' },
     { year: '2022', title: 'Corporate Banking Suite', desc: 'Expanded into commercial trade finance and instant merchant payment gateways.' },
     { year: '2024', title: 'Global Operations', desc: 'Established cross-border clearing hubs in New York, London, and Singapore.' },
-    { year: '2026', title: 'Axis-Tier Burgundy Architecture', desc: 'Integrated real-time biometric safeguards, automated wealth advisors, and AI support.' }
+    { year: '2026', title: 'Axis-Tier Digital Architecture', desc: 'Integrated real-time biometric safeguards, automated wealth advisors, and AI support.' }
   ];
 
   const leadership = [
@@ -60,7 +60,7 @@ export const AboutPage: React.FC = () => {
     },
     { 
       name: 'Sophia Chen', 
-      role: 'Head of Burgundy Experience', 
+      role: 'Head of Client Experience', 
       bio: 'Designed high-touch private client experiences for leading global consumer platforms.',
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
     }

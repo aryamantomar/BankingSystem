@@ -15,7 +15,7 @@ export const LiveChatModal: React.FC = () => {
     {
       id: 'msg-1',
       sender: 'bot',
-      text: `Namaste & Welcome! I'm NexBot, your 24/7 AI banking concierge. How can I assist you with your NexBank Burgundy account today?`,
+      text: `Namaste & Welcome! I'm NexBot, your 24/7 AI banking concierge. How can I assist you with your NexBank account today?`,
       time: 'Just now'
     }
   ]);
@@ -25,7 +25,7 @@ export const LiveChatModal: React.FC = () => {
     'Check my balance',
     'What are loan interest rates?',
     'How do I transfer funds?',
-    'Burgundy debit card perks'
+    'Premier debit card perks'
   ];
 
   const handleSend = (textToSend?: string) => {
@@ -44,7 +44,7 @@ export const LiveChatModal: React.FC = () => {
 
     setTimeout(() => {
       const lower = text.toLowerCase();
-      let reply = "I understand your query. Our senior Burgundy relationship desk has been notified. You can also reach our 24/7 helpline at +1 800-NEX-BANK.";
+      let reply = "I understand your query. Our senior relationship desk has been notified. You can also reach our 24/7 helpline at +1 800-NEX-BANK.";
 
       if (lower.includes('balance')) {
         if (user) {
@@ -56,10 +56,10 @@ export const LiveChatModal: React.FC = () => {
         reply = "NexBank offers Home Loans starting at 6.85% p.a., Education Loans at 8.10% p.a., and Personal Loans at 9.50% p.a. Check our interactive EMI Calculator on the Loans page!";
       } else if (lower.includes('transfer') || lower.includes('imps') || lower.includes('neft') || lower.includes('upi')) {
         reply = "You can execute zero-fee transfers instantly via IMPS, UPI, NEFT, or RTGS from your Dashboard or the Services page!";
-      } else if (lower.includes('card') || lower.includes('burgundy') || lower.includes('perk')) {
-        reply = "NexBank Burgundy Metal Card offers 5% cashback on travel, complimentary worldwide airport lounge visits, zero foreign exchange markup, and dining discounts!";
+      } else if (lower.includes('card') || lower.includes('perk') || lower.includes('privilege')) {
+        reply = "NexBank Premier Metal Card offers 5% cashback on travel, complimentary worldwide airport lounge visits, zero foreign exchange markup, and dining discounts!";
       } else if (lower.includes('open') || lower.includes('account')) {
-        reply = "You can open an instant digital Burgundy savings or current account in 3 minutes! Click 'Open Account' on the top bar.";
+        reply = "You can open an instant digital premier savings or current account in 3 minutes! Click 'Open Account' on the top bar.";
       }
 
       const botReply: ChatMessage = {
@@ -81,7 +81,7 @@ export const LiveChatModal: React.FC = () => {
         aria-label="Open Live Chat"
       >
         <MessageSquare className="w-6 h-6 group-hover:rotate-6 transition-transform" />
-        <span className="text-sm font-bold pr-1 hidden sm:inline">24/7 Burgundy Assist</span>
+        <span className="text-sm font-bold pr-1 hidden sm:inline">24/7 Priority Assist</span>
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-ping"></span>
       </button>
 
@@ -104,7 +104,7 @@ export const LiveChatModal: React.FC = () => {
                   <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                 </h4>
                 <p className="text-[11px] text-pink-100 flex items-center gap-1">
-                  Burgundy Priority • Instant AI
+                  Priority Concierge • Instant AI
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export const LiveChatModal: React.FC = () => {
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              placeholder="Ask about Burgundy perks, FD rates, loans..."
+              placeholder="Ask about card perks, FD rates, loans..."
               className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
             />
             <button

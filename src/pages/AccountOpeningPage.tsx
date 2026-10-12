@@ -57,11 +57,11 @@ export const AccountOpeningPage: React.FC = () => {
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black uppercase tracking-wider">
             <Crown className="w-3.5 h-3.5 text-amber-500" />
-            <span>Paperless Burgundy Onboarding</span>
+            <span>Paperless Digital Onboarding</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-slate-900">Open Your Account</h1>
           <p className="text-sm text-slate-500 max-w-md mx-auto font-medium">
-            Get your digital account number and virtual Burgundy metal card in under 3 minutes.
+            Get your digital account number and virtual metal card in under 3 minutes.
           </p>
         </div>
       </ScrollReveal>
@@ -105,7 +105,7 @@ export const AccountOpeningPage: React.FC = () => {
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Congratulations, {createdUser.name}!</h2>
               <p className="text-sm text-slate-600 font-medium">
-                Your NexBank {createdUser.accountType} Burgundy Account is officially active and funded.
+                Your NexBank {createdUser.accountType} Account is officially active and funded.
               </p>
             </div>
 
@@ -128,7 +128,7 @@ export const AccountOpeningPage: React.FC = () => {
             {/* Virtual Card Preview */}
             <div className="max-w-sm mx-auto p-6 rounded-2xl bg-gradient-to-tr from-[#3b061d] via-[#740e3a] to-[#97144d] text-white shadow-xl text-left space-y-4 border border-amber-400/40 relative overflow-hidden">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-black tracking-wider text-amber-200 uppercase">BURGUNDY METAL</span>
+                <span className="font-black tracking-wider text-amber-200 uppercase">PREMIER METAL</span>
                 <div className="w-8 h-6 rounded bg-gradient-to-tr from-amber-300 to-amber-500 border border-amber-200 flex items-center justify-center">
                   <div className="w-4 h-3 border border-amber-800/40 rounded-sm"></div>
                 </div>
@@ -236,7 +236,7 @@ export const AccountOpeningPage: React.FC = () => {
                         { type: 'Savings', rate: '5.25% - 7.10%' },
                         { type: 'Current', rate: 'Zero Minimum' },
                         { type: 'Salary', rate: 'Zero Fee' },
-                        { type: 'Corporate', rate: 'Burgundy Multi' }
+                        { type: 'Corporate', rate: 'Premier Multi' }
                       ].map((item) => (
                         <div
                           key={item.type}

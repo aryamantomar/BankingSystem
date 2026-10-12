@@ -115,7 +115,7 @@ export const SupportPage: React.FC = () => {
           <ScrollReveal direction="down">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black uppercase tracking-wider mb-4">
               <Headphones className="w-3.5 h-3.5" />
-              <span>Dedicated Burgundy Support</span>
+              <span>Dedicated Priority Support</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight max-w-3xl mx-auto">

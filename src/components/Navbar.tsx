@@ -67,7 +67,7 @@ export const Navbar: React.FC = () => {
           <span className="text-white/40">|</span>
           <span className="text-amber-200 font-semibold flex items-center gap-1">
             <Sparkles className="w-3 h-3 text-amber-300" />
-            Burgundy High-Yield Fixed Deposit: Up to 7.85% APY
+            High-Yield Fixed Deposit: Up to 7.85% APY
           </span>
         </div>
         <div className="flex items-center gap-4 font-medium text-white/90">
@@ -103,7 +103,7 @@ export const Navbar: React.FC = () => {
                   Nex<span className="text-[#97144d]">Bank</span>
                 </span>
                 <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#97144d] text-white tracking-wider shadow-sm">
-                  BURGUNDY
+                  PREMIER
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium tracking-wide hidden sm:block">

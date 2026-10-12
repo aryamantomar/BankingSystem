@@ -492,7 +492,7 @@ export const ServicesPage: React.FC = () => {
                         <option>Small (10x15 in) - $120/yr</option>
                         <option>Medium Vault (15x20 in) - $220/yr</option>
                         <option>Large Vault (24x30 in) - $400/yr</option>
-                        <option>Burgundy Executive Safe - $950/yr</option>
+                        <option>Premier Executive Safe - $950/yr</option>
                       </select>
                     </div>
                   </div>

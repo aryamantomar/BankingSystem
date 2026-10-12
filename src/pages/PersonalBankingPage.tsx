@@ -20,13 +20,13 @@ export const PersonalBankingPage: React.FC = () => {
   const personalProducts = [
     {
       id: 'savings',
-      title: 'Burgundy Savings Account',
+      title: 'Premier Savings Account',
       tagline: 'Grow your wealth with premier privileges.',
       rate: '5.25% - 7.10% APY',
       image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
       icon: <PiggyBank className="w-5 h-5 text-[#97144d]" />,
       features: [
-        'Dedicated Burgundy Relationship Manager',
+        'Dedicated Private Relationship Manager',
         'Daily compound interest credited quarterly',
         'Complimentary worldwide ATM withdrawals with zero markup',
         'Complimentary virtual and contactless metal card'
@@ -84,7 +84,7 @@ export const PersonalBankingPage: React.FC = () => {
     },
     {
       id: 'cards',
-      title: 'Burgundy Metal Cards',
+      title: 'Premier Metal Cards',
       tagline: 'Spend smarter, everywhere.',
       rate: 'Up to 5% Cashback',
       image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80',
@@ -96,7 +96,7 @@ export const PersonalBankingPage: React.FC = () => {
         'Comprehensive travel insurance & golf course privileges'
       ],
       action: '/open-account',
-      btnText: 'Apply for Burgundy Card'
+      btnText: 'Apply for Premier Card'
     }
   ];
 
@@ -116,7 +116,7 @@ export const PersonalBankingPage: React.FC = () => {
           <ScrollReveal direction="down">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
               <Crown className="w-3.5 h-3.5" />
-              <span>Burgundy Everyday Banking</span>
+              <span>Premier Everyday Banking</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight max-w-3xl mx-auto">

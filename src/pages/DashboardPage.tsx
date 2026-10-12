@@ -90,7 +90,7 @@ export const DashboardPage: React.FC = () => {
             <div className="flex items-center gap-2">
               <span className="text-xs font-black uppercase tracking-wider text-amber-300 flex items-center gap-1">
                 <Crown className="w-3.5 h-3.5" />
-                BURGUNDY PRIVATE CLIENT
+                PREMIER PRIVATE CLIENT
               </span>
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             </div>
@@ -245,7 +245,7 @@ export const DashboardPage: React.FC = () => {
                   setCardFrozen(!cardFrozen);
                   showToast(
                     cardFrozen ? 'Card Unfrozen' : 'Card Frozen',
-                    cardFrozen ? 'Your Burgundy card is now active for purchases.' : 'Card temporarily blocked from authorizations.',
+                    cardFrozen ? 'Your card is now active for purchases.' : 'Card temporarily blocked from authorizations.',
                     cardFrozen ? 'success' : 'warning'
                   );
                 }}

@@ -44,7 +44,7 @@ export const HomePage: React.FC = () => {
     },
     {
       title: '24/7 Support',
-      desc: 'Dedicated Burgundy relationship concierge & intelligent AI assistant.',
+      desc: 'Dedicated private relationship concierge & intelligent AI assistant.',
       icon: <Headphones className="w-6 h-6 text-[#97144d]" />,
       badge: 'Always On',
       img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
@@ -75,7 +75,7 @@ export const HomePage: React.FC = () => {
       badge: 'Zero Liability'
     },
     {
-      title: 'Axis Burgundy UI',
+      title: 'Axis Premier UI',
       desc: 'Intuitive interface crafted for clarity, seamless mobile apps, and pristine statements.',
       badge: 'Award Winning'
     }
@@ -117,7 +117,7 @@ export const HomePage: React.FC = () => {
       name: 'Priya Sharma',
       role: 'Venture Partner & Tech Founder',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-      comment: 'NexBank’s Burgundy Private metal card and sub-second remittance have transformed how our firm manages multi-currency capital.'
+      comment: 'NexBank’s Premier Metal card and sub-second remittance have transformed how our firm manages multi-currency capital.'
     },
     {
       name: 'Mark Taylor',
@@ -150,7 +150,7 @@ export const HomePage: React.FC = () => {
               <ScrollReveal direction="down">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black tracking-wide uppercase shadow-sm">
                   <Crown className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Axis-Inspired Burgundy Experience</span>
+                  <span>Axis-Inspired Premier Experience</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#97144d] animate-ping"></span>
                 </div>
               </ScrollReveal>
@@ -164,7 +164,7 @@ export const HomePage: React.FC = () => {
 
               <ScrollReveal direction="up" delay={200}>
                 <p className="text-lg sm:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed">
-                  Safe, Smart, Secure. Experience high-touch banking, sub-second instant transfers, and tailored Burgundy wealth management crafted for discerning individuals and enterprises.
+                  Safe, Smart, Secure. Experience high-touch banking, sub-second instant transfers, and tailored private wealth management crafted for discerning individuals and enterprises.
                 </p>
               </ScrollReveal>
 
@@ -219,7 +219,7 @@ export const HomePage: React.FC = () => {
                       expiry={user ? user.cardDetails.expiry : '10/31'}
                       cvv={user ? user.cardDetails.cvv : '789'}
                       balance={user ? user.balance : 34850.75}
-                      variant="burgundy"
+                      variant="privilege"
                     />
                   </div>
 
@@ -296,12 +296,12 @@ export const HomePage: React.FC = () => {
                 </div>
                 
                 <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                  The Burgundy Metal Card: <br />
+                  The Premier Metal Card: <br />
                   <span className="gradient-text-axis-light">Crafted for Global Prestige</span>
                 </h2>
 
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                  Forged from tungsten-metal composite with micro-etched guilloche security waves, 24K gold EMV chip architecture, and zero foreign transaction markup around the globe.
+                  Forged from tungsten-metal composite with micro-etched floral guilloche security waves, 24K gold EMV chip architecture, and zero foreign transaction markup around the globe.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 pt-2">
@@ -346,7 +346,7 @@ export const HomePage: React.FC = () => {
                     expiry="10/31"
                     cvv="789"
                     balance={34850.75}
-                    variant="burgundy"
+                    variant="privilege"
                   />
                 </div>
               </div>
@@ -461,7 +461,7 @@ export const HomePage: React.FC = () => {
             <div className="relative z-10 max-w-2xl mx-auto space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-amber-200 text-xs font-black uppercase tracking-wider backdrop-blur-sm">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Burgundy Digital Onboarding</span>
+                <span>Priority Digital Onboarding</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">

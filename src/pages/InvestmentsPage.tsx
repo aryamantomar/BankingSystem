@@ -18,7 +18,7 @@ export const InvestmentsPage: React.FC = () => {
   const investmentProducts = [
     {
       id: 'mutual_funds',
-      title: 'Burgundy Mutual Funds',
+      title: 'Premier Mutual Funds',
       desc: 'Expert-managed diversified equity & debt portfolios with zero entry and exit load on direct plans.',
       cagr: '14.8% 3Y Return',
       risk: 'Moderate',
@@ -71,7 +71,7 @@ export const InvestmentsPage: React.FC = () => {
   const wealthGain = totalFutureValue - investedAmount;
 
   const handleStartSIP = () => {
-    showToast('SIP Registered!', `Automated monthly SIP of $${monthlySIP} started. Track in your Burgundy Wealth Portfolio.`, 'success');
+    showToast('SIP Registered!', `Automated monthly SIP of $${monthlySIP} started. Track in your Wealth Portfolio.`, 'success');
   };
 
   return (
@@ -83,7 +83,7 @@ export const InvestmentsPage: React.FC = () => {
           <ScrollReveal direction="down">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black uppercase tracking-wider mb-4">
               <Crown className="w-3.5 h-3.5" />
-              <span>Burgundy Wealth & Asset Management</span>
+              <span>Premier Wealth & Asset Management</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight max-w-3xl mx-auto">

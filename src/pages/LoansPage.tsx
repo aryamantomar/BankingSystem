@@ -63,7 +63,7 @@ export const LoansPage: React.FC = () => {
     },
     {
       id: 'personal',
-      title: 'Burgundy Personal Loan',
+      title: 'Priority Personal Loan',
       rate: '9.50% p.a.',
       maxAmount: '$75,000',
       tenure: 'Up to 5 Years',
@@ -94,7 +94,7 @@ export const LoansPage: React.FC = () => {
   const handleApplySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setAppliedModal(false);
-    showToast('Loan Application Submitted', `Thank you, ${applicantName || 'Applicant'}. Application ref #LN-${Math.floor(1000 + Math.random() * 9000)} is under review. Our Burgundy loan officer will contact you today!`, 'success');
+    showToast('Loan Application Submitted', `Thank you, ${applicantName || 'Applicant'}. Application ref #LN-${Math.floor(1000 + Math.random() * 9000)} is under review. Our loan officer will contact you today!`, 'success');
   };
 
   return (
@@ -313,7 +313,7 @@ export const LoansPage: React.FC = () => {
         <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl animate-scaleUp">
             <div className="text-center">
-              <h3 className="text-xl font-black text-slate-900">Axis Burgundy Pre-Approval</h3>
+              <h3 className="text-xl font-black text-slate-900">Instant Loan Pre-Approval</h3>
               <p className="text-xs text-slate-500 mt-1 font-medium">Estimated monthly repayment: ${emi}/mo</p>
             </div>
 
