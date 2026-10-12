@@ -123,7 +123,7 @@ export const HomePage: React.FC = () => {
       name: 'Mark Taylor',
       role: 'Commercial Real Estate Director',
       avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
-      comment: 'The loan EMI simulator and expedited disbursement process helped us secure prime property without bureaucratic delays.'
+      comment: 'The loan EMI calculator and expedited disbursement process helped us secure prime property without bureaucratic delays.'
     },
     {
       name: 'Sarah Jenkins',

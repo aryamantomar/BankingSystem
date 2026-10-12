@@ -8,9 +8,7 @@ import {
   Building2, 
   Check, 
   ArrowRight,
-  ChevronRight,
-  ShieldAlert,
-  Code
+  ChevronRight
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ScrollReveal';
 
@@ -72,7 +70,7 @@ export const BusinessBankingPage: React.FC = () => {
       icon: <CreditCard className="w-5 h-5 text-[#97144d]" />,
       features: [
         'Smart Android POS terminals with touch screen & tap-to-pay',
-        'Developer REST APIs and SDKs for e-commerce checkout',
+        'Seamless digital checkout integrations for online businesses',
         'Dynamic Bharat/UPI QR codes with instant zero-fee settlement',
         'Automated chargeback defense and PCI-DSS Level 1 compliance'
       ],
@@ -92,6 +90,21 @@ export const BusinessBankingPage: React.FC = () => {
         'Escrow services and syndicated loan facilities'
       ],
       btnText: 'Schedule Institutional Consult'
+    },
+    {
+      id: 'corporate-cards',
+      title: 'Commercial & Corporate Cards',
+      tagline: 'High-limit credit lines with real-time spend control.',
+      badge: 'Zero Forex Markup',
+      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
+      icon: <CreditCard className="w-5 h-5 text-[#97144d]" />,
+      features: [
+        'Custom multi-level spending limits per team or employee',
+        'Automated real-time receipt capture and expense reconciliation',
+        'Zero foreign currency transaction markup on international travel',
+        'Complimentary worldwide airport lounge access & travel cover'
+      ],
+      btnText: 'Apply for Corporate Cards'
     }
   ];
 
@@ -190,42 +203,6 @@ export const BusinessBankingPage: React.FC = () => {
               </div>
             </ScrollReveal>
           ))}
-
-          {/* Interactive Developer Banking Sandbox Feature Card */}
-          <ScrollReveal direction="up" delay={500}>
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#fdf6f9] via-white to-[#faf2f6] dark:from-[#1c0d19] dark:via-[#140811] dark:to-[#190a16] border border-[#97144d]/30 flex flex-col justify-between shadow-[0_15px_35px_-5px_rgba(151,20,77,0.1)] relative overflow-hidden h-full">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#97144d]/5 rounded-full blur-xl pointer-events-none"></div>
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-black uppercase tracking-wider text-[#97144d]">NexBank Open Banking</span>
-                  <Code className="w-4 h-4 text-[#97144d]" />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900">Developer API Sandbox</h3>
-                <p className="text-xs text-slate-500 mt-1 font-medium">
-                  Integrate instant payment collections, webhooks, and account verification in under 5 minutes.
-                </p>
-
-                <div className="mt-6 p-4 rounded-2xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed overflow-x-auto shadow-inner">
-                  <span className="text-pink-400">POST</span> /v2/corporate/payouts<br />
-                  <span className="text-slate-500">Authorization: Bearer nbk_live_98a...</span><br />
-                  <span className="text-amber-400">&#123;</span><br />
-                  &nbsp;&nbsp;<span className="text-emerald-400">"amount"</span>: 250000.00,<br />
-                  &nbsp;&nbsp;<span className="text-emerald-400">"currency"</span>: "USD",<br />
-                  &nbsp;&nbsp;<span className="text-emerald-400">"speed"</span>: "instant"<br />
-                  <span className="text-amber-400">&#125;</span>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <button
-                  onClick={() => navigate('/services')}
-                  className="btn-shimmer w-full py-3 rounded-xl bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white font-black text-xs shadow-md transition-all"
-                >
-                  Explore Developer Portal
-                </button>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ export const AboutPage: React.FC = () => {
   ];
 
   const milestones = [
-    { year: '2018', title: 'Founded with Purpose', desc: 'NexBank launched with an initial seed round to reinvent retail banking with clean APIs.' },
+    { year: '2018', title: 'Founded with Purpose', desc: 'NexBank launched with an initial seed round to deliver transparent, client-first digital banking with zero bureaucracy.' },
     { year: '2020', title: '1 Million Accounts', desc: 'Surpassed 1M active customers and achieved full national banking regulatory charter.' },
     { year: '2022', title: 'Corporate Banking Suite', desc: 'Expanded into commercial trade finance and instant merchant payment gateways.' },
     { year: '2024', title: 'Global Operations', desc: 'Established cross-border clearing hubs in New York, London, and Singapore.' },

@@ -210,7 +210,7 @@ export const ServicesPage: React.FC = () => {
             {selectedService === 'transfer' && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="text-center">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#97144d]">Live Simulator</span>
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#97144d]">Instant Remittance Portal</span>
                   <h2 className="text-2xl font-black text-slate-900 mt-1">Instant Funds Transfer</h2>
                   <p className="text-xs text-slate-500 mt-1 font-medium">
                     Available Balance: <span className="text-emerald-700 font-bold font-mono">${(user?.balance ?? 0).toLocaleString()}</span>
