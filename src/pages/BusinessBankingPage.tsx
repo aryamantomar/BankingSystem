@@ -7,50 +7,48 @@ import {
   CreditCard, 
   TrendingUp, 
   CheckCircle2, 
-  Layers, 
-  ShieldCheck, 
   ArrowRight,
   ChevronRight,
   Terminal,
-  Zap
+  Crown
 } from 'lucide-react';
 
 export const BusinessBankingPage: React.FC = () => {
   const { navigate } = useBanking();
 
-  // 5 core services from diagram
+  // 5 core services from diagram with Axis Bank corporate styling
   const businessProducts = [
     {
       id: 'accounts',
-      title: 'Business Accounts',
+      title: 'Current & Business Accounts',
       tagline: 'Current & Savings Accounts.',
       badge: 'Multi-Currency',
-      icon: <Briefcase className="w-6 h-6 text-blue-400" />,
+      icon: <Briefcase className="w-6 h-6 text-gold-400" />,
       features: [
         'Dedicated treasury sub-accounts for tax, payroll, and ops',
-        'Multi-currency accounts supporting USD, EUR, GBP, SGD & JPY',
+        'Multi-currency accounts supporting USD, EUR, GBP, SGD & INR',
         'Granular multi-user permissions and approval workflows',
-        'Seamless integration with QuickBooks, Xero, and Stripe'
+        'Seamless integration with QuickBooks, SAP, and Stripe'
       ],
       btnText: 'Open Business Account'
     },
     {
       id: 'loans',
-      title: 'Business Loans',
+      title: 'Commercial Credit & Loans',
       tagline: 'For your business growth.',
       badge: 'Up to $5,000,000',
-      icon: <TrendingUp className="w-6 h-6 text-cyan-400" />,
+      icon: <TrendingUp className="w-6 h-6 text-[#ea7ea6]" />,
       features: [
         'Flexible working capital lines with pay-per-use interest',
         'Equipment & technology lease financing up to 10-year tenures',
-        'SBA and government guaranteed subsidized credit facilities',
+        'Subsidized priority sector credit facilities',
         'Decision turnaround within 48 hours for verified entities'
       ],
       btnText: 'Apply for Commercial Credit'
     },
     {
       id: 'trade',
-      title: 'Trade Finance',
+      title: 'Trade Finance & Forex',
       tagline: 'Support for global trade.',
       badge: 'Worldwide Network',
       icon: <Globe2 className="w-6 h-6 text-emerald-400" />,
@@ -64,26 +62,26 @@ export const BusinessBankingPage: React.FC = () => {
     },
     {
       id: 'merchant',
-      title: 'Merchant Services',
+      title: 'Merchant POS & Gateway',
       tagline: 'Easy payment solutions.',
-      badge: 'Next-Day Payouts',
-      icon: <CreditCard className="w-6 h-6 text-amber-400" />,
+      badge: 'Same-Day Settlement',
+      icon: <CreditCard className="w-6 h-6 text-amber-300" />,
       features: [
-        'Smart 5G Android POS terminals with touch screen & tap-to-pay',
-        'Robust developer REST APIs and SDKs for e-commerce checkout',
-        'Dynamic QR codes with instant zero-fee UPI/direct settlement',
+        'Smart Android POS terminals with touch screen & tap-to-pay',
+        'Developer REST APIs and SDKs for e-commerce checkout',
+        'Dynamic Bharat/UPI QR codes with instant zero-fee settlement',
         'Automated chargeback defense and PCI-DSS Level 1 compliance'
       ],
       btnText: 'Deploy Merchant Terminals'
     },
     {
       id: 'corporate',
-      title: 'Corporate Banking',
+      title: 'Corporate Institutional Banking',
       tagline: 'Tailored for large enterprises.',
       badge: 'Bespoke Advisory',
-      icon: <Building2 className="w-6 h-6 text-violet-400" />,
+      icon: <Building2 className="w-6 h-6 text-pink-300" />,
       features: [
-        'Dedicated senior Corporate Relationship Manager and team',
+        'Dedicated senior Corporate Relationship Manager and desk',
         'Comprehensive liquidity pooling and sweeps optimization',
         'Automated bulk payroll processing for 100,000+ employees',
         'Escrow services and syndicated loan facilities'
@@ -96,33 +94,33 @@ export const BusinessBankingPage: React.FC = () => {
     <div className="space-y-20 pb-20">
       
       {/* Hero Section matching diagram */}
-      <section className="relative pt-12 md:pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+      <section className="relative pt-12 md:pt-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#97144d]/30 to-amber-500/20 border border-[#97144d]/50 text-gold-300 text-xs font-bold uppercase tracking-wider mb-4">
             <Building2 className="w-3.5 h-3.5" />
-            <span>Commercial & Institutional Solutions</span>
+            <span>Commercial & Enterprise Solutions</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight max-w-3xl mx-auto">
             Business Banking
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 mt-4 max-w-2xl mx-auto font-light">
+          <p className="text-lg sm:text-xl text-pink-100/70 mt-4 max-w-2xl mx-auto font-normal">
             Powering businesses towards a brighter future.
           </p>
 
           <div className="mt-8 flex justify-center gap-4">
             <button
               onClick={() => navigate('/open-account')}
-              className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors flex items-center gap-2"
+              className="btn-shimmer px-6 py-3 rounded-xl bg-gradient-to-r from-[#97144d] to-amber-500 hover:brightness-110 text-white font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-[#97144d]/30"
             >
               <span>Open Business Account</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigate('/contact')}
-              className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-colors"
+              className="px-6 py-3 rounded-xl bg-[#240616] hover:bg-[#34091f] text-pink-100 font-bold text-sm transition-all border border-[#97144d]/40"
             >
-              Contact Commercial Desk
+              Contact Corporate Desk
             </button>
           </div>
         </div>
@@ -134,70 +132,70 @@ export const BusinessBankingPage: React.FC = () => {
           {businessProducts.map((prod) => (
             <div
               key={prod.id}
-              className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between group"
+              className="p-8 rounded-3xl bg-[#1b0513]/90 border border-[#97144d]/30 hover:border-[#ea7ea6] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[#97144d]/25 hover:-translate-y-1.5"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-cyan-600/20 border border-slate-700/80 flex items-center justify-center transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-[#2b081e] group-hover:bg-[#97144d] border border-[#97144d]/40 flex items-center justify-center transition-all group-hover:scale-110">
                     {prod.icon}
                   </div>
-                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  <span className="text-xs font-black px-2.5 py-1 rounded-full bg-[#97144d]/30 text-gold-300 border border-[#97144d]/50">
                     {prod.badge}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-2xl font-black text-white group-hover:text-gold-300 transition-colors">
                   {prod.title}
                 </h3>
-                <p className="text-sm font-medium text-slate-400 mt-1">
+                <p className="text-sm font-medium text-pink-200/60 mt-1">
                   {prod.tagline}
                 </p>
 
-                <ul className="mt-6 space-y-2.5 text-xs text-slate-300">
+                <ul className="mt-6 space-y-2.5 text-xs text-pink-100/80">
                   {prod.features.map((feat, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-800">
+              <div className="mt-8 pt-6 border-t border-[#97144d]/30">
                 <button
                   onClick={() => navigate('/contact')}
-                  className="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-cyan-600 text-slate-200 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#26071a] hover:bg-[#97144d] text-pink-100 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-[#97144d]/40"
                 >
                   <span>{prod.btnText}</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
+                  <ChevronRight className="w-3.5 h-3.5 text-gold-400" />
                 </button>
               </div>
             </div>
           ))}
 
           {/* Developer API & Merchant Terminal Callout */}
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-blue-950/50 to-slate-950 border border-slate-700/80 flex flex-col justify-between">
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#28051a] via-[#16030f] to-[#200515] border border-amber-400/40 flex flex-col justify-between shadow-2xl">
             <div>
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">
+              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-gold-400 mb-2">
                 <Terminal className="w-4 h-4" />
-                <span>Developer-First Infrastructure</span>
+                <span>Developer & ERP Infrastructure</span>
               </div>
-              <h3 className="text-xl font-bold text-white">NexBank Open API Suite</h3>
-              <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-                Plug automated payout engines, corporate webhooks, and virtual IBAN generators directly into your existing ERP or web app.
+              <h3 className="text-xl font-black text-white">NexBank Open API Suite</h3>
+              <p className="text-xs text-pink-200/70 mt-2 leading-relaxed font-normal">
+                Plug automated payout engines, corporate webhooks, and virtual accounts directly into your existing ERP or web app.
               </p>
 
-              <div className="mt-4 p-3 rounded-xl bg-slate-950 font-mono text-[11px] text-blue-300 border border-slate-800 space-y-1">
-                <div className="text-slate-500">// Instant Corporate Transfer API</div>
+              <div className="mt-4 p-3 rounded-2xl bg-[#0f0209] font-mono text-[11px] text-pink-200 border border-[#97144d]/40 space-y-1">
+                <div className="text-pink-400/60">// Instant Corporate Transfer API</div>
                 <div>POST https://api.nexbank.com/v2/payouts</div>
-                <div className="text-emerald-400">{`{ "status": 200, "txnId": "NB_9921_OK" }`}</div>
+                <div className="text-emerald-400">{`{ "status": 200, "txnId": "AXIS_9921_OK" }`}</div>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800">
+            <div className="mt-6 pt-4 border-t border-[#97144d]/30">
               <button
                 onClick={() => navigate('/contact')}
-                className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors text-center"
+                className="btn-shimmer w-full py-2.5 rounded-xl bg-gradient-to-r from-[#97144d] to-amber-500 hover:brightness-110 text-white font-bold text-xs transition-all text-center shadow-md shadow-[#97144d]/30"
               >
                 Request Enterprise API Keys
               </button>
@@ -208,22 +206,22 @@ export const BusinessBankingPage: React.FC = () => {
 
       {/* Trust & Scale stats */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-slate-900/60 border border-slate-800 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#1a0513]/60 border border-[#97144d]/30 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center shadow-xl">
           <div>
-            <span className="text-3xl sm:text-4xl font-extrabold text-blue-400">$64 Billion+</span>
-            <p className="text-xs text-slate-400 mt-1 uppercase font-semibold">Processed Annually</p>
+            <span className="text-3xl sm:text-4xl font-black text-gold-400 font-mono">$64 Billion+</span>
+            <p className="text-xs text-pink-200/60 mt-1 uppercase font-bold">Processed Annually</p>
           </div>
           <div>
-            <span className="text-3xl sm:text-4xl font-extrabold text-cyan-400">140,000+</span>
-            <p className="text-xs text-slate-400 mt-1 uppercase font-semibold">Businesses Powered</p>
+            <span className="text-3xl sm:text-4xl font-black text-[#ea7ea6] font-mono">140,000+</span>
+            <p className="text-xs text-pink-200/60 mt-1 uppercase font-bold">Businesses Powered</p>
           </div>
           <div>
-            <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400">99.999%</span>
-            <p className="text-xs text-slate-400 mt-1 uppercase font-semibold">Payment Engine SLA</p>
+            <span className="text-3xl sm:text-4xl font-black text-emerald-400 font-mono">99.999%</span>
+            <p className="text-xs text-pink-200/60 mt-1 uppercase font-bold">Core Payment SLA</p>
           </div>
           <div>
-            <span className="text-3xl sm:text-4xl font-extrabold text-violet-400">45+</span>
-            <p className="text-xs text-slate-400 mt-1 uppercase font-semibold">Supported Currencies</p>
+            <span className="text-3xl sm:text-4xl font-black text-amber-300 font-mono">45+</span>
+            <p className="text-xs text-pink-200/60 mt-1 uppercase font-bold">Global Currencies</p>
           </div>
         </div>
       </section>

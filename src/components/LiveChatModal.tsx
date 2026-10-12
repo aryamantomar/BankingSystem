@@ -15,7 +15,7 @@ export const LiveChatModal: React.FC = () => {
     {
       id: 'msg-1',
       sender: 'bot',
-      text: `Hello! I'm NexBot, your 24/7 AI banking concierge. How can I assist you with your NexBank account today?`,
+      text: `Namaste & Welcome! I'm NexBot, your 24/7 Axis-powered AI banking concierge. How can I assist you with your NexBank Burgundy account today?`,
       time: 'Just now'
     }
   ]);
@@ -25,7 +25,7 @@ export const LiveChatModal: React.FC = () => {
     'Check my balance',
     'What are loan interest rates?',
     'How do I transfer funds?',
-    'Report lost debit card'
+    'Burgundy debit card perks'
   ];
 
   const handleSend = (textToSend?: string) => {
@@ -42,25 +42,24 @@ export const LiveChatModal: React.FC = () => {
     setMessages((prev) => [...prev, userMsg]);
     if (!textToSend) setInputText('');
 
-    // Simulate smart bot response
     setTimeout(() => {
       const lower = text.toLowerCase();
-      let reply = "I understand your query. Our senior customer support specialist has been notified. You can also reach our 24/7 telephone helpline at +1 800-NEX-BANK.";
+      let reply = "I understand your query. Our senior Burgundy customer relationship desk has been notified. You can also reach our 24/7 hotline at +1 800-NEX-BANK.";
 
       if (lower.includes('balance')) {
         if (user) {
-          reply = `Your current primary Savings Account balance is $${user.balance.toLocaleString('en-US', { minimumFractionDigits: 2 })}.`;
+          reply = `Your current primary NexBank Savings Account balance is $${user.balance.toLocaleString('en-US', { minimumFractionDigits: 2 })}.`;
         } else {
-          reply = "Please log in to your NexBank account to check your live balance, or click 'Login' on the top bar.";
+          reply = "Please sign in to your NexBank account to view your live balance, or click 'Login' on the top bar.";
         }
       } else if (lower.includes('loan') || lower.includes('interest')) {
-        reply = "NexBank offers Home Loans starting at 6.85% p.a., Education Loans at 8.10% p.a., and Personal Loans at 9.50% p.a. Check out our interactive Loan EMI Calculator under Loans!";
-      } else if (lower.includes('transfer') || lower.includes('imps') || lower.includes('neft')) {
+        reply = "NexBank offers Home Loans starting at 6.85% p.a., Education Loans at 8.10% p.a., and Personal Loans at 9.50% p.a. Check our interactive EMI Calculator on the Loans page!";
+      } else if (lower.includes('transfer') || lower.includes('imps') || lower.includes('neft') || lower.includes('upi')) {
         reply = "You can execute zero-fee transfers instantly via IMPS, UPI, NEFT, or RTGS from your Dashboard or the Services page!";
-      } else if (lower.includes('lost') || lower.includes('card') || lower.includes('block')) {
-        reply = "EMERGENCY PROTOCOL: If your card has been lost or compromised, we can temporarily freeze your card instantly in your Dashboard security tab or call our emergency hotline at 1800-555-LOCK.";
+      } else if (lower.includes('card') || lower.includes('burgundy') || lower.includes('perk')) {
+        reply = "NexBank Burgundy Metal Card offers 5% cashback on travel, complimentary worldwide airport lounge visits, zero foreign exchange markup, and dining discounts!";
       } else if (lower.includes('open') || lower.includes('account')) {
-        reply = "You can open a 100% digital account in 3 minutes! Click 'Open Account' on the top navigation.";
+        reply = "You can open an instant digital Burgundy savings or current account in 3 minutes! Click 'Open Account' on the top bar.";
       }
 
       const botReply: ChatMessage = {
@@ -78,71 +77,71 @@ export const LiveChatModal: React.FC = () => {
       {/* Floating launcher trigger */}
       <button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className="fixed bottom-6 right-6 z-40 p-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-2xl shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2 group"
+        className="fixed bottom-6 right-6 z-40 p-4 rounded-full bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] text-white shadow-2xl shadow-[#97144d]/50 hover:scale-110 active:scale-95 transition-all duration-200 flex items-center gap-2 group border border-white/20 animate-pulse-slow"
         aria-label="Open Live Chat"
       >
         <MessageSquare className="w-6 h-6 group-hover:rotate-6 transition-transform" />
-        <span className="text-sm font-semibold pr-1 hidden sm:inline">24/7 Live Support</span>
-        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span className="text-sm font-bold pr-1 hidden sm:inline">24/7 Burgundy Assist</span>
+        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
       </button>
 
       {/* Chat Window Modal */}
       {isChatOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[400px] h-[540px] bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
+        <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[400px] h-[540px] bg-[#160510] border border-[#97144d]/50 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
           
           {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border-b border-slate-800 flex items-center justify-between">
+          <div className="p-4 bg-gradient-to-r from-[#4d0725] via-[#97144d] to-[#34061a] border-b border-[#97144d]/40 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/30">
-                  <Bot className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-[#240411] border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-md">
+                  <Bot className="w-5 h-5 text-amber-400" />
                 </div>
-                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
+                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#160510]"></span>
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                  NexBot AI Assistant
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                <h4 className="text-sm font-extrabold text-white flex items-center gap-1.5">
+                  NexBot Concierge
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 </h4>
-                <p className="text-[11px] text-emerald-400 flex items-center gap-1">
-                  Online • Avg reply time: instant
+                <p className="text-[11px] text-pink-200 flex items-center gap-1">
+                  Burgundy Priority • Instant AI
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsChatOpen(false)}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg text-pink-200 hover:text-white hover:bg-white/10 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-950/60">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#11030b]">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'bot' && (
-                  <div className="w-7 h-7 rounded-lg bg-blue-600/30 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-[#97144d]/40 border border-[#97144d]/60 flex items-center justify-center text-amber-300 shrink-0">
                     <Bot className="w-4 h-4" />
                   </div>
                 )}
                 <div
                   className={`max-w-[78%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed ${
                     msg.sender === 'user'
-                      ? 'bg-blue-600 text-white rounded-tr-none'
-                      : 'bg-slate-800 text-slate-200 border border-slate-700/70 rounded-tl-none'
+                      ? 'bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white rounded-tr-none'
+                      : 'bg-[#220716] text-pink-100 border border-[#97144d]/30 rounded-tl-none'
                   }`}
                 >
                   <p>{msg.text}</p>
-                  <span className={`text-[10px] block mt-1 ${msg.sender === 'user' ? 'text-blue-200 text-right' : 'text-slate-400'}`}>
+                  <span className={`text-[10px] block mt-1 ${msg.sender === 'user' ? 'text-pink-200 text-right' : 'text-slate-400'}`}>
                     {msg.time}
                   </span>
                 </div>
                 {msg.sender === 'user' && (
-                  <div className="w-7 h-7 rounded-lg bg-slate-700 flex items-center justify-center text-slate-200 shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center text-white shrink-0">
                     <User className="w-4 h-4" />
                   </div>
                 )}
@@ -151,12 +150,12 @@ export const LiveChatModal: React.FC = () => {
           </div>
 
           {/* Quick Prompts */}
-          <div className="p-2 border-t border-slate-800/80 bg-slate-900/90 flex gap-1.5 overflow-x-auto no-scrollbar">
+          <div className="p-2 border-t border-[#97144d]/30 bg-[#190513] flex gap-1.5 overflow-x-auto no-scrollbar">
             {quickPrompts.map((prompt, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSend(prompt)}
-                className="whitespace-nowrap text-[11px] px-2.5 py-1 rounded-full bg-slate-800 hover:bg-blue-600/20 text-slate-300 hover:text-blue-300 border border-slate-700 transition-colors shrink-0"
+                className="whitespace-nowrap text-[11px] px-2.5 py-1 rounded-full bg-[#2a091c] hover:bg-[#97144d] text-pink-200 hover:text-white border border-[#97144d]/40 transition-colors shrink-0"
               >
                 {prompt}
               </button>
@@ -169,18 +168,18 @@ export const LiveChatModal: React.FC = () => {
               e.preventDefault();
               handleSend();
             }}
-            className="p-3 bg-slate-900 border-t border-slate-800 flex items-center gap-2"
+            className="p-3 bg-[#160510] border-t border-[#97144d]/30 flex items-center gap-2"
           >
             <input
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              placeholder="Ask about accounts, transfers, loans..."
-              className="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+              placeholder="Ask about Burgundy perks, FD rates, loans..."
+              className="flex-1 bg-[#0d0208] border border-[#97144d]/40 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white placeholder-pink-300/40 focus:outline-none focus:border-[#ea7ea6]"
             />
             <button
               type="submit"
-              className="p-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white transition-colors"
+              className="p-2 rounded-xl bg-gradient-to-r from-[#97144d] to-[#c52e69] hover:brightness-110 text-white transition-all shadow-md shadow-[#97144d]/30"
               aria-label="Send message"
             >
               <Send className="w-4 h-4" />

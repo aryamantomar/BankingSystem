@@ -1,40 +1,40 @@
 import React from 'react';
 import { useBanking } from '../context/BankingContext';
-import { FileText, ShieldCheck, Scale, ArrowLeft } from 'lucide-react';
+import { Scale, ArrowLeft } from 'lucide-react';
 
 export const TermsPage: React.FC = () => {
   const { navigate } = useBanking();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-10 text-slate-300">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-10 text-pink-100/90 font-normal">
       
       {/* Header matching diagram */}
       <div className="space-y-3">
         <button
           onClick={() => navigate('/')}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 mb-2"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-gold-400 hover:text-gold-300 mb-2"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Home</span>
         </button>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gradient-to-r from-[#97144d]/30 to-amber-500/20 border border-[#97144d]/50 text-gold-300 text-xs font-bold uppercase tracking-wider">
           <Scale className="w-3.5 h-3.5" />
           <span>Legal & Regulatory Framework</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Terms & Conditions</h1>
-        <p className="text-xs text-slate-400">
+        <h1 className="text-3xl sm:text-4xl font-black text-white">Terms & Conditions</h1>
+        <p className="text-xs text-pink-200/70">
           Last updated: October 1, 2026 • Effective for all personal and business NexBank accounts.
         </p>
       </div>
 
       {/* Structured Legal Content */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 space-y-8 text-sm leading-relaxed">
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#1d0514] border border-[#97144d]/40 space-y-8 text-sm leading-relaxed shadow-2xl">
         
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-blue-600/20 text-blue-400 flex items-center justify-center text-xs">1</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">1</span>
             Acceptance of Banking Agreement
           </h2>
           <p>
@@ -44,7 +44,7 @@ export const TermsPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-blue-600/20 text-blue-400 flex items-center justify-center text-xs">2</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">2</span>
             Account Eligibility & Verification (KYC / CIP)
           </h2>
           <p>
@@ -54,7 +54,7 @@ export const TermsPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-blue-600/20 text-blue-400 flex items-center justify-center text-xs">3</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">3</span>
             Funds Transfers & Settlement Rules
           </h2>
           <p>
@@ -64,7 +64,7 @@ export const TermsPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-blue-600/20 text-blue-400 flex items-center justify-center text-xs">4</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">4</span>
             Security Credentials & Unauthorized Access
           </h2>
           <p>
@@ -74,7 +74,7 @@ export const TermsPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-blue-600/20 text-blue-400 flex items-center justify-center text-xs">5</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">5</span>
             Deposit Insurance Coverage
           </h2>
           <p>
@@ -82,9 +82,9 @@ export const TermsPage: React.FC = () => {
           </p>
         </section>
 
-        <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
-          <span>NexBank Regulatory Charter Ref #US-NB-98124</span>
-          <button onClick={() => navigate('/privacy')} className="text-blue-400 hover:underline">
+        <div className="pt-4 border-t border-[#97144d]/30 text-xs text-pink-300/60 flex items-center justify-between">
+          <span>NexBank Regulatory Charter Ref #AXIS-NB-98124</span>
+          <button onClick={() => navigate('/privacy')} className="text-gold-400 hover:underline font-bold">
             Read Privacy Policy →
           </button>
         </div>

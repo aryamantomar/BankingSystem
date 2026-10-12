@@ -11,25 +11,27 @@ import {
   Percent, 
   ShieldCheck, 
   Sparkles,
-  ChevronRight
+  ChevronRight,
+  Crown,
+  Award
 } from 'lucide-react';
 
 export const PersonalBankingPage: React.FC = () => {
   const { navigate } = useBanking();
 
-  // 5 core services from diagram
+  // 5 core services from diagram with Axis Bank Burgundy styling
   const personalProducts = [
     {
       id: 'savings',
-      title: 'Savings Account',
-      tagline: 'Grow your money securely.',
-      rate: '5.25% APY',
-      icon: <PiggyBank className="w-6 h-6 text-blue-400" />,
+      title: 'Burgundy Savings Account',
+      tagline: 'Grow your wealth with premier privileges.',
+      rate: '5.25% - 7.10% APY',
+      icon: <PiggyBank className="w-6 h-6 text-gold-400" />,
       features: [
-        'Zero minimum balance requirement',
+        'Dedicated Burgundy Relationship Manager',
         'Daily compound interest credited quarterly',
-        'Unlimited free ATM withdrawals globally',
-        'Complimentary virtual debit card on signup'
+        'Complimentary worldwide ATM withdrawals with zero markup',
+        'Complimentary virtual and contactless metal card'
       ],
       action: '/open-account',
       btnText: 'Open Savings Account'
@@ -37,27 +39,27 @@ export const PersonalBankingPage: React.FC = () => {
     {
       id: 'current',
       title: 'Current Account',
-      tagline: 'For your daily transactions.',
+      tagline: 'For seamless daily transactions.',
       rate: 'Zero Fee',
-      icon: <Wallet className="w-6 h-6 text-cyan-400" />,
+      icon: <Wallet className="w-6 h-6 text-[#ea7ea6]" />,
       features: [
         'High daily transaction & withdrawal limits',
         'Seamless multi-device digital net banking',
-        'Integrated auto-pay for utilities and subscriptions',
-        'Custom personalized cheque book & statement reports'
+        'Integrated auto-pay for utilities and billers',
+        'Custom personalized cheque book & instant e-statements'
       ],
       action: '/open-account',
       btnText: 'Open Current Account'
     },
     {
       id: 'fd',
-      title: 'Fixed Deposit',
-      tagline: 'Higher returns, greater security.',
+      title: 'Axis-Tier Fixed Deposit',
+      tagline: 'Higher returns, capital guarantee.',
       rate: 'Up to 7.85% p.a.',
       icon: <TrendingUp className="w-6 h-6 text-emerald-400" />,
       features: [
         'Flexible tenures from 7 days to 10 years',
-        'Guaranteed capital preservation & returns',
+        'Guaranteed capital preservation & sovereign safety',
         'Instant liquidity with overdraft up to 90% against FD',
         'Additional 0.50% interest bonus for senior citizens'
       ],
@@ -66,10 +68,10 @@ export const PersonalBankingPage: React.FC = () => {
     },
     {
       id: 'loans',
-      title: 'Loans',
+      title: 'Retail Loans',
       tagline: 'Personal, Home, and Education Loans.',
       rate: 'From 6.85% p.a.',
-      icon: <Landmark className="w-6 h-6 text-indigo-400" />,
+      icon: <Landmark className="w-6 h-6 text-amber-300" />,
       features: [
         'Quick digital sanctions in less than 24 hours',
         'Zero foreclosure charges on floating rate terms',
@@ -81,25 +83,25 @@ export const PersonalBankingPage: React.FC = () => {
     },
     {
       id: 'cards',
-      title: 'Debit & Credit Cards',
+      title: 'Burgundy Metal Cards',
       tagline: 'Spend smarter, everywhere.',
       rate: 'Up to 5% Cashback',
-      icon: <CreditCard className="w-6 h-6 text-violet-400" />,
+      icon: <CreditCard className="w-6 h-6 text-pink-300" />,
       features: [
-        'Zero international foreign transaction fees',
+        'Zero international foreign currency exchange fees',
         'Airport lounge access across 1,200+ global lounges',
         'Instant virtual cards for disposable, secure web shopping',
-        'Comprehensive purchase protection and travel insurance'
+        'Comprehensive travel insurance & golf course privileges'
       ],
       action: '/open-account',
-      btnText: 'Apply for NexCard'
+      btnText: 'Apply for Burgundy Card'
     }
   ];
 
   // Quick FD Return Calculator widget
   const [fdAmount, setFdAmount] = useState(10000);
   const [fdMonths, setFdMonths] = useState(12);
-  const fdRate = 0.075;
+  const fdRate = 0.0785;
   const estimatedReturn = Math.round(fdAmount * (1 + (fdRate * fdMonths) / 12));
   const interestEarned = estimatedReturn - fdAmount;
 
@@ -107,17 +109,17 @@ export const PersonalBankingPage: React.FC = () => {
     <div className="space-y-20 pb-20">
       
       {/* Hero Section matching diagram */}
-      <section className="relative pt-12 md:pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <PiggyBank className="w-3.5 h-3.5" />
-            <span>Retail Financial Services</span>
+      <section className="relative pt-12 md:pt-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#97144d]/30 to-amber-500/20 border border-[#97144d]/50 text-gold-300 text-xs font-bold uppercase tracking-wider mb-4">
+            <Crown className="w-3.5 h-3.5" />
+            <span>Axis Inspired Retail Banking</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight max-w-3xl mx-auto">
             Personal Banking
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 mt-4 max-w-2xl mx-auto font-light">
+          <p className="text-lg sm:text-xl text-pink-100/70 mt-4 max-w-2xl mx-auto font-normal">
             Banking solutions for your everyday needs.
           </p>
         </div>
@@ -129,26 +131,26 @@ export const PersonalBankingPage: React.FC = () => {
           {personalProducts.map((prod) => (
             <div
               key={prod.id}
-              className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between group"
+              className="p-8 rounded-3xl bg-[#1b0513]/90 border border-[#97144d]/30 hover:border-[#ea7ea6] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[#97144d]/25 hover:-translate-y-1.5"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-blue-600/20 border border-slate-700/80 flex items-center justify-center transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-[#2b081e] group-hover:bg-[#97144d] border border-[#97144d]/40 flex items-center justify-center transition-all group-hover:scale-110">
                     {prod.icon}
                   </div>
-                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                  <span className="text-xs font-black px-2.5 py-1 rounded-full bg-[#97144d]/30 text-gold-300 border border-[#97144d]/50">
                     {prod.rate}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-2xl font-black text-white group-hover:text-gold-300 transition-colors">
                   {prod.title}
                 </h3>
-                <p className="text-sm font-medium text-slate-400 mt-1">
+                <p className="text-sm font-medium text-pink-200/60 mt-1">
                   {prod.tagline}
                 </p>
 
-                <ul className="mt-6 space-y-2.5 text-xs text-slate-300">
+                <ul className="mt-6 space-y-2.5 text-xs text-pink-100/80">
                   {prod.features.map((feat, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -158,10 +160,10 @@ export const PersonalBankingPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-800">
+              <div className="mt-8 pt-6 border-t border-[#97144d]/30">
                 <button
                   onClick={() => navigate(prod.action)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#26071a] hover:bg-[#97144d] text-pink-100 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-[#97144d]/40"
                 >
                   <span>{prod.btnText}</span>
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -171,20 +173,21 @@ export const PersonalBankingPage: React.FC = () => {
           ))}
 
           {/* Quick FD Growth Interactive Mini-Calculator Card */}
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-950/60 via-slate-900 to-slate-900 border border-blue-500/30 flex flex-col justify-between">
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#3b061d] via-[#1c0410] to-[#250516] border border-amber-400/40 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/10 rounded-full blur-xl pointer-events-none"></div>
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">Interactive Estimator</span>
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span className="text-xs font-black uppercase tracking-wider text-gold-400">Fixed Deposit Estimator</span>
+                <Sparkles className="w-4 h-4 text-gold-400" />
               </div>
-              <h3 className="text-xl font-bold text-white">Fixed Deposit Quick Estimator</h3>
-              <p className="text-xs text-slate-400 mt-1">Simulate guaranteed returns on deposits.</p>
+              <h3 className="text-xl font-black text-white">Axis 7.85% FD Growth</h3>
+              <p className="text-xs text-pink-200/60 mt-1">Simulate guaranteed returns on deposits.</p>
 
               <div className="mt-6 space-y-4">
                 <div>
-                  <div className="flex justify-between text-xs text-slate-300 mb-1">
+                  <div className="flex justify-between text-xs text-pink-100 mb-1">
                     <span>Deposit Amount</span>
-                    <span className="font-bold text-white">${fdAmount.toLocaleString()}</span>
+                    <span className="font-bold text-white font-mono">${fdAmount.toLocaleString()}</span>
                   </div>
                   <input
                     type="range"
@@ -193,14 +196,14 @@ export const PersonalBankingPage: React.FC = () => {
                     step="1000"
                     value={fdAmount}
                     onChange={(e) => setFdAmount(Number(e.target.value))}
-                    className="w-full accent-blue-500 cursor-pointer"
+                    className="w-full accent-[#97144d] cursor-pointer"
                   />
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-xs text-slate-300 mb-1">
+                  <div className="flex justify-between text-xs text-pink-100 mb-1">
                     <span>Tenure</span>
-                    <span className="font-bold text-white">{fdMonths} Months</span>
+                    <span className="font-bold text-gold-300 font-mono">{fdMonths} Months</span>
                   </div>
                   <input
                     type="range"
@@ -209,27 +212,27 @@ export const PersonalBankingPage: React.FC = () => {
                     step="3"
                     value={fdMonths}
                     onChange={(e) => setFdMonths(Number(e.target.value))}
-                    className="w-full accent-blue-500 cursor-pointer"
+                    className="w-full accent-amber-400 cursor-pointer"
                   />
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 flex justify-between items-center text-xs">
+                <div className="p-3 rounded-2xl bg-[#11030b] border border-[#97144d]/40 flex justify-between items-center text-xs">
                   <div>
                     <span className="text-slate-400 block text-[10px]">Maturity Value</span>
-                    <span className="text-base font-black text-emerald-400">${estimatedReturn.toLocaleString()}</span>
+                    <span className="text-base font-black text-emerald-400 font-mono">${estimatedReturn.toLocaleString()}</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-slate-400 block text-[10px]">Total Interest</span>
-                    <span className="text-xs font-bold text-cyan-300">+${interestEarned.toLocaleString()}</span>
+                    <span className="text-slate-400 block text-[10px]">Total Interest Earned</span>
+                    <span className="text-xs font-bold text-gold-300 font-mono">+${interestEarned.toLocaleString()}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800">
+            <div className="mt-6 pt-4 border-t border-[#97144d]/30">
               <button
                 onClick={() => navigate('/open-account')}
-                className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors text-center"
+                className="btn-shimmer w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#97144d] to-amber-500 hover:brightness-110 text-white font-bold text-xs transition-all text-center shadow-md shadow-[#97144d]/30"
               >
                 Lock In 7.85% APY Today
               </button>
@@ -238,68 +241,69 @@ export const PersonalBankingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Credit & Debit Card Showcase */}
+      {/* Credit & Debit Card Showcase with Axis Burgundy Private metal styling */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#240616] via-[#14030e] to-[#200514] border border-[#97144d]/40 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
           <div className="lg:col-span-7 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-400">NexCard Signature Metal</span>
-            <h2 className="text-3xl font-extrabold text-white">Spend, Save, & Earn Worldwide</h2>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Crafted from 18g blackened stainless steel. Enjoy unlimited 2% cash back on all daily purchases, 5% on flights and hotels, comprehensive primary rental car insurance, and zero foreign currency conversion fees.
+            <span className="text-xs font-bold uppercase tracking-wider text-gold-400">Exclusive Luxury Privilege</span>
+            <h2 className="text-3xl font-black text-white">NexBank Burgundy Metal Card</h2>
+            <p className="text-sm text-pink-100/70 leading-relaxed font-normal">
+              Forged from 18g blackened stainless steel and finished in signature Axis Burgundy tones. Enjoy unlimited 2% cash back on all daily purchases, 5% on flights and luxury hotels, complimentary worldwide lounge access, and zero foreign currency markup.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 text-xs">
-              <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700">
-                <span className="text-blue-400 font-bold block text-sm">0%</span>
-                <span className="text-slate-400">Foreign Exchange Fee</span>
+              <div className="p-3 rounded-2xl bg-[#1a0410] border border-[#97144d]/40">
+                <span className="text-gold-400 font-bold block text-sm">0%</span>
+                <span className="text-pink-200/60">Forex Markup Fee</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700">
-                <span className="text-cyan-400 font-bold block text-sm">1,200+</span>
-                <span className="text-slate-400">Global Airport Lounges</span>
+              <div className="p-3 rounded-2xl bg-[#1a0410] border border-[#97144d]/40">
+                <span className="text-[#ea7ea6] font-bold block text-sm">1,200+</span>
+                <span className="text-pink-200/60">Airport Lounges</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700">
+              <div className="p-3 rounded-2xl bg-[#1a0410] border border-[#97144d]/40">
                 <span className="text-emerald-400 font-bold block text-sm">$0</span>
-                <span className="text-slate-400">Annual Fee in Year 1</span>
+                <span className="text-pink-200/60">Annual Fee in Year 1</span>
               </div>
             </div>
             <div className="pt-4">
               <button
                 onClick={() => navigate('/open-account')}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold text-sm transition-all"
+                className="btn-shimmer px-6 py-3 rounded-xl bg-gradient-to-r from-[#97144d] to-amber-500 text-white font-bold text-sm shadow-lg shadow-[#97144d]/40 transition-all"
               >
-                Claim Your Card
+                Claim Your Burgundy Card
               </button>
             </div>
           </div>
 
           <div className="lg:col-span-5 flex justify-center">
-            {/* Realistic Black Metal Card Mockup */}
-            <div className="w-full max-w-sm h-56 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 p-6 border border-slate-700/80 shadow-2xl relative overflow-hidden flex flex-col justify-between group hover:rotate-1 transition-transform">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl"></div>
+            {/* Realistic Blackened Burgundy Metal Card Mockup */}
+            <div className="w-full max-w-sm h-56 rounded-2xl bg-gradient-to-tr from-[#3a061d] via-[#740e3a] to-[#97144d] p-6 border border-amber-400/40 shadow-2xl relative overflow-hidden flex flex-col justify-between group hover:rotate-2 transition-transform duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-amber-400/20 rounded-full blur-2xl"></div>
               
               <div className="flex justify-between items-center relative z-10">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs font-black">
+                  <div className="w-7 h-7 rounded-lg bg-black/40 border border-amber-400/50 flex items-center justify-center text-gold-300 text-xs font-black">
                     N
                   </div>
-                  <span className="font-bold tracking-wider text-sm text-white">NexBank Signature</span>
+                  <span className="font-extrabold tracking-wider text-xs text-gold-200">BURGUNDY PRIVATE</span>
                 </div>
-                <div className="w-10 h-7 rounded-md bg-amber-400/80 border border-amber-300 flex items-center justify-center opacity-80">
+                {/* Gold chip */}
+                <div className="w-10 h-7 rounded-md bg-gradient-to-tr from-amber-300 to-amber-500 border border-amber-200 flex items-center justify-center">
                   <div className="w-6 h-4 border border-amber-800/40 rounded-sm"></div>
                 </div>
               </div>
 
-              <div className="space-y-1 relative z-10 font-mono tracking-widest text-slate-200 text-sm sm:text-base">
+              <div className="space-y-1 relative z-10 font-mono tracking-widest text-gold-100 text-sm sm:text-base font-bold drop-shadow">
                 <span>4111 •••• •••• 9081</span>
               </div>
 
-              <div className="flex justify-between items-end relative z-10 text-xs text-slate-300">
+              <div className="flex justify-between items-end relative z-10 text-xs text-pink-200">
                 <div>
-                  <span className="text-[10px] text-slate-400 block uppercase">Card Holder</span>
-                  <span className="font-semibold tracking-wider text-white">ARYAMAN TOMAR</span>
+                  <span className="text-[9px] text-pink-300/60 block uppercase font-bold">Card Holder</span>
+                  <span className="font-extrabold tracking-wider text-white">ARYAMAN TOMAR</span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 block uppercase">Expires</span>
-                  <span className="font-mono text-white">10/31</span>
+                  <span className="text-[9px] text-pink-300/60 block uppercase font-bold">Expires</span>
+                  <span className="font-mono text-gold-300 font-bold">10/31</span>
                 </div>
               </div>
             </div>

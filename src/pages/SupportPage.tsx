@@ -8,10 +8,9 @@ import {
   Search, 
   MessageSquare, 
   CheckCircle2, 
-  Clock, 
   ChevronRight,
   ShieldAlert,
-  ArrowRight
+  Crown
 } from 'lucide-react';
 
 export const SupportPage: React.FC = () => {
@@ -67,7 +66,7 @@ export const SupportPage: React.FC = () => {
       title: 'FAQs',
       desc: 'Find quick answers',
       detail: 'Instantly find answers regarding account setup, limits, and fund transfers.',
-      icon: <HelpCircle className="w-6 h-6 text-blue-400" />,
+      icon: <HelpCircle className="w-6 h-6 text-gold-400" />,
       action: () => navigate('/faq'),
       btnLabel: 'Browse FAQs'
     },
@@ -76,7 +75,7 @@ export const SupportPage: React.FC = () => {
       title: 'Contact Us',
       desc: 'Get in touch',
       detail: 'Reach our corporate branches, toll-free lines, or international desks.',
-      icon: <PhoneCall className="w-6 h-6 text-cyan-400" />,
+      icon: <PhoneCall className="w-6 h-6 text-[#ea7ea6]" />,
       action: () => navigate('/contact'),
       btnLabel: 'View Contact Details'
     },
@@ -103,7 +102,7 @@ export const SupportPage: React.FC = () => {
       title: 'Live Chat',
       desc: 'Chat with our support team',
       detail: 'Connect instantly with NexBot AI assistant or a live human support officer.',
-      icon: <MessageSquare className="w-6 h-6 text-violet-400" />,
+      icon: <MessageSquare className="w-6 h-6 text-pink-300" />,
       action: () => setIsChatOpen(true),
       btnLabel: 'Open 24/7 Live Chat'
     }
@@ -113,41 +112,47 @@ export const SupportPage: React.FC = () => {
     <div className="space-y-20 pb-20">
       
       {/* Hero Section matching diagram */}
-      <section className="relative pt-12 md:pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+      <section className="relative pt-12 md:pt-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#97144d]/30 to-amber-500/20 border border-[#97144d]/50 text-gold-300 text-xs font-bold uppercase tracking-wider mb-4">
             <Headphones className="w-3.5 h-3.5" />
-            <span>Dedicated Assistance</span>
+            <span>Dedicated Burgundy Support</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight max-w-3xl mx-auto">
             Customer Support
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 mt-4 max-w-2xl mx-auto font-light">
+          <p className="text-lg sm:text-xl text-pink-100/70 mt-4 max-w-2xl mx-auto font-normal">
             We're here to help you 24/7.
           </p>
 
           <div className="mt-8 flex justify-center gap-3">
             <button
               onClick={() => setActiveTab('channels')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors ${
-                activeTab === 'channels' ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'channels'
+                  ? 'bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white shadow-lg shadow-[#97144d]/30'
+                  : 'bg-[#1b0513] text-pink-200 border border-[#97144d]/30 hover:bg-[#25071a]'
               }`}
             >
               All Support Options
             </button>
             <button
               onClick={() => setActiveTab('raise')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors ${
-                activeTab === 'raise' ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'raise'
+                  ? 'bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white shadow-lg shadow-[#97144d]/30'
+                  : 'bg-[#1b0513] text-pink-200 border border-[#97144d]/30 hover:bg-[#25071a]'
               }`}
             >
               Raise a Complaint
             </button>
             <button
               onClick={() => setActiveTab('track')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors ${
-                activeTab === 'track' ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'track'
+                  ? 'bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white shadow-lg shadow-[#97144d]/30'
+                  : 'bg-[#1b0513] text-pink-200 border border-[#97144d]/30 hover:bg-[#25071a]'
               }`}
             >
               Track Request Status
@@ -163,26 +168,26 @@ export const SupportPage: React.FC = () => {
             {supportChannels.map((chan) => (
               <div
                 key={chan.id}
-                className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between group"
+                className="p-8 rounded-3xl bg-[#1b0513]/90 border border-[#97144d]/30 hover:border-[#ea7ea6] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-[#97144d]/25 hover:-translate-y-1.5"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-blue-600/20 border border-slate-700/80 flex items-center justify-center mb-4 transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-[#2a071c] group-hover:bg-[#97144d] border border-[#97144d]/40 flex items-center justify-center mb-4 transition-all group-hover:scale-110">
                     {chan.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-black text-white group-hover:text-gold-300 transition-colors">
                     {chan.title}
                   </h3>
-                  <p className="text-xs font-semibold text-cyan-400 mt-1">{chan.desc}</p>
-                  <p className="text-xs text-slate-400 mt-2.5 leading-relaxed">{chan.detail}</p>
+                  <p className="text-xs font-bold text-gold-400 mt-1">{chan.desc}</p>
+                  <p className="text-xs text-pink-100/70 mt-2.5 leading-relaxed font-normal">{chan.detail}</p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-800">
+                <div className="mt-8 pt-6 border-t border-[#97144d]/30">
                   <button
                     onClick={chan.action}
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#25071a] hover:bg-[#97144d] text-pink-100 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-[#97144d]/40"
                   >
                     <span>{chan.btnLabel}</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
+                    <ChevronRight className="w-3.5 h-3.5 text-gold-400" />
                   </button>
                 </div>
               </div>
@@ -194,11 +199,11 @@ export const SupportPage: React.FC = () => {
       {/* Raise a Complaint Form Panel */}
       {activeTab === 'raise' && (
         <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#1d0514] border border-[#97144d]/40 shadow-2xl">
             <div className="text-center mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Grievance Redressal</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">Raise an Official Complaint</h2>
-              <p className="text-xs text-slate-400 mt-1">We guarantee formal resolution within 24 to 48 business hours.</p>
+              <span className="text-xs font-extrabold uppercase tracking-wider text-amber-400">Grievance Redressal</span>
+              <h2 className="text-2xl font-black text-white mt-1">Raise an Official Complaint</h2>
+              <p className="text-xs text-pink-200/70 mt-1">We guarantee formal resolution within 24 to 48 business hours.</p>
             </div>
 
             {createdTicketId ? (
@@ -230,35 +235,35 @@ export const SupportPage: React.FC = () => {
               <form onSubmit={handleRaiseSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">Your Name</label>
+                    <label className="block text-xs font-bold text-pink-200 mb-1.5">Your Name</label>
                     <input
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
                       placeholder="e.g. Aryaman Tomar"
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"
+                      className="w-full bg-[#0f0209] border border-[#97144d]/40 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">Your Email</label>
+                    <label className="block text-xs font-bold text-pink-200 mb-1.5">Your Email</label>
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       placeholder="e.g. aryaman@example.com"
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"
+                      className="w-full bg-[#0f0209] border border-[#97144d]/40 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Complaint Category</label>
+                  <label className="block text-xs font-bold text-pink-200 mb-1.5">Complaint Category</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0f0209] border border-[#97144d]/40 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"
                   >
                     <option>Transaction Query / Failed Transfer</option>
                     <option>Card Services / Blocked Card</option>
@@ -270,32 +275,32 @@ export const SupportPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Subject</label>
+                  <label className="block text-xs font-bold text-pink-200 mb-1.5">Subject</label>
                   <input
                     type="text"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     required
                     placeholder="Brief summary of the issue"
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0f0209] border border-[#97144d]/40 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Detailed Description</label>
+                  <label className="block text-xs font-bold text-pink-200 mb-1.5">Detailed Description</label>
                   <textarea
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
                     placeholder="Provide relevant transaction dates, reference IDs, or details..."
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0f0209] border border-[#97144d]/40 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2"
+                  className="btn-shimmer w-full py-3.5 rounded-xl bg-gradient-to-r from-[#97144d] to-amber-500 hover:brightness-110 text-white font-black text-sm shadow-xl shadow-[#97144d]/40 transition-all flex items-center justify-center gap-2"
                 >
                   <AlertCircle className="w-4 h-4" />
                   <span>Submit Formal Complaint</span>
@@ -309,11 +314,11 @@ export const SupportPage: React.FC = () => {
       {/* Track Request Panel */}
       {activeTab === 'track' && (
         <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl space-y-6">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#1d0514] border border-[#97144d]/40 shadow-2xl space-y-6">
             <div className="text-center">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Live Status Tracker</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">Track Existing Request</h2>
-              <p className="text-xs text-slate-400 mt-1">Enter your Ticket ID (e.g. TICK-8021) to check real-time resolution progress.</p>
+              <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-400">Live Status Tracker</span>
+              <h2 className="text-2xl font-black text-white mt-1">Track Existing Request</h2>
+              <p className="text-xs text-pink-200/70 mt-1">Enter your Ticket ID (e.g. TICK-8021) to check real-time resolution progress.</p>
             </div>
 
             <form onSubmit={handleSearchTicket} className="flex gap-2">
@@ -323,11 +328,11 @@ export const SupportPage: React.FC = () => {
                 onChange={(e) => setSearchTicketId(e.target.value)}
                 placeholder="Enter Ticket ID (e.g. TICK-8021)"
                 required
-                className="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 font-mono"
+                className="flex-1 bg-[#0f0209] border border-[#97144d]/40 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 font-mono"
               />
               <button
                 type="submit"
-                className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors flex items-center gap-1.5"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:brightness-110 text-white font-bold text-sm transition-all flex items-center gap-1.5 shadow-md"
               >
                 <Search className="w-4 h-4" />
                 <span>Track</span>
@@ -342,10 +347,10 @@ export const SupportPage: React.FC = () => {
             )}
 
             {searchedTicket && searchedTicket !== 'NOT_FOUND' && (
-              <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div className="p-6 rounded-2xl bg-[#11030b] border border-[#97144d]/40 space-y-4">
+                <div className="flex items-center justify-between border-b border-[#97144d]/30 pb-3">
                   <div>
-                    <span className="font-mono font-bold text-sm text-blue-400">{searchedTicket.id}</span>
+                    <span className="font-mono font-bold text-sm text-gold-400">{searchedTicket.id}</span>
                     <h4 className="text-base font-bold text-white mt-0.5">{searchedTicket.subject}</h4>
                   </div>
                   <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${
@@ -353,7 +358,7 @@ export const SupportPage: React.FC = () => {
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                       : searchedTicket.status === 'In Progress'
                       ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                      : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                      : 'bg-[#97144d]/30 text-gold-300 border border-[#97144d]/40'
                   }`}>
                     {searchedTicket.status}
                   </span>
@@ -362,17 +367,17 @@ export const SupportPage: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4 text-xs">
                   <div>
                     <span className="text-slate-400 block">Category</span>
-                    <span className="text-slate-200 font-semibold">{searchedTicket.category}</span>
+                    <span className="text-pink-100 font-semibold">{searchedTicket.category}</span>
                   </div>
                   <div>
                     <span className="text-slate-400 block">Submitted On</span>
-                    <span className="text-slate-200 font-semibold">{searchedTicket.createdAt}</span>
+                    <span className="text-pink-100 font-semibold">{searchedTicket.createdAt}</span>
                   </div>
                 </div>
 
                 <div className="text-xs">
                   <span className="text-slate-400 block mb-1">Issue Description</span>
-                  <p className="p-3 rounded-lg bg-slate-900 text-slate-300 border border-slate-800">
+                  <p className="p-3 rounded-lg bg-[#190412] text-pink-100/90 border border-[#97144d]/30">
                     {searchedTicket.message}
                   </p>
                 </div>
@@ -380,8 +385,8 @@ export const SupportPage: React.FC = () => {
             )}
 
             {/* Existing tickets list */}
-            <div className="pt-4 border-t border-slate-800">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">All Active Tickets ({tickets.length})</h4>
+            <div className="pt-4 border-t border-[#97144d]/30">
+              <h4 className="text-xs font-extrabold uppercase tracking-wider text-pink-200/70 mb-3">All Active Tickets ({tickets.length})</h4>
               <div className="space-y-2">
                 {tickets.map((t) => (
                   <div
@@ -390,13 +395,13 @@ export const SupportPage: React.FC = () => {
                       setSearchTicketId(t.id);
                       setSearchedTicket(t);
                     }}
-                    className="p-3 rounded-xl bg-slate-950 hover:bg-slate-850 border border-slate-800/80 flex items-center justify-between text-xs cursor-pointer transition-colors"
+                    className="p-3 rounded-xl bg-[#11030b] hover:bg-[#25071a] border border-[#97144d]/30 flex items-center justify-between text-xs cursor-pointer transition-colors"
                   >
                     <div>
-                      <span className="font-mono text-blue-400 font-semibold mr-2">{t.id}</span>
+                      <span className="font-mono text-gold-400 font-bold mr-2">{t.id}</span>
                       <span className="text-white font-medium">{t.subject}</span>
                     </div>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-800 text-slate-300">
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2a071c] text-pink-200">
                       {t.status}
                     </span>
                   </div>
@@ -410,17 +415,17 @@ export const SupportPage: React.FC = () => {
 
       {/* Emergency Hotlines Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="p-6 rounded-3xl bg-[#1a0513] border border-[#97144d]/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs shadow-xl">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-rose-500/10 text-rose-400">
+            <div className="p-2.5 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
               <h5 className="font-bold text-white">Emergency Fraud & Card Blocking Hotline</h5>
-              <p className="text-slate-400">Available 24/7/365 with immediate biometric freeze.</p>
+              <p className="text-pink-200/60 font-normal">Available 24/7/365 with immediate biometric freeze.</p>
             </div>
           </div>
-          <span className="text-base font-extrabold text-rose-400 font-mono tracking-wider">
+          <span className="text-base font-black text-rose-400 font-mono tracking-wider">
             +1 800-555-LOCK (5625)
           </span>
         </div>

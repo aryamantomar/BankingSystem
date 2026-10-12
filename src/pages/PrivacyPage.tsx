@@ -1,40 +1,40 @@
 import React from 'react';
 import { useBanking } from '../context/BankingContext';
-import { Lock, ShieldCheck, EyeOff, ArrowLeft } from 'lucide-react';
+import { ShieldCheck, ArrowLeft } from 'lucide-react';
 
 export const PrivacyPage: React.FC = () => {
   const { navigate } = useBanking();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-10 text-slate-300">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-10 text-pink-100/90 font-normal">
       
       {/* Header matching diagram */}
       <div className="space-y-3">
         <button
           onClick={() => navigate('/')}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 mb-2"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-gold-400 hover:text-gold-300 mb-2"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Home</span>
         </button>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gradient-to-r from-[#97144d]/30 to-amber-500/20 border border-[#97144d]/50 text-gold-300 text-xs font-bold uppercase tracking-wider">
           <ShieldCheck className="w-3.5 h-3.5" />
           <span>Data Safeguards & Trust</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Privacy Policy</h1>
-        <p className="text-xs text-slate-400">
+        <h1 className="text-3xl sm:text-4xl font-black text-white">Privacy Policy</h1>
+        <p className="text-xs text-pink-200/70">
           Last revised: October 2026 • Compliant with Gramm-Leach-Bliley Act (GLBA) and GDPR.
         </p>
       </div>
 
       {/* Structured Privacy Content */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 space-y-8 text-sm leading-relaxed">
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#1d0514] border border-[#97144d]/40 space-y-8 text-sm leading-relaxed shadow-2xl">
         
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xs">1</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">1</span>
             Our Privacy Commitment
           </h2>
           <p>
@@ -44,14 +44,14 @@ export const PrivacyPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xs">2</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">2</span>
             Information We Collect
           </h2>
           <p>
             We collect information necessary to deliver compliant banking services:
           </p>
-          <ul className="list-disc pl-5 space-y-1.5 text-xs text-slate-300">
-            <li>Identification records (Full legal name, SSN/PAN, driver's license or passport scans).</li>
+          <ul className="list-disc pl-5 space-y-1.5 text-xs text-pink-100/80">
+            <li>Identification records (Full legal name, PAN/SSN, driver's license or passport scans).</li>
             <li>Financial activity data (Account balance, transactional records, payment history, recipient details).</li>
             <li>Digital identifiers (IP address, operating system, biometric authentication tokens, fraud analysis flags).</li>
           </ul>
@@ -59,7 +59,7 @@ export const PrivacyPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xs">3</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">3</span>
             Bank-Grade Cryptographic Encryption
           </h2>
           <p>
@@ -69,7 +69,7 @@ export const PrivacyPage: React.FC = () => {
 
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xs">4</span>
+            <span className="w-6 h-6 rounded-md bg-[#97144d] text-gold-300 flex items-center justify-center text-xs font-bold">4</span>
             Your Privacy Rights & Controls
           </h2>
           <p>
@@ -77,9 +77,9 @@ export const PrivacyPage: React.FC = () => {
           </p>
         </section>
 
-        <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
-          <span>Data Protection Officer: <span className="text-slate-300">dpo@nexbank.com</span></span>
-          <button onClick={() => navigate('/terms')} className="text-cyan-400 hover:underline">
+        <div className="pt-4 border-t border-[#97144d]/30 text-xs text-pink-300/60 flex items-center justify-between">
+          <span>Data Protection Officer: <span className="text-white font-bold">dpo@nexbank.com</span></span>
+          <button onClick={() => navigate('/terms')} className="text-gold-400 hover:underline font-bold">
             View Terms & Conditions →
           </button>
         </div>
