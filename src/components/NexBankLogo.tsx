@@ -168,13 +168,18 @@ export const NexBankLogo: React.FC<NexBankLogoProps> = ({
       <div>
         <div className="flex items-center gap-2">
           <span
-            className={`${textSizes[size]} font-black tracking-tight transition-colors ${
-              inverted
-                ? 'text-white group-hover:text-amber-300'
-                : 'text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-amber-300'
-            }`}
+            className={`${textSizes[size]} font-black tracking-tight transition-colors flex items-center`}
           >
-            Nex<span className="text-[#97144d] dark:text-[#f43f5e]">Bank</span>
+            <span
+              className={
+                inverted
+                  ? 'text-white group-hover:text-amber-300 transition-colors'
+                  : 'text-black dark:text-white transition-colors'
+              }
+            >
+              Nex
+            </span>
+            <span className="text-[#97144d] dark:text-[#f43f5e] transition-colors">Bank</span>
           </span>
 
           {showBadge && (
