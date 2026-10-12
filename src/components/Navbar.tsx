@@ -9,6 +9,7 @@ import {
   Sparkles,
   PhoneCall
 } from 'lucide-react';
+import { NexBankLogo } from './NexBankLogo';
 
 export const Navbar: React.FC = () => {
   const { currentRoute, navigate, user, logout } = useBanking();
@@ -83,33 +84,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Brand Logo with Axis Burgundy Emblem */}
+          {/* Brand Logo with NexBank Custom Emblem */}
           <div 
             onClick={() => handleNavClick('/')}
-            className="flex items-center gap-3.5 cursor-pointer group"
+            className="cursor-pointer"
           >
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-[#97144d] via-[#c52e69] to-amber-400 p-0.5 shadow-md shadow-[#97144d]/25 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden">
-                <svg className="w-6 h-6 text-[#97144d]" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3L2 21H7.5L12 12.5L16.5 21H22L12 3Z" fill="#97144d" />
-                  <path d="M12 9L7 19H17L12 9Z" fill="#dc4e83" />
-                  <path d="M12 14L9.5 19H14.5L12 14Z" fill="#ca8a04" />
-                </svg>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-black tracking-tight text-[#1e293b] group-hover:text-[#97144d] transition-colors">
-                  Nex<span className="text-[#97144d]">Bank</span>
-                </span>
-                <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#97144d] text-white tracking-wider shadow-sm">
-                  PREMIER
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-500 font-medium tracking-wide hidden sm:block">
-                Modern Banking for a Brighter Tomorrow
-              </p>
-            </div>
+            <NexBankLogo size="md" showBadge showTagline />
           </div>
 
           {/* Desktop Navigation Links */}

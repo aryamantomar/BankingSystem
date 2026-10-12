@@ -68,7 +68,7 @@ export const BusinessBankingPage: React.FC = () => {
       title: 'Merchant POS & Gateway',
       tagline: 'Omnichannel payment collection hardware.',
       badge: 'Same-Day Settlement',
-      image: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80',
       icon: <CreditCard className="w-5 h-5 text-[#97144d]" />,
       features: [
         'Smart Android POS terminals with touch screen & tap-to-pay',
@@ -144,6 +144,9 @@ export const BusinessBankingPage: React.FC = () => {
                   <img 
                     src={prod.image} 
                     alt={prod.title} 
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80';
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>

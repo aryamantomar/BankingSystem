@@ -12,6 +12,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { NexBankLogo } from '../components/NexBankLogo';
 
 export const AuthPage: React.FC = () => {
   const { login, openAccount, navigate, showToast } = useBanking();
@@ -67,23 +68,9 @@ export const AuthPage: React.FC = () => {
         <div className="w-full max-w-md bg-white border border-slate-200/90 rounded-3xl shadow-[0_20px_50px_-15px_rgba(151,20,77,0.12)] p-8 sm:p-10 relative space-y-6">
           
           {/* Logo and Brand */}
-          <div className="text-center space-y-2">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#97144d] p-0.5 shadow-md shadow-[#97144d]/25 mb-2">
-              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
-                <svg className="w-7 h-7 text-[#97144d]" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3L2 21H7.5L12 12.5L16.5 21H22L12 3Z" fill="#97144d" />
-                  <path d="M12 9L7 19H17L12 9Z" fill="#dc4e83" />
-                  <path d="M12 14L9.5 19H14.5L12 14Z" fill="#ca8a04" />
-                </svg>
-              </div>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <h2 className="text-2xl font-black text-slate-900 tracking-tight">
-                Nex<span className="text-[#97144d]">Bank</span>
-              </h2>
-              <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-[#97144d] text-white">
-                PREMIER
-              </span>
+          <div className="text-center space-y-3">
+            <div className="flex justify-center mb-1">
+              <NexBankLogo size="lg" showBadge />
             </div>
             <h3 className="text-lg font-extrabold text-slate-900">
               {isLoginMode ? 'Welcome Back' : 'Create New Account'}

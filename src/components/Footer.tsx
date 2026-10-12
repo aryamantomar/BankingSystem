@@ -11,6 +11,7 @@ import {
   MapPin
 } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
+import { NexBankLogo } from './NexBankLogo';
 
 export const Footer: React.FC = () => {
   const { navigate } = useBanking();
@@ -104,19 +105,7 @@ export const Footer: React.FC = () => {
             
             {/* Brand info */}
             <div className="lg:col-span-2 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[#97144d] flex items-center justify-center shadow-md shadow-[#97144d]/25">
-                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3L2 21H7.5L12 12.5L16.5 21H22L12 3Z" fill="currentColor" />
-                  </svg>
-                </div>
-                <span className="text-2xl font-black text-slate-900 tracking-tight">
-                  Nex<span className="text-[#97144d]">Bank</span>
-                </span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#97144d] text-white">
-                  PREMIER
-                </span>
-              </div>
+              <NexBankLogo size="md" showBadge />
               <p className="text-sm leading-relaxed text-slate-600 max-w-sm">
                 NexBank combines the reliability of premier banking with next-generation digital speed. Experience high-yield savings, seamless UPI/IMPS transfers, and personalized wealth management.
               </p>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Crown, Wifi, Lock, Eye, EyeOff, Sparkles } from 'lucide-react';
+import { NexBankLogo } from './NexBankLogo';
 
 interface BankCardArtProps {
   cardNumber?: string;
@@ -153,23 +154,7 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
         {/* Card Header: NexBank & Privilege Badge */}
         <div className="relative z-10 flex items-start justify-between">
           <div className="flex items-center gap-2">
-            {/* Axis-inspired Triangular Emblem */}
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-amber-300 via-amber-400 to-amber-200 text-[#730d3a] flex items-center justify-center font-black text-sm shadow-md">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2L2 22h8l2-4 2 4h8L12 2z" />
-              </svg>
-            </div>
-            <div>
-              <div className="text-xs sm:text-sm font-black tracking-wider flex items-center gap-1.5">
-                <span>NEXBANK</span>
-                <span className={`text-[10px] font-black px-1.5 py-0.2 rounded bg-white/10 ${currentTheme.textAccent}`}>
-                  PREMIER
-                </span>
-              </div>
-              <span className="text-[9px] uppercase tracking-widest text-pink-100/70 block font-semibold">
-                {currentTheme.label}
-              </span>
-            </div>
+            <NexBankLogo variant="card" size="xs" badgeText="PREMIER" />
           </div>
 
           <div className="flex items-center gap-2 text-amber-200/90">
