@@ -15,9 +15,14 @@ import {
   ArrowUpRight,
   Crown,
   Percent,
-  Star
+  Star,
+  Check,
+  Plane,
+  Shield,
+  Award
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { BankCardArt } from '../components/BankCardArt';
 
 export const HomePage: React.FC = () => {
   const { navigate, user } = useBanking();
@@ -27,25 +32,29 @@ export const HomePage: React.FC = () => {
       title: 'Secure Banking',
       desc: 'Military-grade 256-bit AES encryption, biometric authorization & fraud guard.',
       icon: <ShieldCheck className="w-6 h-6 text-[#97144d]" />,
-      badge: 'Zero-Risk'
+      badge: 'Zero-Risk',
+      img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80'
     },
     {
       title: 'Instant Transfers',
       desc: 'Zero-fee real-time IMPS, UPI, NEFT & RTGS rails with instant SMS receipts.',
       icon: <Zap className="w-6 h-6 text-[#97144d]" />,
-      badge: 'Sub-Second'
+      badge: 'Sub-Second',
+      img: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=400&q=80'
     },
     {
       title: '24/7 Support',
       desc: 'Dedicated Burgundy relationship concierge & intelligent AI assistant.',
       icon: <Headphones className="w-6 h-6 text-[#97144d]" />,
-      badge: 'Always On'
+      badge: 'Always On',
+      img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
     },
     {
       title: 'Smart Banking',
       desc: 'Automated wealth recurring SIP, smart spending tags & tax insights.',
       icon: <Smartphone className="w-6 h-6 text-[#97144d]" />,
-      badge: 'AI Powered'
+      badge: 'AI Powered',
+      img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80'
     }
   ];
 
@@ -77,25 +86,50 @@ export const HomePage: React.FC = () => {
       title: 'Personal Banking',
       subtitle: 'Savings, cards, & everyday spending',
       path: '/personal',
-      badge: 'Up to 7.10% APY'
+      badge: 'Up to 7.10% APY',
+      image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Business Banking',
       subtitle: 'Corporate accounts & merchant solutions',
       path: '/business',
-      badge: 'Custom Limits'
+      badge: 'Custom Limits',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Home & Personal Loans',
       subtitle: 'Low interest rates with instant eligibility',
       path: '/loans',
-      badge: 'From 6.85% p.a.'
+      badge: 'From 6.85% p.a.',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Wealth & Investments',
       subtitle: 'Mutual funds, SIPs, and high-yield FDs',
       path: '/investments',
-      badge: 'Zero Brokerage'
+      badge: 'Zero Brokerage',
+      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80'
+    }
+  ];
+
+  const clientReviews = [
+    {
+      name: 'Priya Sharma',
+      role: 'Venture Partner & Tech Founder',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+      comment: 'NexBank’s Burgundy Private metal card and sub-second remittance have transformed how our firm manages multi-currency capital.'
+    },
+    {
+      name: 'Mark Taylor',
+      role: 'Commercial Real Estate Director',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
+      comment: 'The loan EMI simulator and expedited disbursement process helped us secure prime property without bureaucratic delays.'
+    },
+    {
+      name: 'Sarah Jenkins',
+      role: 'Senior Software Architect',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+      comment: 'Clean light UI inspired by Axis Bank, transparent 7.85% compound FD yields, and automated SIP savings. An absolute joy to use.'
     }
   ];
 
@@ -158,127 +192,51 @@ export const HomePage: React.FC = () => {
               <ScrollReveal direction="up" delay={400}>
                 <div className="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-semibold">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#97144d]" />
-                    <span>FDIC Insured up to $250k</span>
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
+                    <span>FDIC Insured up to $250,000</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#97144d]" />
-                    <span>Zero Monthly Maintenance Fees</span>
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
+                    <span>Zero Minimum Balance Fees</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#97144d]" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
                     <span>256-Bit Military Encryption</span>
                   </div>
                 </div>
               </ScrollReveal>
             </div>
 
-            {/* Right Column: Floating Interactive Phone / App Mockup with Axis styling */}
-            <div className="lg:col-span-5 flex justify-center">
+            {/* Right Column: Hero Bank Card Art & Mobile Banking Mockup */}
+            <div className="lg:col-span-5 flex flex-col items-center">
               <ScrollReveal direction="left" delay={200}>
-                <div className="relative w-full max-w-[340px] sm:max-w-[380px] animate-float">
-                  
-                  {/* Subtle soft glow aura */}
-                  <div className="absolute -inset-2 rounded-[44px] bg-gradient-to-tr from-[#97144d]/15 via-pink-200/30 to-amber-200/20 opacity-70 blur-2xl"></div>
-                  
-                  {/* Phone chassis in light mode */}
-                  <div className="relative bg-white border-4 border-slate-200 rounded-[38px] shadow-[0_25px_60px_-15px_rgba(151,20,77,0.18)] p-4 overflow-hidden">
-                    {/* Phone speaker notch */}
-                    <div className="w-24 h-4 bg-slate-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                    </div>
+                <div className="relative w-full max-w-[420px] space-y-4">
+                  {/* Floating Luxury Bank Card with Guilloche Art */}
+                  <div className="relative z-10 transition-transform duration-500 hover:scale-[1.02]">
+                    <BankCardArt
+                      cardNumber={user ? user.cardDetails.cardNumber : '4111 8920 4019 9081'}
+                      cardHolder={user ? user.cardDetails.cardHolder : 'ARYAMAN TOMAR'}
+                      expiry={user ? user.cardDetails.expiry : '10/31'}
+                      cvv={user ? user.cardDetails.cvv : '789'}
+                      balance={user ? user.balance : 34850.75}
+                      variant="burgundy"
+                    />
+                  </div>
 
-                    {/* App Screen Header */}
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-xl bg-[#97144d] flex items-center justify-center text-white text-xs font-black shadow-md">
-                          NB
-                        </div>
-                        <div>
-                          <div className="text-xs font-black text-slate-900 flex items-center gap-1">
-                            NexBank Mobile
-                            <Crown className="w-3 h-3 text-amber-500 inline" />
-                          </div>
-                          <div className="text-[10px] text-emerald-600 font-bold flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Live Account
-                          </div>
-                        </div>
+                  {/* Supporting Trust & App Stat Card */}
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.08)] flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
+                        <Zap className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-[#fdf2f6] text-[#97144d] font-black border border-[#97144d]/20">
-                        7.85% FD
-                      </span>
-                    </div>
-
-                    {/* Axis Burgundy Metal Virtual Card Graphic */}
-                    <div className="mt-4 p-5 rounded-2xl bg-gradient-to-br from-[#740e3a] via-[#97144d] to-[#3a061d] text-white shadow-xl relative overflow-hidden group hover:rotate-1 transition-transform">
-                      {/* Metallic shimmer effect */}
-                      <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl"></div>
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <span className="text-[10px] font-black uppercase tracking-widest text-amber-300">BURGUNDY PRIVATE</span>
-                          <span className="text-[9px] text-pink-200 block">World Contactless Metal</span>
-                        </div>
-                        {/* Gold EMV Chip */}
-                        <div className="w-8 h-6 rounded bg-gradient-to-tr from-amber-300 to-amber-500 border border-amber-200/60 shadow-sm flex items-center justify-center">
-                          <div className="w-4 h-3 border border-amber-800/40 rounded-sm"></div>
-                        </div>
-                      </div>
-                      <div className="mt-4">
-                        <p className="text-[10px] text-pink-200 uppercase font-medium">Available Balance</p>
-                        <h3 className="text-2xl font-black tracking-tight text-white font-mono drop-shadow">
-                          ${(user?.balance ?? 34850.75).toLocaleString('en-US', { minimumFractionDigits: 2 })}
-                        </h3>
-                      </div>
-                      <div className="mt-4 flex justify-between items-center text-[11px] text-amber-200 font-mono tracking-wider font-bold">
-                        <span>4111 •••• •••• 9081</span>
-                        <span className="text-white">10/31</span>
+                      <div>
+                        <div className="text-xs font-black text-slate-900">Instant UPI & Wire Rails</div>
+                        <div className="text-[10px] text-slate-500">Average settlement: 0.8 seconds</div>
                       </div>
                     </div>
-
-                    {/* Quick in-app buttons */}
-                    <div className="grid grid-cols-3 gap-2 mt-4 text-center">
-                      <button 
-                        onClick={() => navigate('/services')} 
-                        className="p-2.5 rounded-xl bg-slate-50 hover:bg-[#fdf2f6] border border-slate-200 hover:border-[#97144d]/40 transition-all shadow-sm"
-                      >
-                        <Zap className="w-4 h-4 text-[#97144d] mx-auto mb-1" />
-                        <span className="text-[10px] font-extrabold text-slate-800 block">Transfer</span>
-                      </button>
-                      <button 
-                        onClick={() => navigate('/investments')} 
-                        className="p-2.5 rounded-xl bg-slate-50 hover:bg-[#fdf2f6] border border-slate-200 hover:border-[#97144d]/40 transition-all shadow-sm"
-                      >
-                        <TrendingUp className="w-4 h-4 text-emerald-600 mx-auto mb-1" />
-                        <span className="text-[10px] font-extrabold text-slate-800 block">Invest</span>
-                      </button>
-                      <button 
-                        onClick={() => navigate('/loans')} 
-                        className="p-2.5 rounded-xl bg-slate-50 hover:bg-[#fdf2f6] border border-slate-200 hover:border-[#97144d]/40 transition-all shadow-sm"
-                      >
-                        <Landmark className="w-4 h-4 text-amber-600 mx-auto mb-1" />
-                        <span className="text-[10px] font-extrabold text-slate-800 block">Loans</span>
-                      </button>
-                    </div>
-
-                    {/* Mock Activity List */}
-                    <div className="mt-4 space-y-2">
-                      <p className="text-[10px] uppercase font-black text-slate-400 tracking-wider">Recent Activity</p>
-                      <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
-                        <div>
-                          <div className="font-bold text-slate-900">Direct Deposit (Salary)</div>
-                          <div className="text-[10px] text-slate-400">Today, 09:30 AM</div>
-                        </div>
-                        <span className="font-extrabold text-emerald-600 font-mono">+$4,500.00</span>
-                      </div>
-                      <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
-                        <div>
-                          <div className="font-bold text-slate-900">Burgundy Dining Perk</div>
-                          <div className="text-[10px] text-slate-400">Yesterday</div>
-                        </div>
-                        <span className="font-extrabold text-slate-800 font-mono">-$142.50</span>
-                      </div>
-                    </div>
-
+                    <span className="text-[11px] font-black px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      99.99% Uptime
+                    </span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -288,77 +246,121 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4 Feature Badges matching diagram with ScrollReveal */}
+      {/* 4 Feature Badges matching diagram with ScrollReveal & Imagery */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {keyFeatures.map((feat, idx) => (
               <div
                 key={idx}
-                className="p-7 rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 hover:-translate-y-2 group shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)]"
+                className="overflow-hidden rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 hover:-translate-y-2 group shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)] flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                    <span className="text-[#97144d] group-hover:text-white transition-colors">{feat.icon}</span>
-                  </div>
-                  <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+                <div className="h-32 w-full overflow-hidden relative">
+                  <img 
+                    src={feat.img} 
+                    alt={feat.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <span className="absolute bottom-3 right-3 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#97144d] backdrop-blur-sm shadow-sm">
                     {feat.badge}
                   </span>
                 </div>
-                <h3 className="text-lg font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
-                  {feat.title}
-                </h3>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
-                  {feat.desc}
-                </p>
+                <div className="p-6">
+                  <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center transition-all duration-300 mb-3">
+                    <span className="text-[#97144d] group-hover:text-white transition-colors">{feat.icon}</span>
+                  </div>
+                  <h3 className="text-lg font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                    {feat.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-1.5 leading-relaxed font-medium">
+                    {feat.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </ScrollReveal>
       </section>
 
-      {/* "Why Choose NexBank?" Section matching diagram with ScrollReveal */}
+      {/* Dedicated Card Art & Metal Engineering Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-black uppercase tracking-widest text-[#97144d] mb-2 block">
-              PREMIER REPUTATION
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Why Choose NexBank?
-            </h2>
-            <p className="text-base text-slate-600 mt-3 font-normal">
-              Inspired by the trusted legacy of Axis Bank, engineered with tomorrow's cutting-edge digital speed.
-            </p>
+          <div className="p-8 sm:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_-10px_rgba(151,20,77,0.1)] relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <div className="lg:col-span-6 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black uppercase tracking-wider">
+                  <CreditCard className="w-3.5 h-3.5" />
+                  <span>Card Engineering & Artistry</span>
+                </div>
+                
+                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                  The Burgundy Metal Card: <br />
+                  <span className="gradient-text-axis-light">Crafted for Global Prestige</span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                  Forged from tungsten-metal composite with micro-etched guilloche security waves, 24K gold EMV chip architecture, and zero foreign transaction markup around the globe.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                    <Plane className="w-5 h-5 text-[#97144d]" />
+                    <div className="text-xs font-black text-slate-900">Global Lounge Access</div>
+                    <div className="text-[11px] text-slate-500">Over 1,400+ international airport lounges</div>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                    <Percent className="w-5 h-5 text-amber-600" />
+                    <div className="text-xs font-black text-slate-900">0% Forex Markup</div>
+                    <div className="text-[11px] text-slate-500">True interbank exchange rates worldwide</div>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                    <Shield className="w-5 h-5 text-emerald-600" />
+                    <div className="text-xs font-black text-slate-900">Instant Kill-Switch</div>
+                    <div className="text-[11px] text-slate-500">Freeze and unfreeze card with 1 tap</div>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                    <Award className="w-5 h-5 text-purple-600" />
+                    <div className="text-xs font-black text-slate-900">5X Reward Edge</div>
+                    <div className="text-[11px] text-slate-500">Points convertible to airline miles & hotels</div>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    onClick={() => navigate('/open-account')}
+                    className="btn-shimmer px-6 py-3 rounded-xl bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white font-bold text-xs shadow-md shadow-[#97144d]/25"
+                  >
+                    Claim Your Metal Card
+                  </button>
+                </div>
+              </div>
+
+              {/* Right: Interactive 3-Edition Card Art Switcher Showcase */}
+              <div className="lg:col-span-6 flex justify-center">
+                <div className="w-full max-w-md">
+                  <BankCardArt
+                    cardNumber="4111 8920 4019 9081"
+                    cardHolder="ARYAMAN TOMAR"
+                    expiry="10/31"
+                    cvv="789"
+                    balance={34850.75}
+                    variant="burgundy"
+                  />
+                </div>
+              </div>
+
+            </div>
           </div>
         </ScrollReveal>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {whyChooseUs.map((item, idx) => (
-            <ScrollReveal key={idx} direction="up" delay={idx * 100}>
-              <div className="p-7 rounded-3xl bg-white border border-slate-200/90 relative overflow-hidden hover:border-[#97144d]/40 transition-all duration-300 hover:-translate-y-2 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)] group">
-                <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#fdf2f6] text-[#97144d] border border-[#97144d]/20">
-                  {item.badge}
-                </span>
-                <h3 className="text-xl font-black text-slate-900 mt-4 group-hover:text-[#97144d] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed font-normal">
-                  {item.desc}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
       </section>
 
-      {/* Core Banking Portals Grid with ScrollReveal */}
+      {/* Core Banking Portals Grid with Real Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_40px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#fdf2f6] rounded-full blur-3xl pointer-events-none"></div>
-
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
               <div>
                 <span className="text-xs font-black uppercase tracking-wider text-[#97144d]">Comprehensive Solutions</span>
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Our Core Banking Verticals</h2>
@@ -372,34 +374,80 @@ export const HomePage: React.FC = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {quickServices.map((service, idx) => (
                 <div
                   key={idx}
                   onClick={() => navigate(service.path)}
-                  className="p-6 rounded-2xl bg-[#faf7f9] border border-slate-200/80 hover:border-[#97144d]/40 hover:bg-white cursor-pointer transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md"
+                  className="rounded-2xl bg-[#faf7f9] border border-slate-200/80 hover:border-[#97144d]/40 hover:bg-white cursor-pointer transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md overflow-hidden"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[11px] font-black px-2 py-0.5 rounded-full bg-white text-[#97144d] border border-[#97144d]/20 shadow-xs">
-                        {service.badge}
-                      </span>
-                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#97144d] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </div>
-                    <h4 className="text-lg font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
-                      {service.title}
-                    </h4>
-                    <p className="text-xs text-slate-600 mt-1.5 font-medium">
-                      {service.subtitle}
-                    </p>
+                  <div className="h-36 w-full overflow-hidden relative">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span className="absolute top-3 left-3 text-[10px] font-black px-2.5 py-0.5 rounded-full bg-white/90 text-[#97144d] shadow-sm">
+                      {service.badge}
+                    </span>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center text-xs font-bold text-slate-700 group-hover:text-[#97144d]">
-                    <span>Explore Offerings</span>
-                    <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#97144d]" />
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-lg font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                        {service.title}
+                      </h4>
+                      <p className="text-xs text-slate-600 mt-1.5 font-medium">
+                        {service.subtitle}
+                      </p>
+                    </div>
+                    <div className="mt-5 pt-3 border-t border-slate-200/70 flex items-center text-xs font-bold text-slate-700 group-hover:text-[#97144d]">
+                      <span>Explore Offerings</span>
+                      <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#97144d]" />
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* Customer Testimonials & Verified Portfolios */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal direction="up">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-black uppercase tracking-wider text-[#97144d]">Client Endorsements</span>
+            <h2 className="text-3xl font-black text-slate-900 mt-1">Trusted by Discerning Clients</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {clientReviews.map((rev, idx) => (
+              <div 
+                key={idx}
+                className="p-7 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+              >
+                <div className="flex items-center gap-1 text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
+                  "{rev.comment}"
+                </p>
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-3">
+                  <img 
+                    src={rev.avatar} 
+                    alt={rev.name} 
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#97144d]/30" 
+                  />
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">{rev.name}</div>
+                    <div className="text-[10px] text-slate-500">{rev.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </ScrollReveal>
       </section>

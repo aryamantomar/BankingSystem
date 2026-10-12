@@ -40,10 +40,30 @@ export const AboutPage: React.FC = () => {
   ];
 
   const leadership = [
-    { name: 'Dr. Alexander Vance', role: 'Chief Executive Officer & Co-Founder', bio: 'Former Senior VP with 22 years in premier financial infrastructure and wealth management.' },
-    { name: 'Elena Rostova', role: 'Chief Technology Officer', bio: 'Pioneered cryptographic payment protocols at MIT Fintech Labs.' },
-    { name: 'Marcus Sterling', role: 'Chief Risk & Compliance Officer', bio: 'Ex-Director of Regulatory Banking Compliance with specialized expertise in anti-fraud.' },
-    { name: 'Sophia Chen', role: 'Head of Burgundy Experience', bio: 'Designed high-touch private client experiences for leading global consumer platforms.' }
+    { 
+      name: 'Dr. Alexander Vance', 
+      role: 'Chief Executive Officer & Co-Founder', 
+      bio: 'Former Senior VP with 22 years in premier financial infrastructure and wealth management.',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+    },
+    { 
+      name: 'Elena Rostova', 
+      role: 'Chief Technology Officer', 
+      bio: 'Pioneered cryptographic payment protocols at MIT Fintech Labs.',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
+    },
+    { 
+      name: 'Marcus Sterling', 
+      role: 'Chief Risk & Compliance Officer', 
+      bio: 'Ex-Director of Regulatory Banking Compliance with specialized expertise in anti-fraud.',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
+    },
+    { 
+      name: 'Sophia Chen', 
+      role: 'Head of Burgundy Experience', 
+      bio: 'Designed high-touch private client experiences for leading global consumer platforms.',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
+    }
   ];
 
   return (
@@ -65,22 +85,27 @@ export const AboutPage: React.FC = () => {
               Building a smarter and safer financial future for everyone.
             </p>
 
-            {/* Headquarters architectural visual mock matching diagram */}
+            {/* Headquarters architectural visual mock with High-Res Architecture */}
             <div className="mt-12 relative rounded-3xl overflow-hidden border border-[#97144d]/20 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.1)] max-w-4xl mx-auto">
-              <div className="h-72 sm:h-96 w-full bg-gradient-to-tr from-[#fbf0f4] via-[#f7e4eb] to-[#f3d9e2] relative flex items-center justify-center p-8 text-center overflow-hidden">
-                <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#97144d_1px,transparent_1px)] [background-size:24px_24px]"></div>
+              <div className="h-80 sm:h-96 w-full relative overflow-hidden flex items-center justify-center p-8 text-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" 
+                  alt="NexBank Headquarters Skyscraper" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/60 to-slate-900/40"></div>
                 
-                <div className="relative z-10 space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-white border border-[#97144d]/30 flex items-center justify-center mx-auto text-[#97144d] shadow-lg">
+                <div className="relative z-10 space-y-3 text-white">
+                  <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center mx-auto text-amber-300 shadow-xl">
                     <Building2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900">NexBank Global Headquarters</h3>
-                  <p className="text-sm text-slate-600 max-w-lg mx-auto">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white drop-shadow">NexBank Global Headquarters</h3>
+                  <p className="text-xs sm:text-sm text-pink-100/90 max-w-lg mx-auto">
                     Lexington Avenue, New York • Regulated Financial Institution & Tier-4 Vault Infrastructure
                   </p>
                   <div className="pt-2 flex flex-wrap justify-center gap-3 text-xs font-bold">
-                    <span className="px-3.5 py-1 rounded-full bg-white text-[#97144d] border border-[#97144d]/20 shadow-sm">250+ Global Branches</span>
-                    <span className="px-3.5 py-1 rounded-full bg-white text-slate-700 border border-slate-200 shadow-sm">4,200+ Financial Experts</span>
+                    <span className="px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-sm">250+ Global Branches</span>
+                    <span className="px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-amber-200 border border-white/30 shadow-sm">4,200+ Financial Experts</span>
                   </div>
                 </div>
               </div>
@@ -144,7 +169,7 @@ export const AboutPage: React.FC = () => {
         </ScrollReveal>
       </section>
 
-      {/* Leadership Team */}
+      {/* Leadership Team with Real Executive Portraits */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
           <div className="text-center max-w-2xl mx-auto mb-12">
@@ -158,8 +183,12 @@ export const AboutPage: React.FC = () => {
                 key={idx}
                 className="p-6 rounded-3xl bg-white border border-slate-200/90 text-center space-y-3 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
               >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#97144d] to-[#c52e69] mx-auto flex items-center justify-center text-white text-xl font-black shadow-md">
-                  {person.name.split(' ').map((n) => n[0]).join('')}
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto border-3 border-[#97144d]/30 shadow-md">
+                  <img 
+                    src={person.avatar} 
+                    alt={person.name} 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-slate-900 pt-1">{person.name}</h4>
                 <div className="text-xs text-[#97144d] font-bold">{person.role}</div>

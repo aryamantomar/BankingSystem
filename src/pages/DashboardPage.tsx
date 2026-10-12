@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useBanking } from '../context/BankingContext';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { BankCardArt } from '../components/BankCardArt';
 import { 
   SendHorizontal, 
   Receipt, 
@@ -228,57 +229,14 @@ export const DashboardPage: React.FC = () => {
         {/* Right: Axis Burgundy Metal Virtual Card Widget */}
         <div className="lg:col-span-5 space-y-4">
           <ScrollReveal direction="up" delay={150}>
-            <div className={`p-6 rounded-3xl border transition-all relative overflow-hidden shadow-2xl ${
-              cardFrozen
-                ? 'bg-slate-800 border-rose-500/40 opacity-80'
-                : 'bg-gradient-to-br from-[#97144d] via-[#740e3a] to-[#4f0927] border-amber-400/40 text-white'
-            }`}>
-              <div className="flex justify-between items-center text-xs text-white">
-                <span className="font-black tracking-wider text-amber-300">BURGUNDY PRIVATE METAL</span>
-                <div className="w-8 h-6 rounded bg-gradient-to-tr from-amber-300 to-amber-500 border border-amber-200 flex items-center justify-center">
-                  <div className="w-4 h-3 border border-amber-800/40 rounded-sm"></div>
-                </div>
-              </div>
-
-              <div className="mt-8 space-y-1">
-                <span className="text-[10px] text-amber-200 uppercase tracking-wider font-bold">Card Number</span>
-                <div className="text-lg sm:text-xl font-mono font-black tracking-widest text-white flex items-center justify-between drop-shadow">
-                  <span>
-                    {showCardNumber
-                      ? user.cardDetails.cardNumber
-                      : '4111 •••• •••• ' + user.cardDetails.cardNumber.slice(-4)}
-                  </span>
-                  <button
-                    onClick={() => setShowCardNumber(!showCardNumber)}
-                    className="text-amber-200 hover:text-white p-1"
-                  >
-                    {showCardNumber ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                  </button>
-                </div>
-              </div>
-
-              <div className="mt-6 flex justify-between items-end text-xs text-pink-100">
-                <div>
-                  <span className="text-[9px] uppercase block text-pink-200/80 font-bold">Cardholder</span>
-                  <span className="font-black text-white tracking-wider">{user.cardDetails.cardHolder}</span>
-                </div>
-                <div>
-                  <span className="text-[9px] uppercase block text-pink-200/80 font-bold">Expires</span>
-                  <span className="font-mono text-amber-300 font-bold">{user.cardDetails.expiry}</span>
-                </div>
-                <div>
-                  <span className="text-[9px] uppercase block text-pink-200/80 font-bold">CVV</span>
-                  <span className="font-mono text-amber-300 font-bold">{showCardNumber ? user.cardDetails.cvv : '•••'}</span>
-                </div>
-              </div>
-
-              {cardFrozen && (
-                <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-sm flex items-center justify-center flex-col gap-2">
-                  <Lock className="w-8 h-8 text-rose-400" />
-                  <span className="text-sm font-black text-rose-300 uppercase tracking-wider">Card Frozen</span>
-                </div>
-              )}
-            </div>
+            <BankCardArt
+              cardNumber={user.cardDetails.cardNumber}
+              cardHolder={user.cardDetails.cardHolder}
+              expiry={user.cardDetails.expiry}
+              cvv={user.cardDetails.cvv}
+              balance={user.balance}
+              isFrozen={cardFrozen}
+            />
 
             {/* Card Controls */}
             <div className="flex gap-2 text-xs mt-3">

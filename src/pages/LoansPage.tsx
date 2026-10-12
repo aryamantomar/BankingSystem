@@ -7,8 +7,13 @@ import {
   Briefcase, 
   User, 
   Calculator, 
+  Sparkles, 
   CheckCircle2, 
-  ChevronRight
+  ChevronRight,
+  TrendingUp,
+  Percent,
+  Clock,
+  DollarSign
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ScrollReveal';
 
@@ -22,7 +27,8 @@ export const LoansPage: React.FC = () => {
       rate: '6.85% p.a.',
       maxAmount: '$2,500,000',
       tenure: 'Up to 30 Years',
-      icon: <Home className="w-6 h-6 text-[#97144d]" />,
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+      icon: <Home className="w-5 h-5 text-[#97144d]" />,
       features: ['Zero prepayment penalty', 'Doorstep document pickup', 'Quick sanction in 48 hours']
     },
     {
@@ -31,7 +37,8 @@ export const LoansPage: React.FC = () => {
       rate: '8.10% p.a.',
       maxAmount: '$250,000',
       tenure: 'Up to 15 Years',
-      icon: <GraduationCap className="w-6 h-6 text-[#97144d]" />,
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80',
+      icon: <GraduationCap className="w-5 h-5 text-[#97144d]" />,
       features: ['Covers 100% of tuition & living', 'Moratorium during course period', 'Zero collateral up to $75k']
     },
     {
@@ -40,7 +47,8 @@ export const LoansPage: React.FC = () => {
       rate: '7.45% p.a.',
       maxAmount: '$150,000',
       tenure: 'Up to 7 Years',
-      icon: <Car className="w-6 h-6 text-[#97144d]" />,
+      image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80',
+      icon: <Car className="w-5 h-5 text-[#97144d]" />,
       features: ['Up to 100% on-road financing', 'Special discounts for electric vehicles', 'Instant digital sanction']
     },
     {
@@ -49,7 +57,8 @@ export const LoansPage: React.FC = () => {
       rate: '9.20% p.a.',
       maxAmount: '$5,000,000',
       tenure: 'Up to 10 Years',
-      icon: <Briefcase className="w-6 h-6 text-[#97144d]" />,
+      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80',
+      icon: <Briefcase className="w-5 h-5 text-[#97144d]" />,
       features: ['Collateral-free micro loans available', 'Flexible hybrid overdraft limits', 'Tax deductible interest component']
     },
     {
@@ -58,15 +67,16 @@ export const LoansPage: React.FC = () => {
       rate: '9.50% p.a.',
       maxAmount: '$75,000',
       tenure: 'Up to 5 Years',
-      icon: <User className="w-6 h-6 text-[#97144d]" />,
+      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80',
+      icon: <User className="w-5 h-5 text-[#97144d]" />,
       features: ['Instant disbursal into account in 15 mins', 'Zero end-use restrictions', 'Minimal basic documentation']
     }
   ];
 
-  // EMI Calculator State
-  const [loanAmount, setLoanAmount] = useState(50000);
+  // Interactive EMI Calculator State
+  const [loanAmount, setLoanAmount] = useState(250000);
   const [interestRate, setInterestRate] = useState(7.5);
-  const [tenureYears, setTenureYears] = useState(5);
+  const [tenureYears, setTenureYears] = useState(20);
 
   const monthlyRate = interestRate / 12 / 100;
   const totalMonths = tenureYears * 12;
@@ -121,57 +131,58 @@ export const LoansPage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Sliders */}
+              
+              {/* Sliders Input Panel */}
               <div className="lg:col-span-7 space-y-6">
                 {/* Loan Amount */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-bold text-slate-700">Loan Amount</span>
+                    <span className="text-xs font-bold text-slate-700">Principal Loan Amount</span>
                     <span className="text-xl font-black text-[#97144d] font-mono">${loanAmount.toLocaleString()}</span>
                   </div>
                   <input
                     type="range"
-                    min="5000"
+                    min="10000"
                     max="1000000"
                     step="5000"
                     value={loanAmount}
                     onChange={(e) => setLoanAmount(Number(e.target.value))}
                     className="w-full accent-[#97144d] cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-400 mt-1 font-mono font-bold">
-                    <span>$5,000</span>
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>$10,000</span>
                     <span>$500,000</span>
                     <span>$1,000,000</span>
                   </div>
                 </div>
 
                 {/* Interest Rate */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-bold text-slate-700">Interest Rate (p.a.)</span>
-                    <span className="text-xl font-black text-[#97144d] font-mono">{interestRate}%</span>
+                    <span className="text-xs font-bold text-slate-700">Annual Interest Rate</span>
+                    <span className="text-xl font-black text-amber-600 font-mono">{interestRate}% p.a.</span>
                   </div>
                   <input
                     type="range"
-                    min="5.0"
-                    max="20.0"
+                    min="5"
+                    max="18"
                     step="0.25"
                     value={interestRate}
                     onChange={(e) => setInterestRate(Number(e.target.value))}
-                    className="w-full accent-[#97144d] cursor-pointer"
+                    className="w-full accent-amber-500 cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-400 mt-1 font-mono font-bold">
-                    <span>5%</span>
-                    <span>12.5%</span>
-                    <span>20%</span>
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>5.0%</span>
+                    <span>11.5%</span>
+                    <span>18.0%</span>
                   </div>
                 </div>
 
-                {/* Tenure */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                {/* Loan Tenure */}
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Loan Tenure</span>
-                    <span className="text-xl font-black text-[#97144d] font-mono">{tenureYears} Years</span>
+                    <span className="text-xl font-black text-emerald-600 font-mono">{tenureYears} Years</span>
                   </div>
                   <input
                     type="range"
@@ -180,9 +191,9 @@ export const LoansPage: React.FC = () => {
                     step="1"
                     value={tenureYears}
                     onChange={(e) => setTenureYears(Number(e.target.value))}
-                    className="w-full accent-[#97144d] cursor-pointer"
+                    className="w-full accent-emerald-600 cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-400 mt-1 font-mono font-bold">
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
                     <span>1 Year</span>
                     <span>15 Years</span>
                     <span>30 Years</span>
@@ -190,101 +201,106 @@ export const LoansPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Calculated Breakdown Card */}
-              <div className="lg:col-span-5 p-8 rounded-3xl bg-gradient-to-br from-[#fdf2f6] via-white to-[#faf0f5] border border-[#97144d]/30 text-center space-y-6 shadow-md">
+              {/* EMI Calculation Result Card */}
+              <div className="lg:col-span-5 p-8 rounded-3xl bg-gradient-to-br from-[#97144d] via-[#800f40] to-[#590a2d] text-white text-center space-y-6 shadow-2xl">
                 <div>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#97144d]">Monthly Installment (EMI)</span>
-                  <div className="text-4xl sm:text-5xl font-black text-[#97144d] mt-2 font-mono">
-                    ${emi.toLocaleString()}
-                    <span className="text-sm text-slate-500 font-sans font-normal"> / mo</span>
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-amber-300">Monthly Equated Installment</span>
+                  <div className="text-4xl sm:text-5xl font-black text-white mt-2 font-mono drop-shadow-sm">
+                    ${emi.toLocaleString()} <span className="text-sm font-normal text-pink-200">/ mo</span>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white border border-slate-200/90 space-y-3 text-left text-xs shadow-xs">
+                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 space-y-3 text-left text-xs">
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Principal Amount</span>
-                    <span className="text-slate-900 font-bold font-mono">${loanAmount.toLocaleString()}</span>
+                    <span className="text-pink-100/80">Principal Borrowed</span>
+                    <span className="text-white font-bold font-mono">${loanAmount.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Total Interest Payable</span>
-                    <span className="text-[#97144d] font-bold font-mono">${totalInterest.toLocaleString()}</span>
+                    <span className="text-pink-100/80">Total Interest Payable</span>
+                    <span className="text-amber-300 font-bold font-mono">${totalInterest.toLocaleString()}</span>
                   </div>
-                  <div className="border-t border-slate-100 pt-2 flex justify-between font-black text-sm">
-                    <span className="text-slate-900">Total Repayment</span>
-                    <span className="text-emerald-700 font-mono">${totalPayment.toLocaleString()}</span>
+                  <div className="border-t border-white/20 pt-2 flex justify-between font-black text-sm">
+                    <span className="text-pink-100">Total Repayment</span>
+                    <span className="text-white font-mono">${totalPayment.toLocaleString()}</span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => setAppliedModal(true)}
-                  className="btn-shimmer w-full py-3.5 rounded-xl bg-gradient-to-r from-[#97144d] via-[#ba1e63] to-[#ca8a04] hover:brightness-105 text-white font-black text-sm shadow-md shadow-[#97144d]/25 transition-all"
+                  className="btn-shimmer w-full py-3.5 rounded-xl bg-white hover:bg-rose-50 text-[#97144d] font-black text-sm shadow-xl transition-all"
                 >
-                  Apply for this Loan in 2 Minutes
+                  Apply with Instant Pre-Approval
                 </button>
               </div>
+
             </div>
           </div>
         </ScrollReveal>
       </section>
 
-      {/* Loan Categories Cards matching diagram with ScrollReveal */}
+      {/* 5 Core Loan Products Grid with Real Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal direction="up">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-black text-slate-900">Explore Our Loan Portfolios</h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium">Select any loan product to apply directly with low processing fees.</p>
-          </div>
-        </ScrollReveal>
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl font-black text-slate-900">Explore Our Financing Solutions</h2>
+          <p className="text-sm text-slate-500 mt-2 font-medium">Bespoke credit lines designed with transparent interest rates and zero hidden charges.</p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loanTypes.map((loan, idx) => (
             <ScrollReveal key={loan.id} direction="up" delay={idx * 80}>
-              <div className="p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md hover:-translate-y-2 h-full">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center transition-all group-hover:scale-110">
-                      <span className="text-[#97144d] group-hover:text-white transition-colors">{loan.icon}</span>
-                    </div>
-                    <span className="text-xs font-black px-2.5 py-1 rounded-full bg-[#fdf2f6] text-[#97144d] border border-[#97144d]/20">
-                      {loan.rate}
-                    </span>
+              <div className="rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md hover:-translate-y-2 h-full overflow-hidden">
+                {/* Visual Photography Header */}
+                <div className="h-44 w-full overflow-hidden relative">
+                  <img 
+                    src={loan.image} 
+                    alt={loan.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    {loan.icon}
                   </div>
-
-                  <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
-                    {loan.title}
-                  </h3>
-
-                  <div className="mt-4 grid grid-cols-2 gap-2 text-xs p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
-                    <div>
-                      <span className="text-[10px] text-slate-400 block font-bold">Max Limit</span>
-                      <span className="font-bold text-slate-900 font-mono">{loan.maxAmount}</span>
-                    </div>
-                    <div>
-                      <span className="text-[10px] text-slate-400 block font-bold">Tenure</span>
-                      <span className="font-bold text-[#97144d] font-mono">{loan.tenure}</span>
-                    </div>
-                  </div>
-
-                  <ul className="mt-5 space-y-2 text-xs text-slate-600 font-medium">
-                    {loan.features.map((f, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#97144d] shrink-0" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 text-[#97144d] shadow-sm">
+                    {loan.rate}
+                  </span>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => {
-                      setAppliedModal(true);
-                    }}
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d]"
-                  >
-                    <span>Apply for {loan.title}</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
+                <div className="p-7 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                      {loan.title}
+                    </h3>
+
+                    <div className="mt-4 grid grid-cols-2 gap-2 text-xs p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
+                      <div>
+                        <span className="text-[10px] text-slate-400 block font-bold">Max Limit</span>
+                        <span className="font-bold text-slate-900 font-mono">{loan.maxAmount}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-slate-400 block font-bold">Tenure</span>
+                        <span className="font-bold text-[#97144d] font-mono">{loan.tenure}</span>
+                      </div>
+                    </div>
+
+                    <ul className="mt-5 space-y-2 text-xs text-slate-600 font-medium">
+                      {loan.features.map((f, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#97144d] shrink-0" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-slate-100">
+                    <button
+                      onClick={() => setAppliedModal(true)}
+                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d]"
+                    >
+                      <span>Apply for {loan.title}</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -308,47 +324,37 @@ export const LoansPage: React.FC = () => {
                   type="text"
                   value={applicantName}
                   onChange={(e) => setApplicantName(e.target.value)}
-                  required
                   placeholder="e.g. Aryaman Tomar"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#97144d] focus:bg-white"
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Mobile Contact</label>
                 <input
                   type="tel"
                   value={applicantPhone}
                   onChange={(e) => setApplicantPhone(e.target.value)}
+                  placeholder="+1 (555) 000-0000"
                   required
-                  placeholder="+1 (555) 019-2834"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#97144d] focus:bg-white"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
                 />
               </div>
 
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Monthly In-Hand Income ($)</label>
-                <input
-                  type="number"
-                  defaultValue="8500"
-                  required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#97144d] focus:bg-white"
-                />
-              </div>
-
-              <div className="flex gap-3 pt-2">
+              <div className="pt-2 flex gap-3">
                 <button
                   type="button"
                   onClick={() => setAppliedModal(false)}
-                  className="flex-1 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200"
+                  className="flex-1 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="btn-shimmer flex-1 py-2.5 rounded-xl bg-gradient-to-r from-[#97144d] to-[#ca8a04] hover:brightness-105 text-white text-xs font-black shadow-md shadow-[#97144d]/25"
+                  className="btn-shimmer flex-1 py-3 rounded-xl bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white font-bold text-xs shadow-md transition-all"
                 >
-                  Submit Application
+                  Confirm & Submit
                 </button>
               </div>
             </form>

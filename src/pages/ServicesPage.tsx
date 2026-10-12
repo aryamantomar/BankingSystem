@@ -85,42 +85,48 @@ export const ServicesPage: React.FC = () => {
       title: 'Funds Transfer',
       desc: 'NEFT, RTGS, IMPS, UPI',
       detail: 'Instant cross-network settlement with zero transaction fees and real-time confirmations.',
-      icon: <SendHorizontal className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80',
+      icon: <SendHorizontal className="w-5 h-5 text-[#97144d]" />
     },
     {
       id: 'bill',
       title: 'Bill Payments',
       desc: 'Electricity, Water, Mobile, DTH',
       detail: 'Pay recurring utility bills with automated fetch, instant confirmations, and cashback rewards.',
-      icon: <Receipt className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80',
+      icon: <Receipt className="w-5 h-5 text-[#97144d]" />
     },
     {
       id: 'recharge',
       title: 'Recharge',
       desc: 'Mobile, DTH, FASTag',
       detail: 'Instant prepaid recharges across all national telecom carriers and highway toll tags.',
-      icon: <Smartphone className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80',
+      icon: <Smartphone className="w-5 h-5 text-[#97144d]" />
     },
     {
       id: 'invest',
       title: 'Investments',
       desc: 'Mutual Funds, SIP, Bonds',
       detail: 'Axis-grade asset management, automated recurring SIP plans, and sovereign backed bonds.',
-      icon: <TrendingUp className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80',
+      icon: <TrendingUp className="w-5 h-5 text-[#97144d]" />
     },
     {
       id: 'insurance',
       title: 'Insurance',
       desc: 'Life, Health, Vehicle Insurance',
       detail: 'Comprehensive policies underwritten with paperless fast claims settlement in 15 minutes.',
-      icon: <ShieldCheck className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80',
+      icon: <ShieldCheck className="w-5 h-5 text-[#97144d]" />
     },
     {
       id: 'locker',
       title: 'Locker Services',
       desc: 'Keep your valuables safe',
       detail: 'Biometric military-grade vault lockers with 24/7 video surveillance and dual-key security.',
-      icon: <KeyRound className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80',
+      icon: <KeyRound className="w-5 h-5 text-[#97144d]" />
     }
   ];
 
@@ -153,31 +159,41 @@ export const ServicesPage: React.FC = () => {
             <ScrollReveal key={srv.id} direction="up" delay={idx * 80}>
               <div
                 onClick={() => setSelectedService(srv.id as any)}
-                className={`p-7 rounded-3xl cursor-pointer transition-all duration-300 border flex flex-col justify-between shadow-sm h-full ${
+                className={`rounded-3xl cursor-pointer transition-all duration-300 border flex flex-col justify-between shadow-sm h-full overflow-hidden ${
                   selectedService === srv.id
                     ? 'bg-gradient-to-br from-[#fdf2f6] via-white to-[#fbf0f5] border-[#97144d] shadow-md shadow-[#97144d]/15 -translate-y-1.5'
                     : 'bg-white border-slate-200/90 hover:border-[#97144d]/40 hover:-translate-y-1'
                 }`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] border border-[#97144d]/20 flex items-center justify-center">
-                      {srv.icon}
-                    </div>
-                    {selectedService === srv.id && (
-                      <span className="text-[10px] uppercase font-black tracking-wider px-2.5 py-0.5 rounded-full bg-[#97144d] text-white">
-                        Active Tool
-                      </span>
-                    )}
+                {/* Visual Image Header */}
+                <div className="h-36 w-full overflow-hidden relative">
+                  <img 
+                    src={srv.image} 
+                    alt={srv.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                  <div className="absolute top-3 left-3 w-8 h-8 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    {srv.icon}
                   </div>
-                  <h3 className="text-xl font-black text-slate-900">{srv.title}</h3>
-                  <p className="text-xs font-bold text-[#97144d] mt-1">{srv.desc}</p>
-                  <p className="text-xs text-slate-600 mt-2.5 leading-relaxed font-normal">{srv.detail}</p>
+                  {selectedService === srv.id && (
+                    <span className="absolute top-3 right-3 text-[10px] uppercase font-black tracking-wider px-2.5 py-0.5 rounded-full bg-[#97144d] text-white shadow-sm">
+                      Active Tool
+                    </span>
+                  )}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700">
-                  <span>{selectedService === srv.id ? 'Using Tool Below' : 'Launch Service'}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#97144d]" />
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-black text-slate-900">{srv.title}</h3>
+                    <p className="text-xs font-bold text-[#97144d] mt-1">{srv.desc}</p>
+                    <p className="text-xs text-slate-600 mt-2.5 leading-relaxed font-normal">{srv.detail}</p>
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700">
+                    <span>{selectedService === srv.id ? 'Using Tool Below' : 'Launch Service'}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#97144d]" />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

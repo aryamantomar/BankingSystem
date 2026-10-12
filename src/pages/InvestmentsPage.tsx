@@ -14,7 +14,7 @@ import {
 export const InvestmentsPage: React.FC = () => {
   const { navigate, showToast } = useBanking();
 
-  // 4 items from diagram
+  // 4 items from diagram with imagery
   const investmentProducts = [
     {
       id: 'mutual_funds',
@@ -22,7 +22,8 @@ export const InvestmentsPage: React.FC = () => {
       desc: 'Expert-managed diversified equity & debt portfolios with zero entry and exit load on direct plans.',
       cagr: '14.8% 3Y Return',
       risk: 'Moderate',
-      icon: <TrendingUp className="w-6 h-6 text-[#97144d]" />
+      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80',
+      icon: <TrendingUp className="w-5 h-5 text-[#97144d]" />
     },
     {
       id: 'fixed_deposits',
@@ -30,7 +31,8 @@ export const InvestmentsPage: React.FC = () => {
       desc: 'Guaranteed principal safety with up to 7.85% compound interest and flexible premature liquidity options.',
       cagr: 'Up to 7.85% APY',
       risk: 'Very Low',
-      icon: <PiggyBank className="w-6 h-6 text-emerald-600" />
+      image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80',
+      icon: <PiggyBank className="w-5 h-5 text-emerald-600" />
     },
     {
       id: 'bonds',
@@ -38,7 +40,8 @@ export const InvestmentsPage: React.FC = () => {
       desc: 'Sovereign and AAA corporate bonds providing predictable semi-annual coupon payouts and capital security.',
       cagr: '7.10% Coupon',
       risk: 'Low',
-      icon: <FileCheck className="w-6 h-6 text-amber-600" />
+      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80',
+      icon: <FileCheck className="w-5 h-5 text-amber-600" />
     },
     {
       id: 'gold',
@@ -46,7 +49,8 @@ export const InvestmentsPage: React.FC = () => {
       desc: '99.9% pure 24K digital gold and Sovereign Gold Bonds (SGB) with 2.5% annual interest plus gold price appreciation.',
       cagr: '12.4% 5Y Return',
       risk: 'Low to Moderate',
-      icon: <Coins className="w-6 h-6 text-amber-500" />
+      image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=600&q=80',
+      icon: <Coins className="w-5 h-5 text-amber-500" />
     }
   ];
 
@@ -92,47 +96,54 @@ export const InvestmentsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4 Core Investment Products matching diagram */}
+      {/* 4 Core Investment Products matching diagram with Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {investmentProducts.map((prod, idx) => (
             <ScrollReveal key={prod.id} direction="up" delay={idx * 100}>
-              <div className="h-full p-7 rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center transition-all group-hover:scale-110 group-hover:text-white">
-                      {React.cloneElement(prod.icon, {
-                        className: 'w-6 h-6 transition-colors group-hover:text-white'
-                      })}
-                    </div>
-                    <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-[#fdf2f6] text-[#97144d] border border-[#97144d]/20">
-                      {prod.cagr}
-                    </span>
+              <div className="h-full rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5 overflow-hidden">
+                {/* Visual Image Header */}
+                <div className="h-40 w-full overflow-hidden relative">
+                  <img 
+                    src={prod.image} 
+                    alt={prod.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    {prod.icon}
                   </div>
-
-                  <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
-                    {prod.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
-                    {prod.desc}
-                  </p>
-
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[11px]">
-                    <span className="text-slate-400 font-medium">Risk Profile</span>
-                    <span className="text-slate-800 font-bold">{prod.risk}</span>
-                  </div>
+                  <span className="absolute top-3 right-3 text-[10px] font-black px-2.5 py-1 rounded-full bg-white/95 text-[#97144d] shadow-sm">
+                    {prod.cagr}
+                  </span>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => {
-                      showToast('Fund Info', `Explore top-rated ${prod.title} with 0% brokerage fees.`, 'info');
-                    }}
-                    className="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-700 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1 border border-slate-200 group-hover:border-[#97144d]"
-                  >
-                    <span>Invest in {prod.title}</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-[#97144d] group-hover:text-white" />
-                  </button>
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                      {prod.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                      {prod.desc}
+                    </p>
+
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[11px]">
+                      <span className="text-slate-400 font-medium">Risk Profile</span>
+                      <span className="text-slate-800 font-bold">{prod.risk}</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-slate-100">
+                    <button
+                      onClick={() => {
+                        showToast('Fund Info', `Explore top-rated ${prod.title} with 0% brokerage fees.`, 'info');
+                      }}
+                      className="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-700 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1 border border-slate-200 group-hover:border-[#97144d]"
+                    >
+                      <span>Invest in {prod.title}</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-[#97144d] group-hover:text-white" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
