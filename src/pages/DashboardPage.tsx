@@ -82,7 +82,7 @@ export const DashboardPage: React.FC = () => {
   return (
     <div className="space-y-10 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 bg-[#fbf9fa]">
       
-      {/* Welcome Banner with Axis Burgundy styling */}
+      {/* Welcome Banner with Velvet Burgundy styling */}
       <ScrollReveal direction="down">
         <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#97144d] via-[#800f40] to-[#590a2d] text-white border border-[#97144d]/30 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.25)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -227,7 +227,7 @@ export const DashboardPage: React.FC = () => {
           </ScrollReveal>
         </div>
 
-        {/* Right: Axis Burgundy Metal Virtual Card Widget */}
+        {/* Right: Velvet Burgundy Metal Virtual Card Widget */}
         <div className="lg:col-span-5 space-y-4">
           <ScrollReveal direction="up" delay={150}>
             <BankCardArt

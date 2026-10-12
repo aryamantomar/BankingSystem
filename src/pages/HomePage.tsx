@@ -75,7 +75,7 @@ export const HomePage: React.FC = () => {
       badge: 'Zero Liability'
     },
     {
-      title: 'Axis Premier UI',
+      title: 'Premier Digital Banking',
       desc: 'Intuitive interface crafted for clarity, seamless mobile apps, and pristine statements.',
       badge: 'Award Winning'
     }
@@ -127,9 +127,9 @@ export const HomePage: React.FC = () => {
     },
     {
       name: 'Sarah Jenkins',
-      role: 'Senior Software Architect',
+      role: 'Senior Treasury Director',
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
-      comment: 'Clean light UI inspired by Axis Bank, transparent 7.85% compound FD yields, and automated SIP savings. An absolute joy to use.'
+      comment: 'Intuitive modern interface, transparent 7.85% compound FD yields, and automated SIP wealth building. An absolute pleasure to bank with.'
     }
   ];
 
@@ -150,7 +150,7 @@ export const HomePage: React.FC = () => {
               <ScrollReveal direction="down">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] text-xs font-black tracking-wide uppercase shadow-sm">
                   <Crown className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Axis-Inspired Premier Experience</span>
+                  <span>Premier Institutional Banking</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#97144d] animate-ping"></span>
                 </div>
               </ScrollReveal>
@@ -158,7 +158,7 @@ export const HomePage: React.FC = () => {
               <ScrollReveal direction="up" delay={100}>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
                   Banking Made Simple, <br className="hidden sm:inline" />
-                  <span className="gradient-text-axis-light">For a Brighter Tomorrow</span>
+                  <span className="gradient-text-premier-light">For a Brighter Tomorrow</span>
                 </h1>
               </ScrollReveal>
 
@@ -297,7 +297,7 @@ export const HomePage: React.FC = () => {
                 
                 <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
                   The Premier Metal Card: <br />
-                  <span className="gradient-text-axis-light">Crafted for Global Prestige</span>
+                  <span className="gradient-text-premier-light">Crafted for Global Prestige</span>
                 </h2>
 
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
@@ -452,7 +452,7 @@ export const HomePage: React.FC = () => {
         </ScrollReveal>
       </section>
 
-      {/* Axis Burgundy CTA Banner with ScrollReveal */}
+      {/* Velvet Burgundy CTA Banner with ScrollReveal */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#740e3a] via-[#97144d] to-[#ba1e63] p-8 sm:p-14 text-white text-center shadow-2xl">

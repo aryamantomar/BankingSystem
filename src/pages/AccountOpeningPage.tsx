@@ -21,7 +21,7 @@ export const AccountOpeningPage: React.FC = () => {
   const [phone, setPhone] = useState('');
   const [accountType, setAccountType] = useState<'Savings' | 'Current' | 'Salary' | 'Corporate'>('Savings');
   const [initialDeposit, setInitialDeposit] = useState('2500');
-  const [govId, setGovId] = useState('AXIS-9921-X');
+  const [govId, setGovId] = useState('NBK-9921-X');
   const [acceptedTerms, setAcceptedTerms] = useState(true);
 
   // Created Result State

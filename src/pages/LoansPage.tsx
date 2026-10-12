@@ -23,7 +23,7 @@ export const LoansPage: React.FC = () => {
   const loanTypes = [
     {
       id: 'home',
-      title: 'Axis-Tier Home Loan',
+      title: 'Premier Home Loan',
       rate: '6.85% p.a.',
       maxAmount: '$2,500,000',
       tenure: 'Up to 30 Years',
@@ -124,7 +124,7 @@ export const LoansPage: React.FC = () => {
         <ScrollReveal direction="up">
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden dark:bg-[#150912] dark:border-[#97144d]/25">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Axis-Style Loan EMI Calculator</h2>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Loan EMI Calculator</h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium">
                 Adjust amount, interest rate, and tenure to visualize your exact monthly payment obligations.
               </p>

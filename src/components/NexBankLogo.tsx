@@ -59,7 +59,7 @@ export const NexBankLogo: React.FC<NexBankLogoProps> = ({
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            {/* Deep Axis Burgundy Gradient */}
+            {/* Deep Velvet Burgundy Gradient */}
             <linearGradient id="nbLogoBurgundy" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#6d0b36" />
               <stop offset="50%" stop-color="#97144d" />
@@ -108,7 +108,7 @@ export const NexBankLogo: React.FC<NexBankLogoProps> = ({
           />
           <path d="M 76 21 L 76 66 L 80 64 L 80 23 Z" fill="url(#nbLogoSpecular)" opacity="0.5" />
 
-          {/* Chevron Crown Crest (Homage to Axis Bank's Triangular Apex) */}
+          {/* Diamond Crown Crest (Precision & Security) */}
           <path d="M 50 12 L 62 26 L 50 40 L 38 26 Z" fill="url(#nbLogoGold)" opacity="0.95" />
           <path d="M 50 17 L 57 26 L 50 35 L 43 26 Z" fill="#ffffff" opacity="0.85" />
           <circle cx="50" cy="26" r="2.5" fill="#97144d" />

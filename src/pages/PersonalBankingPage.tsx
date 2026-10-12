@@ -52,7 +52,7 @@ export const PersonalBankingPage: React.FC = () => {
     },
     {
       id: 'fd',
-      title: 'Axis-Tier Fixed Deposit',
+      title: 'High-Yield Fixed Deposit',
       tagline: 'Higher returns, capital guarantee.',
       rate: 'Up to 7.85% p.a.',
       image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80',
@@ -254,7 +254,7 @@ export const PersonalBankingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Axis Card Art Showcase inside Personal Banking */}
+      {/* Premier Card Art Showcase inside Personal Banking */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">

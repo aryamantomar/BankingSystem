@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
                   <Award className="w-5 h-5 text-[#97144d] dark:text-pink-300" />
                 </div>
                 <div>
-                  <h4 className="text-slate-900 dark:text-white font-extrabold text-sm">Axis-Tier Excellence</h4>
+                  <h4 className="text-slate-900 dark:text-white font-extrabold text-sm">Institutional Excellence</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400">Premier Digital Experience 2026</p>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© 2026 NexBank National Association. Inspired by premier Axis Bank architecture. Member FDIC.</p>
+          <p>© 2026 NexBank National Association. All rights reserved. Member FDIC. Equal Housing Lender.</p>
           <div className="flex items-center gap-6 text-slate-600 font-semibold">
             <button onClick={() => navigate('/terms')} className="hover:text-[#97144d]">Terms of Use</button>
             <button onClick={() => navigate('/privacy')} className="hover:text-[#97144d]">Privacy Policy</button>

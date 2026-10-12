@@ -27,7 +27,7 @@ export const InvestmentsPage: React.FC = () => {
     },
     {
       id: 'fixed_deposits',
-      title: 'Axis-Tier Fixed Deposits',
+      title: 'Premier Fixed Deposits',
       desc: 'Guaranteed principal safety with up to 7.85% compound interest and flexible premature liquidity options.',
       cagr: 'Up to 7.85% APY',
       risk: 'Very Low',

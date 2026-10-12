@@ -8,8 +8,7 @@ import {
   ShieldCheck, 
   ArrowRight, 
   User, 
-  Phone,
-  Sparkles
+  Phone
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { NexBankLogo } from '../components/NexBankLogo';
@@ -51,16 +50,9 @@ export const AuthPage: React.FC = () => {
     }
   };
 
-  const handleDemoLogin = () => {
-    setEmailOrId('aryaman@nexbank.com');
-    setPassword('NexBank@2026!');
-    login('aryaman@nexbank.com', 'NexBank@2026!');
-    navigate('/dashboard');
-  };
-
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#fbf9fa]">
-      {/* Background glow in soft Axis burgundy */}
+      {/* Background glow in soft burgundy */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#97144d]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Auth Card matching diagram in Light Mode */}
@@ -79,20 +71,6 @@ export const AuthPage: React.FC = () => {
               {isLoginMode ? 'Login to your NexBank account' : 'Start your modern banking journey in minutes'}
             </p>
           </div>
-
-          {/* 1-Click Demo Login helper banner */}
-          {isLoginMode && (
-            <div 
-              onClick={handleDemoLogin}
-              className="p-3.5 rounded-2xl bg-[#fdf2f6] dark:bg-[#1e0d1a] border border-[#97144d]/20 dark:border-[#97144d]/30 text-center cursor-pointer hover:bg-[#fae3ed] dark:hover:bg-[#281123] transition-all group shadow-sm"
-            >
-              <div className="flex items-center justify-center gap-1.5 text-xs font-black text-[#97144d]">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-spin" style={{ animationDuration: '6s' }} />
-                <span>Click for 1-Click Premier Demo Access</span>
-              </div>
-              <p className="text-[10px] text-slate-500 mt-0.5 font-medium">Preloaded with $34,850.75 balance & virtual metal card</p>
-            </div>
-          )}
 
           {/* Form matching diagram wireframe */}
           <form onSubmit={handleSubmit} className="space-y-4">

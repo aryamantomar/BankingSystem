@@ -36,7 +36,7 @@ export const AboutPage: React.FC = () => {
     { year: '2020', title: '1 Million Accounts', desc: 'Surpassed 1M active customers and achieved full national banking regulatory charter.' },
     { year: '2022', title: 'Corporate Banking Suite', desc: 'Expanded into commercial trade finance and instant merchant payment gateways.' },
     { year: '2024', title: 'Global Operations', desc: 'Established cross-border clearing hubs in New York, London, and Singapore.' },
-    { year: '2026', title: 'Axis-Tier Digital Architecture', desc: 'Integrated real-time biometric safeguards, automated wealth advisors, and AI support.' }
+    { year: '2026', title: 'Next-Gen Digital Architecture', desc: 'Integrated real-time biometric safeguards, automated wealth advisors, and AI support.' }
   ];
 
   const leadership = [

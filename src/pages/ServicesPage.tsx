@@ -35,7 +35,7 @@ export const ServicesPage: React.FC = () => {
   const [planAmount, setPlanAmount] = useState('45');
 
   // Locker Booking State
-  const [lockerCity, setLockerCity] = useState('Axis-Tier New York HQ');
+  const [lockerCity, setLockerCity] = useState('New York Financial District HQ');
   const [lockerSize, setLockerSize] = useState('Medium Vault (15x20 in)');
 
   const handleExecuteTransfer = (e: React.FormEvent) => {
@@ -108,7 +108,7 @@ export const ServicesPage: React.FC = () => {
       id: 'invest',
       title: 'Investments',
       desc: 'Mutual Funds, SIP, Bonds',
-      detail: 'Axis-grade asset management, automated recurring SIP plans, and sovereign backed bonds.',
+      detail: 'Institutional-grade asset management, automated recurring SIP plans, and sovereign backed bonds.',
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80',
       icon: <TrendingUp className="w-5 h-5 text-[#97144d]" />
     },
@@ -201,7 +201,7 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Interactive Service Tool Sandbox with ScrollReveal */}
+      {/* Interactive Banking Services Panel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
           <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
@@ -426,7 +426,7 @@ export const ServicesPage: React.FC = () => {
                 <div className="w-16 h-16 rounded-2xl bg-[#fdf2f6] border border-[#97144d]/20 text-[#97144d] flex items-center justify-center mx-auto">
                   <TrendingUp className="w-8 h-8" />
                 </div>
-                <h2 className="text-2xl font-black text-slate-900">Axis-Tier Wealth & Mutual Funds</h2>
+                <h2 className="text-2xl font-black text-slate-900">Premier Wealth & Mutual Funds</h2>
                 <p className="text-sm text-slate-600 leading-relaxed font-normal">
                   Explore zero-commission Direct Mutual Funds, automated SIP engines, and sovereign bonds with real-time portfolio tracking.
                 </p>
@@ -475,7 +475,7 @@ export const ServicesPage: React.FC = () => {
                         onChange={(e) => setLockerCity(e.target.value)}
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#97144d]"
                       >
-                        <option>Axis-Tier New York HQ (Lexington Ave)</option>
+                        <option>New York Financial District HQ (Lexington Ave)</option>
                         <option>San Francisco (California St)</option>
                         <option>Chicago Downtown (Wacker Dr)</option>
                         <option>London Tech Hub (Bank St)</option>

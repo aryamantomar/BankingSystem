@@ -89,7 +89,7 @@ export const TermsPage: React.FC = () => {
           </section>
 
           <div className="pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
-            <span>NexBank Regulatory Charter Ref #AXIS-NB-98124</span>
+            <span>NexBank Regulatory Charter Ref #NB-FDIC-98124</span>
             <button onClick={() => navigate('/privacy')} className="text-[#97144d] hover:underline font-bold">
               Read Privacy Policy →
             </button>

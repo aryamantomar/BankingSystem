@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
         style={{ width: `${scrollProgress}%` }}
       />
 
-      {/* Axis-style Top Micro Bar */}
+      {/* Premier Top Notification Bar */}
       <div className="bg-[#97144d] text-white text-[11px] py-1.5 px-4 sm:px-8 border-b border-white/10 hidden sm:flex items-center justify-between">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5 font-medium">

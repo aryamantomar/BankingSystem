@@ -12,7 +12,7 @@
   }
 }
 
-/* Axis-inspired light scrollbar */
+/* Custom luxury light scrollbar */
 ::-webkit-scrollbar {
   width: 9px;
   height: 9px;
@@ -46,8 +46,8 @@
   transform: translateY(-5px);
 }
 
-/* Axis Burgundy & Gold gradients */
-.gradient-text-axis-light {
+/* Premier Burgundy & Gold gradients */
+.gradient-text-premier-light {
   background: linear-gradient(135deg, #740e3a 0%, #97144d 40%, #c52e69 75%, #ca8a04 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -87,7 +87,7 @@
 }
 
 /* ========================================================
-   LUXURY DARK MODE (Axis-inspired Velvet Maroon & Onyx)
+   LUXURY DARK MODE (Velvet Maroon & Deep Onyx)
    ======================================================== */
 html.dark {
   color-scheme: dark;
@@ -137,7 +137,7 @@ html.dark .bg-slate-200 {
   background-color: #2e172a !important;
 }
 
-/* Axis Bank signature soft tints in Dark Mode */
+/* Signature soft tints in Dark Mode */
 html.dark .bg-\[\#fdf2f6\],
 html.dark [class*="bg-[#fdf2f6]"] {
   background-color: rgba(151, 20, 77, 0.2) !important;
@@ -165,7 +165,7 @@ html.dark .bg-\[\#f7e0e9\] {
 }
 
 /* Luminous Gradient Typography in Dark Mode */
-html.dark .gradient-text-axis-light {
+html.dark .gradient-text-premier-light {
   background: linear-gradient(135deg, #ff7597 0%, #f43f5e 35%, #fb7185 65%, #fde047 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
