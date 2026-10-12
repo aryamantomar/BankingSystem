@@ -131,7 +131,7 @@ export const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-24 pb-20 bg-[#fbf9fa]">
+    <div className="space-y-24 pb-20 bg-[#f8fafc]">
       
       {/* Hero Section matching diagram */}
       <section className="relative pt-12 md:pt-20 text-center">
@@ -172,7 +172,7 @@ export const ServicesPage: React.FC = () => {
                     alt={srv.title} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
                   <div className="absolute top-3 left-3 w-8 h-8 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {srv.icon}
                   </div>

@@ -134,7 +134,7 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-24 pb-20 overflow-hidden bg-[#fbf9fa]">
+    <div className="space-y-24 pb-20 overflow-hidden bg-[#f8fafc]">
       
       {/* Hero Section matching diagram in Light Mode */}
       <section className="relative pt-12 md:pt-20 pb-16 overflow-hidden">
@@ -261,8 +261,8 @@ export const HomePage: React.FC = () => {
                     alt={feat.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <span className="absolute bottom-3 right-3 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 dark:bg-[#180a14]/90 text-[#97144d] dark:text-[#f43f5e] backdrop-blur-sm shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                  <span className="absolute bottom-3 right-3 text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-white/95 dark:bg-[#180a14]/90 text-[#97144d] dark:text-[#f43f5e] backdrop-blur-sm shadow-sm border border-slate-100 dark:border-transparent">
                     {feat.badge}
                   </span>
                 </div>
@@ -305,22 +305,22 @@ export const HomePage: React.FC = () => {
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 shadow-sm space-y-1">
                     <Plane className="w-5 h-5 text-[#97144d]" />
                     <div className="text-xs font-black text-slate-900">Global Lounge Access</div>
                     <div className="text-[11px] text-slate-500">Over 1,400+ international airport lounges</div>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 shadow-sm space-y-1">
                     <Percent className="w-5 h-5 text-amber-600" />
                     <div className="text-xs font-black text-slate-900">0% Forex Markup</div>
                     <div className="text-[11px] text-slate-500">True interbank exchange rates worldwide</div>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 shadow-sm space-y-1">
                     <Shield className="w-5 h-5 text-emerald-600" />
                     <div className="text-xs font-black text-slate-900">Instant Kill-Switch</div>
                     <div className="text-[11px] text-slate-500">Freeze and unfreeze card with 1 tap</div>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 shadow-sm space-y-1">
                     <Award className="w-5 h-5 text-purple-600" />
                     <div className="text-xs font-black text-slate-900">5X Reward Edge</div>
                     <div className="text-[11px] text-slate-500">Points convertible to airline miles & hotels</div>
@@ -379,7 +379,7 @@ export const HomePage: React.FC = () => {
                 <div
                   key={idx}
                   onClick={() => navigate(service.path)}
-                  className="rounded-2xl bg-[#faf7f9] dark:bg-[#190a16] border border-slate-200/80 dark:border-[#97144d]/25 hover:border-[#97144d]/40 hover:bg-white dark:hover:bg-[#220d1e] cursor-pointer transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md overflow-hidden"
+                  className="rounded-2xl bg-white dark:bg-[#190a16] border border-slate-200 dark:border-[#97144d]/25 hover:border-[#97144d]/40 cursor-pointer transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md overflow-hidden"
                 >
                   <div className="h-36 w-full overflow-hidden relative">
                     <img 
@@ -387,8 +387,8 @@ export const HomePage: React.FC = () => {
                       alt={service.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <span className="absolute top-3 left-3 text-[10px] font-black px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-[#1a0a16]/90 text-[#97144d] dark:text-[#f43f5e] shadow-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+                    <span className="absolute top-3 left-3 text-[10px] font-black px-2.5 py-1 rounded-full bg-white/95 dark:bg-[#1a0a16]/90 text-[#97144d] dark:text-[#f43f5e] shadow-sm border border-slate-100 dark:border-transparent">
                       {service.badge}
                     </span>
                   </div>

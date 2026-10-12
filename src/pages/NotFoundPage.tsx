@@ -7,7 +7,7 @@ export const NotFoundPage: React.FC = () => {
   const { navigate } = useBanking();
 
   return (
-    <div className="min-h-[75vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-[#fbf9fa]">
+    <div className="min-h-[75vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-[#f8fafc]">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#97144d]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 

@@ -7,7 +7,7 @@ export const PrivacyPage: React.FC = () => {
   const { navigate } = useBanking();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-10 text-slate-700 font-normal bg-[#fbf9fa]">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-10 text-slate-700 font-normal bg-[#f8fafc]">
       
       {/* Header matching diagram */}
       <ScrollReveal direction="down">

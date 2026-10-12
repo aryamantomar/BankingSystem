@@ -37,7 +37,7 @@ export const DashboardPage: React.FC = () => {
 
   if (!user) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center py-12 px-4 text-center bg-[#fbf9fa]">
+      <div className="min-h-[70vh] flex items-center justify-center py-12 px-4 text-center bg-[#f8fafc]">
         <div className="max-w-md p-8 rounded-3xl bg-white border border-slate-200/90 space-y-4 shadow-xl">
           <h2 className="text-xl font-black text-slate-900">Sign In Required</h2>
           <p className="text-xs text-slate-500">Please authenticate to view your personal banking dashboard.</p>
@@ -80,7 +80,7 @@ export const DashboardPage: React.FC = () => {
   });
 
   return (
-    <div className="space-y-10 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 bg-[#fbf9fa]">
+    <div className="space-y-10 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 bg-[#f8fafc]">
       
       {/* Welcome Banner with Velvet Burgundy styling */}
       <ScrollReveal direction="down">

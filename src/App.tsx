@@ -68,7 +68,7 @@ const PageRenderer: React.FC = () => {
 export function App() {
   return (
     <BankingProvider>
-      <div className="min-h-screen bg-[#fbf9fa] dark:bg-[#0c0409] text-slate-900 dark:text-slate-100 flex flex-col font-sans selection:bg-[#97144d] selection:text-white transition-colors duration-200">
+      <div className="min-h-screen bg-[#f8fafc] dark:bg-[#0c0409] text-slate-900 dark:text-slate-100 flex flex-col font-sans selection:bg-[#97144d] selection:text-white transition-colors duration-200">
         <Navbar />
         <main className="flex-1">
           <PageRenderer />

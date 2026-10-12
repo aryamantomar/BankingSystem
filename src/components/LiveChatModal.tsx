@@ -117,7 +117,7 @@ export const LiveChatModal: React.FC = () => {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#faf7f9] dark:bg-[#0c0409]">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#f8fafc] dark:bg-[#0c0409]">
             {messages.map((msg) => (
               <div
                 key={msg.id}

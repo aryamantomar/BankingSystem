@@ -33,7 +33,7 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-24 pb-20 bg-[#fbf9fa]">
+    <div className="space-y-24 pb-20 bg-[#f8fafc]">
       
       {/* Hero Section matching diagram */}
       <section className="relative pt-12 md:pt-20 text-center">

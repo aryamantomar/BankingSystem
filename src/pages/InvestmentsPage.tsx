@@ -75,7 +75,7 @@ export const InvestmentsPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-24 pb-20 bg-[#fbf9fa]">
+    <div className="space-y-24 pb-20 bg-[#f8fafc]">
       
       {/* Hero Section matching diagram */}
       <section className="relative pt-12 md:pt-20 text-center">
@@ -109,7 +109,7 @@ export const InvestmentsPage: React.FC = () => {
                     alt={prod.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
                   <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {prod.icon}
                   </div>

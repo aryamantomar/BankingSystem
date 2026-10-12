@@ -3,11 +3,29 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-subtle: #F1F5F9;
+    --text-primary: #171C2E;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+  }
+  html.dark {
+    --bg-page: #0C0409;
+    --bg-card: #150912;
+    --bg-card-subtle: #1D0E19;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E2E8F0;
+    --text-muted: #94A3B8;
+    --border-color: rgba(151, 20, 77, 0.25);
+  }
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#fbf9fa] text-slate-800 antialiased selection:bg-[#97144d] selection:text-white;
+    @apply bg-[#f8fafc] text-slate-700 antialiased selection:bg-[#97144d] selection:text-white;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
@@ -18,12 +36,12 @@
   height: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #fbf9fa;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e5cbd7;
+  background: #cbd5e1;
   border-radius: 9999px;
-  border: 2px solid #fbf9fa;
+  border: 2px solid #f8fafc;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #97144d;
@@ -104,8 +122,8 @@ html.dark [class*="bg-[#fbf9fa]"],
 html.dark .bg-\[\#faf7f9\],
 html.dark [class*="bg-[#faf7f9]"],
 html.dark .bg-\[\#fdf9fb\],
-html.dark [class*="bg-[#fdf9fb]"],
-html.dark .bg-\[\#f8fafc\] {
+html.dark .bg-\[\#f8fafc\],
+html.dark [class*="bg-[#f8fafc]"] {
   background-color: #0c0409 !important;
 }
 
@@ -171,20 +189,35 @@ html.dark .gradient-text-premier-light {
   -webkit-text-fill-color: transparent !important;
 }
 
-/* Light Mode Legibility Enhancements */
-body:not(.dark) .text-slate-400,
-html:not(.dark) .text-slate-400 {
-  color: #526075;
+/* Light Mode WCAG AA Legibility & Contrast Architecture */
+html:not(.dark) h1:not(.text-white):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="gradient"]),
+html:not(.dark) h2:not(.text-white):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="gradient"]),
+html:not(.dark) h3:not(.text-white):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="gradient"]),
+html:not(.dark) h4:not(.text-white):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="gradient"]),
+html:not(.dark) h5:not(.text-white):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="gradient"]),
+html:not(.dark) h6:not(.text-white):not([class*="text-pink"]):not([class*="text-amber"]):not([class*="gradient"]),
+html:not(.dark) .text-slate-900:not(.text-white):not([class*="text-white"]):not([class*="gradient"]),
+html:not(.dark) .text-slate-800:not(.text-white):not([class*="text-white"]):not([class*="gradient"]),
+html:not(.dark) .text-black:not(.text-white):not([class*="text-white"]) {
+  color: #171c2e;
 }
 
-body:not(.dark) .text-slate-500,
-html:not(.dark) .text-slate-500 {
+html:not(.dark) .text-slate-700:not(.text-white),
+html:not(.dark) .text-slate-600:not(.text-white) {
   color: #475569;
 }
 
-body:not(.dark) .text-slate-600,
-html:not(.dark) .text-slate-600 {
-  color: #334155;
+html:not(.dark) .text-slate-500:not(.text-white),
+html:not(.dark) .text-slate-400:not(.text-white) {
+  color: #64748b;
+}
+
+html:not(.dark) .border-slate-200,
+html:not(.dark) .border-slate-200\/90,
+html:not(.dark) .border-slate-200\/80,
+html:not(.dark) .border-slate-200\/70,
+html:not(.dark) .border-slate-100 {
+  border-color: #e2e8f0;
 }
 
 body:not(.dark) input::placeholder,

@@ -50,7 +50,7 @@ export const AccountOpeningPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[85vh] py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-10 bg-[#fbf9fa]">
+    <div className="min-h-[85vh] py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-10 bg-[#f8fafc]">
       
       {/* Title */}
       <ScrollReveal direction="down">

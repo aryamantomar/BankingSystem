@@ -33,7 +33,7 @@ export const FaqPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-16 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#fbf9fa] pt-8">
+    <div className="space-y-16 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#f8fafc] pt-8">
       
       {/* Hero Section matching diagram */}
       <section className="relative pt-6 md:pt-12 text-center space-y-4">
