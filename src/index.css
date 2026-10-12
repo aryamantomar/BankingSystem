@@ -3,69 +3,65 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-[#0e030a] text-slate-100 antialiased selection:bg-[#97144d] selection:text-white;
+    @apply bg-[#fbf9fa] text-slate-800 antialiased selection:bg-[#97144d] selection:text-white;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
-/* Axis-inspired scrollbar */
+/* Axis-inspired light scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #0e030a;
+  background: #fbf9fa;
 }
 ::-webkit-scrollbar-thumb {
-  background: #40051e;
-  border-radius: 4px;
+  background: #e5cbd7;
+  border-radius: 9999px;
+  border: 2px solid #fbf9fa;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #97144d;
 }
 
-/* Glassmorphism with Axis Burgundy tints */
-.glass-panel {
-  background: rgba(30, 7, 18, 0.7);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(220, 78, 131, 0.15);
+/* Glassmorphism for Light Mode */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(151, 20, 77, 0.12);
+  box-shadow: 0 10px 30px -5px rgba(151, 20, 77, 0.05);
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.glass-panel-hover:hover {
-  border-color: rgba(220, 78, 131, 0.4);
-  box-shadow: 0 12px 40px -8px rgba(151, 20, 77, 0.35);
-  transform: translateY(-4px);
-}
-
-/* Glowing burgundy aura */
-.glow-burgundy {
-  box-shadow: 0 0 50px -10px rgba(151, 20, 77, 0.45);
+.glass-card-hover:hover {
+  border-color: rgba(151, 20, 77, 0.35);
+  box-shadow: 0 20px 35px -8px rgba(151, 20, 77, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
 }
 
-.glow-gold {
-  box-shadow: 0 0 40px -10px rgba(234, 179, 8, 0.3);
-}
-
-/* Axis Bank signature gradient text */
-.gradient-text-axis {
-  background: linear-gradient(135deg, #ffffff 0%, #f8cfde 35%, #ea7ea6 70%, #facc15 100%);
+/* Axis Burgundy & Gold gradients */
+.gradient-text-axis-light {
+  background: linear-gradient(135deg, #740e3a 0%, #97144d 40%, #c52e69 75%, #ca8a04 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-burgundy {
-  background: linear-gradient(135deg, #97144d 0%, #c52e69 50%, #740e3a 100%);
+.gradient-burgundy-btn {
+  background: linear-gradient(135deg, #97144d 0%, #ba1e63 60%, #ca8a04 100%);
 }
 
-.gradient-burgundy-gold {
-  background: linear-gradient(135deg, #97144d 0%, #ba1e63 50%, #ca8a04 100%);
+.glow-burgundy-light {
+  box-shadow: 0 10px 30px -5px rgba(151, 20, 77, 0.3);
 }
 
-/* Shimmer animation on buttons */
+/* Button Shimmer */
 .btn-shimmer {
   position: relative;
   overflow: hidden;
@@ -80,7 +76,7 @@
   background: linear-gradient(
     60deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.35),
     transparent
   );
   transform: rotate(30deg) translateY(-100%);
@@ -88,9 +84,4 @@
 }
 .btn-shimmer:hover::after {
   transform: rotate(30deg) translateY(100%);
-}
-
-/* Axis Bank angled emblem shape */
-.axis-angle {
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }

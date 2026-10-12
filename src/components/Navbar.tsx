@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useBanking } from '../context/BankingContext';
 import { 
   Menu, 
@@ -7,12 +7,26 @@ import {
   ChevronRight, 
   LayoutDashboard,
   Sparkles,
-  ShieldCheck
+  PhoneCall
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { currentRoute, navigate, user, logout } = useBanking();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Scroll Progress indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        const currentScroll = window.scrollY;
+        setScrollProgress((currentScroll / totalScroll) * 100);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -35,55 +49,64 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#14040e]/90 backdrop-blur-xl border-b border-[#97144d]/25 transition-all duration-300">
-      {/* Top micro bar for Axis-style rates and status */}
-      <div className="bg-gradient-to-r from-[#500827] via-[#97144d] to-[#40051e] text-[11px] text-white/90 py-1 px-4 sm:px-8 border-b border-white/10 hidden sm:flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-[#97144d]/10 shadow-[0_4px_20px_-4px_rgba(151,20,77,0.06)] transition-all duration-300">
+      
+      {/* Dynamic Scroll Progress Bar at the very top */}
+      <div 
+        className="h-1 bg-gradient-to-r from-[#97144d] via-[#dc4e83] to-[#ca8a04] transition-all duration-100 ease-out"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
+      {/* Axis-style Top Micro Bar */}
+      <div className="bg-[#97144d] text-white text-[11px] py-1.5 px-4 sm:px-8 border-b border-white/10 hidden sm:flex items-center justify-between">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5 font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            NexBank 24/7 Digital Banking • 100% Secure
+            NexBank 24/7 Digital Banking • FDIC Insured
           </span>
           <span className="text-white/40">|</span>
-          <span className="text-gold-300 font-semibold flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-gold-400" />
-            Axis-Inspired Burgundy Experience: Up to 7.85% FD Rate
+          <span className="text-amber-200 font-semibold flex items-center gap-1">
+            <Sparkles className="w-3 h-3 text-amber-300" />
+            Burgundy High-Yield Fixed Deposit: Up to 7.85% APY
           </span>
         </div>
-        <div className="flex items-center gap-4 font-medium text-white/80">
-          <span className="hover:text-white cursor-pointer" onClick={() => navigate('/loans')}>Fixed EMI Calc</span>
+        <div className="flex items-center gap-4 font-medium text-white/90">
+          <span className="hover:text-amber-200 cursor-pointer transition-colors" onClick={() => navigate('/loans')}>EMI Calculator</span>
           <span>•</span>
-          <span className="hover:text-white cursor-pointer" onClick={() => navigate('/contact')}>Toll Free: 1800-NEX-BANK</span>
+          <span className="hover:text-amber-200 cursor-pointer transition-colors flex items-center gap-1" onClick={() => navigate('/contact')}>
+            <PhoneCall className="w-3 h-3" />
+            1800-NEX-BANK
+          </span>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Brand Logo inspired by Axis Bank geometric triangle/maroon identity */}
+          {/* Brand Logo with Axis Burgundy Emblem */}
           <div 
             onClick={() => handleNavClick('/')}
             className="flex items-center gap-3.5 cursor-pointer group"
           >
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-[#97144d] via-[#dc4e83] to-amber-400 p-0.5 shadow-lg shadow-[#97144d]/30 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-[#1b0512] rounded-[10px] flex items-center justify-center relative overflow-hidden">
-                {/* Axis-style geometric stylized chevron/pyramid emblem */}
-                <svg className="w-6 h-6 text-[#ea7ea6] group-hover:text-amber-300 transition-colors drop-shadow" viewBox="0 0 24 24" fill="none">
+            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-[#97144d] via-[#c52e69] to-amber-400 p-0.5 shadow-md shadow-[#97144d]/25 group-hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                <svg className="w-6 h-6 text-[#97144d]" viewBox="0 0 24 24" fill="none">
                   <path d="M12 3L2 21H7.5L12 12.5L16.5 21H22L12 3Z" fill="#97144d" />
-                  <path d="M12 9L7 19H17L12 9Z" fill="#ea7ea6" />
-                  <path d="M12 14L9.5 19H14.5L12 14Z" fill="#facc15" />
+                  <path d="M12 9L7 19H17L12 9Z" fill="#dc4e83" />
+                  <path d="M12 14L9.5 19H14.5L12 14Z" fill="#ca8a04" />
                 </svg>
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-black tracking-tight text-white group-hover:text-[#f8d2df] transition-colors">
-                  Nex<span className="text-[#ea7ea6]">Bank</span>
+                <span className="text-2xl font-black tracking-tight text-[#1e293b] group-hover:text-[#97144d] transition-colors">
+                  Nex<span className="text-[#97144d]">Bank</span>
                 </span>
-                <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white tracking-wider shadow-sm">
+                <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#97144d] text-white tracking-wider shadow-sm">
                   BURGUNDY
                 </span>
               </div>
-              <p className="text-[11px] text-pink-200/60 font-medium tracking-wide hidden sm:block">
+              <p className="text-[11px] text-slate-500 font-medium tracking-wide hidden sm:block">
                 Modern Banking for a Brighter Tomorrow
               </p>
             </div>
@@ -97,15 +120,15 @@ export const Navbar: React.FC = () => {
                 <button
                   key={link.path}
                   onClick={() => handleNavClick(link.path)}
-                  className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-all duration-200 relative group ${
+                  className={`px-3.5 py-2 text-sm font-bold rounded-xl transition-all duration-200 relative group ${
                     active
-                      ? 'text-white bg-[#97144d]/40 border border-[#97144d]/60 shadow-md shadow-[#97144d]/20'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      ? 'text-[#97144d] bg-[#97144d]/10 font-extrabold shadow-sm'
+                      : 'text-slate-600 hover:text-[#97144d] hover:bg-slate-100/80'
                   }`}
                 >
                   <span>{link.label}</span>
                   {active && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-gradient-to-r from-amber-400 to-[#ea7ea6] rounded-full"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#97144d] rounded-full"></span>
                   )}
                 </button>
               );
@@ -118,15 +141,15 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <button
                   onClick={() => handleNavClick('/dashboard')}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all border ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all border ${
                     currentRoute === '/dashboard'
-                      ? 'bg-gradient-to-r from-[#97144d] to-[#731640] text-white border-pink-500/40 shadow-lg shadow-[#97144d]/30'
-                      : 'bg-[#240615] hover:bg-[#34091f] text-pink-100 border-[#97144d]/30 hover:border-[#dc4e83]/50'
+                      ? 'bg-[#97144d] text-white border-[#97144d] shadow-md shadow-[#97144d]/30'
+                      : 'bg-white hover:bg-slate-50 text-[#97144d] border-[#97144d]/30 hover:border-[#97144d]'
                   }`}
                 >
-                  <LayoutDashboard className="w-4 h-4 text-gold-400" />
+                  <LayoutDashboard className="w-4 h-4 text-amber-500" />
                   <span>Dashboard</span>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
                     ${user.balance.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                   </span>
                 </button>
@@ -134,7 +157,7 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={logout}
                   title="Sign out"
-                  className="p-2 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-xl transition-colors border border-transparent hover:border-rose-500/20"
+                  className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors border border-transparent hover:border-rose-200"
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -143,14 +166,14 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <button
                   onClick={() => handleNavClick('/login')}
-                  className="px-4 py-2 text-sm font-bold text-slate-200 hover:text-white bg-[#240615] hover:bg-[#34091f] border border-[#97144d]/40 hover:border-[#dc4e83] rounded-xl transition-all"
+                  className="px-4 py-2 text-sm font-bold text-slate-700 hover:text-[#97144d] bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#97144d]/40 rounded-xl transition-all shadow-sm"
                 >
                   Login / Sign Up
                 </button>
 
                 <button
                   onClick={() => handleNavClick('/open-account')}
-                  className="btn-shimmer relative px-5 py-2 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] hover:brightness-110 shadow-lg shadow-[#97144d]/40 transition-all duration-200 active:scale-95"
+                  className="btn-shimmer relative px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] hover:brightness-105 shadow-md shadow-[#97144d]/30 transition-all duration-200 active:scale-95"
                 >
                   <span className="relative z-10 flex items-center gap-1.5">
                     Open Account
@@ -173,7 +196,7 @@ export const Navbar: React.FC = () => {
             )}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-pink-200 hover:text-white hover:bg-white/10"
+              className="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -185,38 +208,38 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#97144d]/30 bg-[#160410]/95 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-2 animate-fadeIn">
+        <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 animate-fadeIn shadow-xl">
           {navLinks.map((link) => {
             const active = isActive(link.path);
             return (
               <button
                 key={link.path}
                 onClick={() => handleNavClick(link.path)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-base font-bold ${
                   active
-                    ? 'bg-[#97144d]/30 text-white font-bold border border-[#97144d]/50'
-                    : 'text-slate-300 hover:bg-white/5'
+                    ? 'bg-[#97144d]/10 text-[#97144d] border border-[#97144d]/20'
+                    : 'text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <span>{link.label}</span>
-                <ChevronRight className="w-4 h-4 text-pink-400" />
+                <ChevronRight className="w-4 h-4 text-slate-400" />
               </button>
             );
           })}
 
-          <div className="pt-3 border-t border-[#97144d]/30 space-y-2">
+          <div className="pt-3 border-t border-slate-200 space-y-2">
             {user ? (
               <>
                 <button
                   onClick={() => handleNavClick('/dashboard')}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white font-bold text-sm shadow-lg shadow-[#97144d]/30"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#97144d] text-white font-bold text-sm shadow-md"
                 >
-                  <LayoutDashboard className="w-4 h-4 text-gold-300" />
+                  <LayoutDashboard className="w-4 h-4 text-amber-300" />
                   <span>Go to Dashboard (${user.balance.toFixed(2)})</span>
                 </button>
                 <button
                   onClick={logout}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-rose-500/10 text-rose-300 font-medium text-sm border border-rose-500/20"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-rose-50 text-rose-700 font-bold text-sm border border-rose-200"
                 >
                   <LogOut className="w-4 h-4" />
                   <span>Sign Out ({user.name})</span>
@@ -226,13 +249,13 @@ export const Navbar: React.FC = () => {
               <>
                 <button
                   onClick={() => handleNavClick('/open-account')}
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] text-white font-bold text-sm shadow-lg shadow-[#97144d]/30 text-center"
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] text-white font-bold text-sm shadow-md text-center"
                 >
                   Open Free Account
                 </button>
                 <button
                   onClick={() => handleNavClick('/login')}
-                  className="w-full py-2.5 rounded-xl bg-[#240615] text-slate-200 font-semibold text-sm text-center border border-[#97144d]/40"
+                  className="w-full py-2.5 rounded-xl bg-slate-100 text-slate-700 font-bold text-sm text-center border border-slate-200"
                 >
                   Sign In to Online Banking
                 </button>

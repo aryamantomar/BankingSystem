@@ -15,7 +15,7 @@ export const LiveChatModal: React.FC = () => {
     {
       id: 'msg-1',
       sender: 'bot',
-      text: `Namaste & Welcome! I'm NexBot, your 24/7 Axis-powered AI banking concierge. How can I assist you with your NexBank Burgundy account today?`,
+      text: `Namaste & Welcome! I'm NexBot, your 24/7 AI banking concierge. How can I assist you with your NexBank Burgundy account today?`,
       time: 'Just now'
     }
   ]);
@@ -44,7 +44,7 @@ export const LiveChatModal: React.FC = () => {
 
     setTimeout(() => {
       const lower = text.toLowerCase();
-      let reply = "I understand your query. Our senior Burgundy customer relationship desk has been notified. You can also reach our 24/7 hotline at +1 800-NEX-BANK.";
+      let reply = "I understand your query. Our senior Burgundy relationship desk has been notified. You can also reach our 24/7 helpline at +1 800-NEX-BANK.";
 
       if (lower.includes('balance')) {
         if (user) {
@@ -77,62 +77,62 @@ export const LiveChatModal: React.FC = () => {
       {/* Floating launcher trigger */}
       <button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className="fixed bottom-6 right-6 z-40 p-4 rounded-full bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] text-white shadow-2xl shadow-[#97144d]/50 hover:scale-110 active:scale-95 transition-all duration-200 flex items-center gap-2 group border border-white/20 animate-pulse-slow"
+        className="fixed bottom-6 right-6 z-40 p-4 rounded-full bg-gradient-to-r from-[#97144d] via-[#c52e69] to-[#ca8a04] text-white shadow-xl shadow-[#97144d]/35 hover:scale-110 active:scale-95 transition-all duration-200 flex items-center gap-2 group border border-white/40"
         aria-label="Open Live Chat"
       >
         <MessageSquare className="w-6 h-6 group-hover:rotate-6 transition-transform" />
         <span className="text-sm font-bold pr-1 hidden sm:inline">24/7 Burgundy Assist</span>
-        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span className="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-ping"></span>
       </button>
 
-      {/* Chat Window Modal */}
+      {/* Chat Window Modal in Light Mode */}
       {isChatOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[400px] h-[540px] bg-[#160510] border border-[#97144d]/50 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
+        <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[400px] h-[540px] bg-white border border-slate-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
           
           {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-[#4d0725] via-[#97144d] to-[#34061a] border-b border-[#97144d]/40 flex items-center justify-between">
+          <div className="p-4 bg-[#97144d] text-white flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-xl bg-[#240411] border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-md">
-                  <Bot className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-amber-300 shadow-sm">
+                  <Bot className="w-5 h-5 text-amber-200" />
                 </div>
-                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#160510]"></span>
+                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#97144d]"></span>
               </div>
               <div>
-                <h4 className="text-sm font-extrabold text-white flex items-center gap-1.5">
+                <h4 className="text-sm font-black text-white flex items-center gap-1.5">
                   NexBot Concierge
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                 </h4>
-                <p className="text-[11px] text-pink-200 flex items-center gap-1">
+                <p className="text-[11px] text-pink-100 flex items-center gap-1">
                   Burgundy Priority • Instant AI
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsChatOpen(false)}
-              className="p-1.5 rounded-lg text-pink-200 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#11030b]">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#faf7f9]">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'bot' && (
-                  <div className="w-7 h-7 rounded-lg bg-[#97144d]/40 border border-[#97144d]/60 flex items-center justify-center text-amber-300 shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-[#97144d]/10 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] shrink-0 font-bold">
                     <Bot className="w-4 h-4" />
                   </div>
                 )}
                 <div
-                  className={`max-w-[78%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed ${
+                  className={`max-w-[78%] px-4 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-sm ${
                     msg.sender === 'user'
-                      ? 'bg-gradient-to-r from-[#97144d] to-[#c52e69] text-white rounded-tr-none'
-                      : 'bg-[#220716] text-pink-100 border border-[#97144d]/30 rounded-tl-none'
+                      ? 'bg-[#97144d] text-white rounded-tr-none'
+                      : 'bg-white text-slate-800 border border-slate-200/80 rounded-tl-none'
                   }`}
                 >
                   <p>{msg.text}</p>
@@ -141,7 +141,7 @@ export const LiveChatModal: React.FC = () => {
                   </span>
                 </div>
                 {msg.sender === 'user' && (
-                  <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center text-white shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center text-white shrink-0 font-bold">
                     <User className="w-4 h-4" />
                   </div>
                 )}
@@ -150,12 +150,12 @@ export const LiveChatModal: React.FC = () => {
           </div>
 
           {/* Quick Prompts */}
-          <div className="p-2 border-t border-[#97144d]/30 bg-[#190513] flex gap-1.5 overflow-x-auto no-scrollbar">
+          <div className="p-2 border-t border-slate-200 bg-white flex gap-1.5 overflow-x-auto no-scrollbar">
             {quickPrompts.map((prompt, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSend(prompt)}
-                className="whitespace-nowrap text-[11px] px-2.5 py-1 rounded-full bg-[#2a091c] hover:bg-[#97144d] text-pink-200 hover:text-white border border-[#97144d]/40 transition-colors shrink-0"
+                className="whitespace-nowrap text-[11px] px-3 py-1 rounded-full bg-[#fdf2f6] hover:bg-[#97144d] text-[#97144d] hover:text-white border border-[#97144d]/20 transition-all font-semibold shrink-0"
               >
                 {prompt}
               </button>
@@ -168,18 +168,18 @@ export const LiveChatModal: React.FC = () => {
               e.preventDefault();
               handleSend();
             }}
-            className="p-3 bg-[#160510] border-t border-[#97144d]/30 flex items-center gap-2"
+            className="p-3 bg-white border-t border-slate-200 flex items-center gap-2"
           >
             <input
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder="Ask about Burgundy perks, FD rates, loans..."
-              className="flex-1 bg-[#0d0208] border border-[#97144d]/40 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white placeholder-pink-300/40 focus:outline-none focus:border-[#ea7ea6]"
+              className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
             />
             <button
               type="submit"
-              className="p-2 rounded-xl bg-gradient-to-r from-[#97144d] to-[#c52e69] hover:brightness-110 text-white transition-all shadow-md shadow-[#97144d]/30"
+              className="p-2 rounded-xl bg-[#97144d] hover:bg-[#740e3a] text-white transition-all shadow-md shadow-[#97144d]/20"
               aria-label="Send message"
             >
               <Send className="w-4 h-4" />
