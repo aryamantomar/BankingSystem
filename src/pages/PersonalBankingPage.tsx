@@ -143,37 +143,37 @@ export const PersonalBankingPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {prod.icon}
                   </div>
-                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 text-[#97144d] shadow-sm">
+                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 dark:bg-[#1a0b15]/95 text-[#97144d] dark:text-[#ff7597] shadow-sm border border-transparent dark:border-[#97144d]/30">
                     {prod.rate}
                   </span>
                 </div>
 
                 <div className="p-7 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                    <h3 className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-[#ff7597] transition-colors">
                       {prod.title}
                     </h3>
-                    <p className="text-xs font-semibold text-slate-500 mt-1">
+                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1">
                       {prod.tagline}
                     </p>
 
-                    <ul className="mt-5 space-y-2 text-xs text-slate-600 font-medium">
+                    <ul className="mt-5 space-y-2 text-xs text-slate-600 dark:text-slate-300 font-medium">
                       {prod.features.map((feat, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-[#97144d] shrink-0 mt-0.5" />
+                          <Check className="w-4 h-4 text-[#97144d] dark:text-[#ff7597] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mt-6 pt-5 border-t border-slate-100">
+                  <div className="mt-6 pt-5 border-t border-slate-100 dark:border-[#97144d]/20">
                     <button
                       onClick={() => navigate(prod.action)}
-                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d]"
+                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 dark:bg-[#1d0e19] hover:bg-[#97144d] text-slate-800 dark:text-slate-200 hover:text-white dark:hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 dark:border-[#97144d]/30 hover:border-[#97144d]"
                     >
                       <span>{prod.btnText}</span>
                       <ChevronRight className="w-3.5 h-3.5" />

@@ -103,13 +103,13 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleNavClick(link.path)}
                   className={`px-3.5 py-2 text-sm font-bold rounded-xl transition-all duration-200 relative group ${
                     active
-                      ? 'text-[#97144d] bg-[#97144d]/10 font-extrabold shadow-sm'
-                      : 'text-slate-600 hover:text-[#97144d] hover:bg-slate-100/80'
+                      ? 'text-[#97144d] dark:text-[#ff7597] bg-[#97144d]/10 dark:bg-[#97144d]/25 font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-200 hover:text-[#97144d] dark:hover:text-[#ff7597] hover:bg-slate-100/80 dark:hover:bg-[#251020]'
                   }`}
                 >
                   <span>{link.label}</span>
                   {active && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#97144d] rounded-full"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#97144d] dark:bg-[#ff7597] rounded-full"></span>
                   )}
                 </button>
               );

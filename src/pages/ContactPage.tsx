@@ -78,18 +78,18 @@ export const ContactPage: React.FC = () => {
 
           {/* Card 2: Email Us */}
           <ScrollReveal direction="up" delay={100}>
-            <div className="h-full p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5">
+            <div className="h-full p-8 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center mb-4 text-[#97144d] group-hover:text-white transition-all group-hover:scale-110">
+                <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] dark:bg-[#1f0d1b] group-hover:bg-[#97144d] border border-[#97144d]/20 dark:border-[#97144d]/30 flex items-center justify-center mb-4 text-[#97144d] dark:text-[#ff7597] group-hover:text-white transition-all group-hover:scale-110">
                   <Mail className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">Email Us</h3>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
-                  General Inquiries: <span className="text-slate-900 font-bold">contact@nexbank.com</span><br />
-                  Priority Desk: <span className="text-[#97144d] font-bold">priority@nexbank.com</span>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-[#ff7597] transition-colors">Email Us</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed font-normal">
+                  General Inquiries: <span className="text-slate-900 dark:text-white font-bold">contact@nexbank.com</span><br />
+                  Priority Desk: <span className="text-[#97144d] dark:text-[#ff7597] font-bold">priority@nexbank.com</span>
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-[#97144d] font-bold">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#97144d]/20 text-xs text-[#97144d] dark:text-[#ff7597] font-bold">
                 Avg response: Under 15 minutes
               </div>
             </div>
@@ -97,18 +97,18 @@ export const ContactPage: React.FC = () => {
 
           {/* Card 3: Call Us */}
           <ScrollReveal direction="up" delay={200}>
-            <div className="h-full p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5">
+            <div className="h-full p-8 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center mb-4 text-emerald-600 group-hover:text-white transition-all group-hover:scale-110">
+                <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] dark:bg-[#1f0d1b] group-hover:bg-[#97144d] border border-[#97144d]/20 dark:border-[#97144d]/30 flex items-center justify-center mb-4 text-emerald-600 dark:text-emerald-400 group-hover:text-white transition-all group-hover:scale-110">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">Call Us</h3>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
-                  Toll Free (USA): <span className="text-slate-900 font-mono font-bold">+1 800-NEX-BANK</span><br />
-                  International: <span className="text-slate-900 font-mono font-bold">+1 (212) 555-0199</span>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-[#ff7597] transition-colors">Call Us</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed font-normal">
+                  Toll Free (USA): <span className="text-slate-900 dark:text-white font-mono font-bold">+1 800-NEX-BANK</span><br />
+                  International: <span className="text-slate-900 dark:text-white font-mono font-bold">+1 (212) 555-0199</span>
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-emerald-600 font-bold">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#97144d]/20 text-xs text-emerald-600 dark:text-emerald-400 font-bold">
                 Available 24 Hours / 7 Days
               </div>
             </div>
@@ -122,20 +122,20 @@ export const ContactPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Interactive Form */}
-            <div className="lg:col-span-6 p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
-              <h2 className="text-2xl font-black text-slate-900 mb-1">Send Us a Direct Message</h2>
-              <p className="text-xs text-slate-500 mb-6">Our relationship managers will review and respond promptly.</p>
+            <div className="lg:col-span-6 p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
+              <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-1">Send Us a Direct Message</h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">Our relationship managers will review and respond promptly.</p>
 
               {submitted ? (
-                <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
-                  <h4 className="text-base font-bold text-slate-900">Message Dispatched</h4>
-                  <p className="text-xs text-slate-600">
+                <div className="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/50 text-center space-y-3">
+                  <CheckCircle2 className="w-10 h-10 text-emerald-600 dark:text-emerald-400 mx-auto" />
+                  <h4 className="text-base font-bold text-slate-900 dark:text-white">Message Dispatched</h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-300">
                     Thank you! An automated ticket reference has been logged to your inbox.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-2 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors"
+                    className="mt-2 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-[#97144d] text-white hover:bg-slate-800 dark:hover:bg-[#ba1e63] transition-colors"
                   >
                     Send Another Message
                   </button>
@@ -204,13 +204,13 @@ export const ContactPage: React.FC = () => {
 
             {/* Interactive Branch Locator & Visual Map matching diagram */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="p-6 rounded-3xl bg-white border border-slate-200/90 space-y-4 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
+              <div className="p-6 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 space-y-4 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-lg font-black text-slate-900">Branch & ATM Directory</h3>
-                    <p className="text-xs text-slate-500 font-normal">Select a premier location to view details.</p>
+                    <h3 className="text-lg font-black text-slate-900 dark:text-white">Branch & ATM Directory</h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-normal">Select a premier location to view details.</p>
                   </div>
-                  <Navigation className="w-5 h-5 text-[#97144d]" />
+                  <Navigation className="w-5 h-5 text-[#97144d] dark:text-[#ff7597]" />
                 </div>
 
                 {/* Branch pills */}
@@ -222,7 +222,7 @@ export const ContactPage: React.FC = () => {
                       className={`p-3 rounded-xl text-left border transition-all text-xs font-bold ${
                         selectedBranch.city === branch.city
                           ? 'bg-[#97144d] border-[#97144d] text-white shadow-md shadow-[#97144d]/20'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-[#97144d]/40'
+                          : 'bg-slate-50 dark:bg-[#1c0d19] border-slate-200 dark:border-[#97144d]/25 text-slate-700 dark:text-slate-300 hover:border-[#97144d]/40'
                       }`}
                     >
                       <span>{branch.city.split(' (')[0]}</span>

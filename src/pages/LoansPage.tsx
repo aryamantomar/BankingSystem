@@ -124,8 +124,8 @@ export const LoansPage: React.FC = () => {
         <ScrollReveal direction="up">
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden dark:bg-[#150912] dark:border-[#97144d]/25">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Loan EMI Calculator</h2>
-              <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Loan EMI Calculator</h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium">
                 Adjust amount, interest rate, and tenure to visualize your exact monthly payment obligations.
               </p>
             </div>
@@ -137,8 +137,8 @@ export const LoansPage: React.FC = () => {
                 {/* Loan Amount */}
                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-bold text-slate-700">Principal Loan Amount</span>
-                    <span className="text-xl font-black text-[#97144d] font-mono">${loanAmount.toLocaleString()}</span>
+                    <span className="text-xs font-bold text-slate-700 dark:text-slate-200">Principal Loan Amount</span>
+                    <span className="text-xl font-black text-[#97144d] dark:text-[#ff7597] font-mono">${loanAmount.toLocaleString()}</span>
                   </div>
                   <input
                     type="range"
@@ -149,7 +149,7 @@ export const LoansPage: React.FC = () => {
                     onChange={(e) => setLoanAmount(Number(e.target.value))}
                     className="w-full accent-[#97144d] cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <div className="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 mt-1 font-mono">
                     <span>$10,000</span>
                     <span>$500,000</span>
                     <span>$1,000,000</span>
@@ -159,8 +159,8 @@ export const LoansPage: React.FC = () => {
                 {/* Interest Rate */}
                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-bold text-slate-700">Annual Interest Rate</span>
-                    <span className="text-xl font-black text-amber-600 font-mono">{interestRate}% p.a.</span>
+                    <span className="text-xs font-bold text-slate-700 dark:text-slate-200">Annual Interest Rate</span>
+                    <span className="text-xl font-black text-amber-600 dark:text-amber-400 font-mono">{interestRate}% p.a.</span>
                   </div>
                   <input
                     type="range"
@@ -171,7 +171,7 @@ export const LoansPage: React.FC = () => {
                     onChange={(e) => setInterestRate(Number(e.target.value))}
                     className="w-full accent-amber-500 cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <div className="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 mt-1 font-mono">
                     <span>5.0%</span>
                     <span>11.5%</span>
                     <span>18.0%</span>
@@ -181,8 +181,8 @@ export const LoansPage: React.FC = () => {
                 {/* Loan Tenure */}
                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-bold text-slate-700">Loan Tenure</span>
-                    <span className="text-xl font-black text-emerald-600 font-mono">{tenureYears} Years</span>
+                    <span className="text-xs font-bold text-slate-700 dark:text-slate-200">Loan Tenure</span>
+                    <span className="text-xl font-black text-emerald-600 dark:text-emerald-400 font-mono">{tenureYears} Years</span>
                   </div>
                   <input
                     type="range"
@@ -241,8 +241,8 @@ export const LoansPage: React.FC = () => {
       {/* 5 Core Loan Products Grid with Real Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl font-black text-slate-900">Explore Our Financing Solutions</h2>
-          <p className="text-sm text-slate-500 mt-2 font-medium">Bespoke credit lines designed with transparent interest rates and zero hidden charges.</p>
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white">Explore Our Financing Solutions</h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium">Bespoke credit lines designed with transparent interest rates and zero hidden charges.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

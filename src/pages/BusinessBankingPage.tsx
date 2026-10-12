@@ -173,17 +173,17 @@ export const BusinessBankingPage: React.FC = () => {
 
                 <div className="p-7 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                    <h3 className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-[#ff7597] transition-colors">
                       {prod.title}
                     </h3>
-                    <p className="text-xs font-semibold text-slate-500 mt-1">
+                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1">
                       {prod.tagline}
                     </p>
 
-                    <ul className="mt-5 space-y-2 text-xs text-slate-600 font-medium">
+                    <ul className="mt-5 space-y-2 text-xs text-slate-600 dark:text-slate-300 font-medium">
                       {prod.features.map((feat, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-[#97144d] shrink-0 mt-0.5" />
+                          <Check className="w-4 h-4 text-[#97144d] dark:text-[#ff7597] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
                       ))}

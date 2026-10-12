@@ -120,15 +120,15 @@ export const InvestmentsPage: React.FC = () => {
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
+                    <h3 className="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-[#ff7597] transition-colors">
                       {prod.title}
                     </h3>
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed font-normal">
                       {prod.desc}
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-slate-100 dark:border-[#97144d]/20 flex justify-between items-center text-[11px]">
-                      <span className="text-slate-400 font-medium">Risk Profile</span>
+                      <span className="text-slate-400 dark:text-slate-400 font-medium">Risk Profile</span>
                       <span className="text-slate-800 dark:text-slate-200 font-bold">{prod.risk}</span>
                     </div>
                   </div>

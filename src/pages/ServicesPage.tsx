@@ -185,14 +185,14 @@ export const ServicesPage: React.FC = () => {
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-black text-slate-900">{srv.title}</h3>
-                    <p className="text-xs font-bold text-[#97144d] mt-1">{srv.desc}</p>
-                    <p className="text-xs text-slate-600 mt-2.5 leading-relaxed font-normal">{srv.detail}</p>
+                    <h3 className="text-xl font-black text-slate-900 dark:text-white">{srv.title}</h3>
+                    <p className="text-xs font-bold text-[#97144d] dark:text-[#ff7597] mt-1">{srv.desc}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed font-normal">{srv.detail}</p>
                   </div>
 
-                  <div className="mt-5 pt-4 border-t border-slate-100 dark:border-[#97144d]/20 flex items-center justify-between text-xs font-bold text-slate-700">
+                  <div className="mt-5 pt-4 border-t border-slate-100 dark:border-[#97144d]/20 flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-200">
                     <span>{selectedService === srv.id ? 'Using Tool Below' : 'Launch Service'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#97144d]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#97144d] dark:text-[#ff7597]" />
                   </div>
                 </div>
               </div>

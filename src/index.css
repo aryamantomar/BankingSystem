@@ -171,6 +171,27 @@ html.dark .gradient-text-premier-light {
   -webkit-text-fill-color: transparent !important;
 }
 
+/* Light Mode Legibility Enhancements */
+body:not(.dark) .text-slate-400,
+html:not(.dark) .text-slate-400 {
+  color: #526075;
+}
+
+body:not(.dark) .text-slate-500,
+html:not(.dark) .text-slate-500 {
+  color: #475569;
+}
+
+body:not(.dark) .text-slate-600,
+html:not(.dark) .text-slate-600 {
+  color: #334155;
+}
+
+body:not(.dark) input::placeholder,
+body:not(.dark) textarea::placeholder {
+  color: #64748b;
+}
+
 /* Status Pill Badges in Dark Mode */
 html.dark .bg-emerald-50,
 html.dark .bg-emerald-100 {
@@ -178,6 +199,7 @@ html.dark .bg-emerald-100 {
   color: #34d399 !important;
   border-color: rgba(16, 185, 129, 0.35) !important;
 }
+html.dark .text-emerald-600,
 html.dark .text-emerald-700,
 html.dark .text-emerald-800,
 html.dark .text-emerald-900 {
@@ -194,6 +216,7 @@ html.dark .bg-rose-100 {
   color: #fb7185 !important;
   border-color: rgba(244, 63, 94, 0.35) !important;
 }
+html.dark .text-rose-600,
 html.dark .text-rose-700,
 html.dark .text-rose-800,
 html.dark .text-rose-900,
@@ -211,6 +234,7 @@ html.dark .bg-amber-100 {
   color: #fcd34d !important;
   border-color: rgba(245, 158, 11, 0.35) !important;
 }
+html.dark .text-amber-600,
 html.dark .text-amber-700,
 html.dark .text-amber-800,
 html.dark .text-amber-900 {
@@ -240,29 +264,67 @@ html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
 }
 
 /* High-contrast Typography in Dark Mode */
-html.dark .text-slate-900 {
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-black,
+html.dark .text-\[\#1e293b\] {
   color: #ffffff !important;
 }
 
-html.dark .text-slate-800,
-html.dark .text-\[\#1e293b\] {
+html.dark .text-slate-700 {
   color: #f1f5f9 !important;
 }
 
-html.dark .text-slate-700 {
+html.dark .text-slate-600 {
   color: #e2e8f0 !important;
 }
 
-html.dark .text-slate-600 {
+html.dark .text-slate-500 {
   color: #cbd5e1 !important;
 }
 
-html.dark .text-slate-500 {
+html.dark .text-slate-400 {
   color: #94a3b8 !important;
 }
 
-html.dark .text-slate-400 {
-  color: #64748b !important;
+/* Signature Brand Accent in Dark Mode (radiant luminous rose) */
+html.dark .text-\[\#97144d\],
+html.dark [class*="text-[#97144d]"],
+html.dark .text-\[\#740e3a\],
+html.dark .text-\[\#800f40\],
+html.dark .text-\[\#590a2d\],
+html.dark .text-\[\#6d0b36\],
+html.dark .text-\[\#6d143b\],
+html.dark .text-axis-700,
+html.dark .text-axis-800,
+html.dark .text-axis-900 {
+  color: #ff7597 !important;
+}
+
+html.dark .hover\:text-\[\#97144d\]:hover,
+html.dark [class*="hover:text-[#97144d]"]:hover,
+html.dark .hover\:text-\[\#740e3a\]:hover,
+html.dark .group:hover .group-hover\:text-\[\#97144d\],
+html.dark .group:hover [class*="group-hover:text-[#97144d]"] {
+  color: #fbcfe8 !important;
+}
+
+/* Action Buttons inside Dark Gradient Banners in both themes */
+html.dark [class*="from-[#97144d]"] button.bg-white,
+html.dark [class*="from-[#740e3a]"] button.bg-white,
+html.dark [class*="from-[#800f40]"] button.bg-white,
+html.dark [class*="from-[#590a2d]"] button.bg-white,
+html.dark [class*="from-[#740e3a]"] a.bg-white,
+html.dark [class*="from-[#97144d]"] [class*="\!bg-white"],
+html.dark [class*="from-[#740e3a]"] [class*="\!bg-white"] {
+  background-color: #ffffff !important;
+  color: #97144d !important;
+}
+html.dark [class*="from-[#97144d]"] button.bg-white:hover,
+html.dark [class*="from-[#740e3a]"] button.bg-white:hover,
+html.dark [class*="from-[#800f40]"] button.bg-white:hover {
+  background-color: #fff1f6 !important;
+  color: #740e3a !important;
 }
 
 /* Interactive Hover States in Dark Mode */
@@ -295,18 +357,18 @@ html.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 html.dark select,
 html.dark textarea {
   background-color: #1a0b15 !important;
-  color: #f8fafc !important;
+  color: #ffffff !important;
   border-color: rgba(151, 20, 77, 0.32) !important;
 }
 
 html.dark select option {
   background-color: #1a0b15 !important;
-  color: #f8fafc !important;
+  color: #ffffff !important;
 }
 
 html.dark input::placeholder,
 html.dark textarea::placeholder {
-  color: #64748b !important;
+  color: #94a3b8 !important;
 }
 
 html.dark input:focus,
@@ -316,7 +378,7 @@ html.dark .focus\:bg-white:focus,
 html.dark input.focus\:bg-white:focus,
 html.dark textarea.focus\:bg-white:focus {
   background-color: #24111f !important;
-  color: #f8fafc !important;
+  color: #ffffff !important;
   border-color: #dc4e83 !important;
   box-shadow: 0 0 0 3px rgba(151, 20, 77, 0.3) !important;
 }
@@ -334,7 +396,7 @@ html.dark thead {
 }
 
 html.dark th {
-  color: #94a3b8 !important;
+  color: #cbd5e1 !important;
 }
 
 html.dark tbody tr:hover,

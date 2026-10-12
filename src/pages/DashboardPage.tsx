@@ -139,50 +139,50 @@ export const DashboardPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* Total Balance Card */}
-              <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] relative overflow-hidden">
+              <div className="p-6 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] relative overflow-hidden">
                 <div className="flex justify-between items-start">
-                  <span className="text-xs font-bold text-slate-500">Available Balance</span>
-                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Available Balance</span>
+                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
                     Active
                   </span>
                 </div>
                 <div className="mt-3">
-                  <h2 className="text-3xl font-black text-slate-900 font-mono tracking-tight">
+                  <h2 className="text-3xl font-black text-slate-900 dark:text-white font-mono tracking-tight">
                     ${user.balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </h2>
-                  <p className="text-[11px] text-[#97144d] mt-1 flex items-center gap-1 font-bold">
+                  <p className="text-[11px] text-[#97144d] dark:text-[#ff7597] mt-1 flex items-center gap-1 font-bold">
                     <TrendingUp className="w-3.5 h-3.5" />
                     <span>Earning 7.85% Compound Annual Return</span>
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                  <span>Account Type: <strong className="text-slate-900">{user.accountType}</strong></span>
-                  <button onClick={handleCopyAccount} className="hover:text-[#97144d] flex items-center gap-1 font-bold text-[#97144d]">
-                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-[#97144d]/20 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                  <span>Account Type: <strong className="text-slate-900 dark:text-white">{user.accountType}</strong></span>
+                  <button onClick={handleCopyAccount} className="hover:text-[#97144d] dark:hover:text-[#ff9bb7] flex items-center gap-1 font-bold text-[#97144d] dark:text-[#ff7597]">
+                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copied ? 'Copied' : 'Copy Acct'}</span>
                   </button>
                 </div>
               </div>
 
               {/* Monthly In/Out Cashflow Card */}
-              <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)]">
-                <span className="text-xs font-bold text-slate-500">October Cash Flow</span>
+              <div className="p-6 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)]">
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-400">October Cash Flow</span>
                 <div className="mt-4 space-y-2.5 text-xs">
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-600 flex items-center gap-1">
-                      <ArrowDownLeft className="w-3.5 h-3.5 text-emerald-600" /> Total Inflow
+                    <span className="text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                      <ArrowDownLeft className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> Total Inflow
                     </span>
-                    <span className="font-bold text-emerald-600 font-mono">+$4,720.00</span>
+                    <span className="font-bold text-emerald-600 dark:text-emerald-400 font-mono">+$4,720.00</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-600 flex items-center gap-1">
-                      <ArrowUpRight className="w-3.5 h-3.5 text-rose-600" /> Total Outflow
+                    <span className="text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                      <ArrowUpRight className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" /> Total Outflow
                     </span>
-                    <span className="font-bold text-rose-600 font-mono">-$1,492.50</span>
+                    <span className="font-bold text-rose-600 dark:text-rose-400 font-mono">-$1,492.50</span>
                   </div>
-                  <div className="pt-2 border-t border-slate-100 flex justify-between items-center text-[11px] text-slate-500">
+                  <div className="pt-2 border-t border-slate-100 dark:border-[#97144d]/20 flex justify-between items-center text-[11px] text-slate-500 dark:text-slate-400">
                     <span>Net Savings Ratio</span>
-                    <span className="font-black text-[#97144d] font-mono">+68.3%</span>
+                    <span className="font-black text-[#97144d] dark:text-[#ff7597] font-mono">+68.3%</span>
                   </div>
                 </div>
               </div>
@@ -192,10 +192,10 @@ export const DashboardPage: React.FC = () => {
 
           {/* Quick Transfer Form Shortcut */}
           <ScrollReveal direction="up" delay={100}>
-            <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] space-y-4">
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-base font-black text-slate-900">Instant One-Click Transfer</h3>
-                <span className="text-xs text-[#97144d] font-bold">Zero Fee Rails</span>
+                <h3 className="text-base font-black text-slate-900 dark:text-white">Instant One-Click Transfer</h3>
+                <span className="text-xs text-[#97144d] dark:text-[#ff7597] font-bold">Zero Fee Rails</span>
               </div>
 
               <form onSubmit={handleQuickTransfer} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -205,7 +205,7 @@ export const DashboardPage: React.FC = () => {
                   onChange={(e) => setRecipientName(e.target.value)}
                   placeholder="Recipient Name"
                   required
-                  className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white"
+                  className="bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/30 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white dark:focus:bg-[#251020]"
                 />
                 <input
                   type="number"
@@ -213,7 +213,7 @@ export const DashboardPage: React.FC = () => {
                   onChange={(e) => setTransferAmount(e.target.value)}
                   placeholder="Amount ($)"
                   required
-                  className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white font-bold"
+                  className="bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/30 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white dark:focus:bg-[#251020] font-bold"
                 />
                 <button
                   type="submit"
@@ -336,7 +336,7 @@ export const DashboardPage: React.FC = () => {
                       </span>
                     </td>
                     <td className={`py-3.5 px-4 text-right font-mono font-bold text-sm ${
-                      t.type === 'credit' ? 'text-emerald-600' : 'text-slate-900'
+                      t.type === 'credit' ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-900 dark:text-white'
                     }`}>
                       {t.type === 'credit' ? '+' : '-'}${t.amount.toFixed(2)}
                     </td>

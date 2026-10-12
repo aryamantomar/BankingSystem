@@ -84,7 +84,7 @@ export const FaqPage: React.FC = () => {
       {/* Accordion Questions List matching diagram */}
       <section className="space-y-4">
         {filteredFaqs.length === 0 ? (
-          <div className="p-8 rounded-2xl bg-white border border-slate-200 text-center text-sm text-slate-500 shadow-sm">
+          <div className="p-8 rounded-2xl bg-white dark:bg-[#150912] border border-slate-200 dark:border-[#97144d]/25 text-center text-sm text-slate-500 dark:text-slate-300 shadow-sm">
             No matching questions found for "{searchQuery}". Try searching with different keywords or ask our 24/7 AI chat.
           </div>
         ) : (
@@ -127,9 +127,9 @@ export const FaqPage: React.FC = () => {
       {/* Still need help callout */}
       <section>
         <ScrollReveal direction="up">
-          <div className="p-8 rounded-3xl bg-white border border-slate-200/90 text-center space-y-4 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
-            <h3 className="text-xl font-black text-slate-900">Couldn't find what you were searching for?</h3>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-md mx-auto font-normal">
+          <div className="p-8 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 text-center space-y-4 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
+            <h3 className="text-xl font-black text-slate-900 dark:text-white">Couldn't find what you were searching for?</h3>
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto font-normal">
               Our round-the-clock customer support officers and NexBot AI assistant are ready to assist you anytime.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row justify-center gap-4">
