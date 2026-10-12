@@ -101,7 +101,7 @@ export const InvestmentsPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {investmentProducts.map((prod, idx) => (
             <ScrollReveal key={prod.id} direction="up" delay={idx * 100}>
-              <div className="h-full rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5 overflow-hidden">
+              <div className="h-full rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5 overflow-hidden">
                 {/* Visual Image Header */}
                 <div className="h-40 w-full overflow-hidden relative">
                   <img 
@@ -110,10 +110,10 @@ export const InvestmentsPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {prod.icon}
                   </div>
-                  <span className="absolute top-3 right-3 text-[10px] font-black px-2.5 py-1 rounded-full bg-white/95 text-[#97144d] shadow-sm">
+                  <span className="absolute top-3 right-3 text-[10px] font-black px-2.5 py-1 rounded-full bg-white/95 dark:bg-[#1a0b15]/95 text-[#97144d] dark:text-[#f43f5e] shadow-sm">
                     {prod.cagr}
                   </span>
                 </div>
@@ -127,18 +127,18 @@ export const InvestmentsPage: React.FC = () => {
                       {prod.desc}
                     </p>
 
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[11px]">
+                    <div className="mt-4 pt-3 border-t border-slate-100 dark:border-[#97144d]/20 flex justify-between items-center text-[11px]">
                       <span className="text-slate-400 font-medium">Risk Profile</span>
-                      <span className="text-slate-800 font-bold">{prod.risk}</span>
+                      <span className="text-slate-800 dark:text-slate-200 font-bold">{prod.risk}</span>
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-slate-100">
+                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#97144d]/20">
                     <button
                       onClick={() => {
                         showToast('Fund Info', `Explore top-rated ${prod.title} with 0% brokerage fees.`, 'info');
                       }}
-                      className="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-700 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1 border border-slate-200 group-hover:border-[#97144d]"
+                      className="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-700 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1 border border-slate-200 dark:bg-[#1d0e19] dark:hover:bg-[#97144d] dark:text-slate-200 dark:border-[#97144d]/30 group-hover:border-[#97144d]"
                     >
                       <span>Invest in {prod.title}</span>
                       <ChevronRight className="w-3.5 h-3.5 text-[#97144d] group-hover:text-white" />
@@ -154,7 +154,7 @@ export const InvestmentsPage: React.FC = () => {
       {/* Interactive SIP Wealth Calculator Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
             <div className="max-w-2xl mx-auto text-center mb-10 relative z-10">
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Systematic Investment Plan (SIP) Calculator</h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 font-normal">
@@ -166,7 +166,7 @@ export const InvestmentsPage: React.FC = () => {
               {/* Sliders */}
               <div className="lg:col-span-7 space-y-6">
                 {/* Monthly Deposit */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Monthly Contribution</span>
                     <span className="text-xl font-black text-[#97144d] font-mono">${monthlySIP.toLocaleString()} / mo</span>
@@ -188,7 +188,7 @@ export const InvestmentsPage: React.FC = () => {
                 </div>
 
                 {/* Expected Returns */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Expected Annual Returns</span>
                     <span className="text-xl font-black text-amber-600 font-mono">{expectedReturnRate}% p.a.</span>
@@ -210,7 +210,7 @@ export const InvestmentsPage: React.FC = () => {
                 </div>
 
                 {/* Duration */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Investment Horizon</span>
                     <span className="text-xl font-black text-emerald-600 font-mono">{durationYears} Years</span>

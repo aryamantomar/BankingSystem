@@ -262,7 +262,7 @@ export const DashboardPage: React.FC = () => {
 
               <button
                 onClick={() => showToast('Limits Updated', 'Daily contactless and online limit set to $5,000.', 'info')}
-                className="flex-1 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold transition-colors text-center shadow-sm"
+                className="flex-1 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold transition-colors text-center shadow-sm dark:bg-[#1a0b15] dark:hover:bg-[#251020] dark:text-slate-200 dark:border-[#97144d]/30"
               >
                 Adjust Limits
               </button>
@@ -351,10 +351,10 @@ export const DashboardPage: React.FC = () => {
       {/* Quick Transfer Full Modal */}
       {showTransferModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="w-full max-w-md bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative">
+          <div className="w-full max-w-md bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
+                <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] dark:bg-[#1f0d1b] border border-[#97144d]/20 dark:border-[#97144d]/30 flex items-center justify-center text-[#97144d]">
                   <SendHorizontal className="w-5 h-5" />
                 </div>
                 <div>
@@ -364,7 +364,7 @@ export const DashboardPage: React.FC = () => {
               </div>
               <button
                 onClick={() => setShowTransferModal(false)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:bg-[#251020] dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -414,7 +414,7 @@ export const DashboardPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowTransferModal(false)}
-                  className="flex-1 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors"
+                  className="flex-1 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-[#1f0e1c] dark:hover:bg-[#281324] dark:text-slate-200 font-bold text-xs transition-colors"
                 >
                   Cancel
                 </button>

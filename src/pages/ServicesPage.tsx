@@ -161,8 +161,8 @@ export const ServicesPage: React.FC = () => {
                 onClick={() => setSelectedService(srv.id as any)}
                 className={`rounded-3xl cursor-pointer transition-all duration-300 border flex flex-col justify-between shadow-sm h-full overflow-hidden ${
                   selectedService === srv.id
-                    ? 'bg-gradient-to-br from-[#fdf2f6] via-white to-[#fbf0f5] border-[#97144d] shadow-md shadow-[#97144d]/15 -translate-y-1.5'
-                    : 'bg-white border-slate-200/90 hover:border-[#97144d]/40 hover:-translate-y-1'
+                    ? 'bg-gradient-to-br from-[#fdf2f6] via-white to-[#fbf0f5] dark:from-[#220d1c] dark:via-[#190915] dark:to-[#170814] border-[#97144d] shadow-md shadow-[#97144d]/15 -translate-y-1.5'
+                    : 'bg-white dark:bg-[#150912] border-slate-200/90 dark:border-[#97144d]/25 hover:border-[#97144d]/40 hover:-translate-y-1'
                 }`}
               >
                 {/* Visual Image Header */}
@@ -173,7 +173,7 @@ export const ServicesPage: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                  <div className="absolute top-3 left-3 w-8 h-8 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                  <div className="absolute top-3 left-3 w-8 h-8 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {srv.icon}
                   </div>
                   {selectedService === srv.id && (
@@ -190,7 +190,7 @@ export const ServicesPage: React.FC = () => {
                     <p className="text-xs text-slate-600 mt-2.5 leading-relaxed font-normal">{srv.detail}</p>
                   </div>
 
-                  <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700">
+                  <div className="mt-5 pt-4 border-t border-slate-100 dark:border-[#97144d]/20 flex items-center justify-between text-xs font-bold text-slate-700">
                     <span>{selectedService === srv.id ? 'Using Tool Below' : 'Launch Service'}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#97144d]" />
                   </div>
@@ -204,7 +204,7 @@ export const ServicesPage: React.FC = () => {
       {/* Interactive Service Tool Sandbox with ScrollReveal */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
             
             {/* Funds Transfer Interactive Panel */}
             {selectedService === 'transfer' && (
@@ -229,7 +229,7 @@ export const ServicesPage: React.FC = () => {
                           className={`py-2 text-xs font-black rounded-xl border transition-all ${
                             transferMode === mode
                               ? 'bg-[#97144d] text-white border-[#97144d] shadow-sm'
-                              : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
+                              : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 dark:bg-[#1c0d19] dark:text-slate-200 dark:border-[#97144d]/30 dark:hover:bg-[#251020]'
                           }`}
                         >
                           {mode}
@@ -398,8 +398,8 @@ export const ServicesPage: React.FC = () => {
                           onClick={() => setPlanAmount(plan.amt)}
                           className={`p-3 rounded-2xl border cursor-pointer text-center transition-all ${
                             planAmount === plan.amt
-                              ? 'bg-[#fdf2f6] border-[#97144d] text-slate-900 shadow-sm'
-                              : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-[#97144d]/30'
+                              ? 'bg-[#fdf2f6] dark:bg-[#220e1d] border-[#97144d] text-slate-900 dark:text-slate-100 shadow-sm'
+                              : 'bg-slate-50 dark:bg-[#1a0b15] border-slate-200 dark:border-[#97144d]/25 text-slate-700 dark:text-slate-300 hover:border-[#97144d]/30'
                           }`}
                         >
                           <span className="text-lg font-black text-[#97144d] font-mono">${plan.amt}</span>

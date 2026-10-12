@@ -186,21 +186,21 @@ export const PersonalBankingPage: React.FC = () => {
 
           {/* Quick FD Growth Interactive Mini-Calculator Card */}
           <ScrollReveal direction="up" delay={500}>
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#fdf6f9] via-white to-[#faf2f6] border border-[#97144d]/30 flex flex-col justify-between shadow-[0_15px_35px_-5px_rgba(151,20,77,0.1)] relative overflow-hidden h-full">
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#fdf6f9] via-white to-[#faf2f6] dark:from-[#1c0d19] dark:via-[#140811] dark:to-[#190a16] border border-[#97144d]/30 flex flex-col justify-between shadow-[0_15px_35px_-5px_rgba(151,20,77,0.1)] relative overflow-hidden h-full">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#97144d]/5 rounded-full blur-xl pointer-events-none"></div>
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-black uppercase tracking-wider text-[#97144d]">Fixed Deposit Estimator</span>
                   <Sparkles className="w-4 h-4 text-amber-500" />
                 </div>
-                <h3 className="text-2xl font-black text-slate-900">Calculate FD Returns</h3>
-                <p className="text-xs text-slate-500 mt-1 font-medium">Guaranteed sovereign yield up to 7.85% compound p.a.</p>
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white">Calculate FD Returns</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">Guaranteed sovereign yield up to 7.85% compound p.a.</p>
 
                 <div className="mt-6 space-y-4">
                   <div>
-                    <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                    <div className="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">
                       <span>Deposit Amount</span>
-                      <span className="text-[#97144d] font-mono">${fdAmount.toLocaleString()}</span>
+                      <span className="text-[#97144d] dark:text-[#f43f5e] font-mono">${fdAmount.toLocaleString()}</span>
                     </div>
                     <input
                       type="range"
@@ -214,9 +214,9 @@ export const PersonalBankingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                    <div className="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">
                       <span>Tenure</span>
-                      <span className="text-[#97144d] font-mono">{fdMonths} Months</span>
+                      <span className="text-[#97144d] dark:text-[#f43f5e] font-mono">{fdMonths} Months</span>
                     </div>
                     <input
                       type="range"
@@ -229,12 +229,12 @@ export const PersonalBankingPage: React.FC = () => {
                     />
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-white border border-[#97144d]/20 text-center space-y-1 shadow-sm">
-                    <span className="text-[10px] text-slate-500 uppercase font-black">Estimated Value at Maturity</span>
-                    <div className="text-2xl font-black text-slate-900 font-mono text-[#97144d]">
+                  <div className="p-4 rounded-2xl bg-white dark:bg-[#1a0c16] border border-[#97144d]/20 dark:border-[#97144d]/35 text-center space-y-1 shadow-sm">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-black">Estimated Value at Maturity</span>
+                    <div className="text-2xl font-black text-[#97144d] dark:text-amber-300 font-mono">
                       ${estimatedMaturity.toLocaleString()}
                     </div>
-                    <span className="text-xs text-emerald-600 font-bold block">
+                    <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold block">
                       +${estimatedInterest.toLocaleString()} interest earned
                     </span>
                   </div>

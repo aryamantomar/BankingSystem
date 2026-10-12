@@ -180,7 +180,7 @@ export const HomePage: React.FC = () => {
 
                   <button
                     onClick={() => navigate('/services')}
-                    className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold text-base transition-all flex items-center justify-center gap-2 shadow-sm hover:border-[#97144d]/40 hover:text-[#97144d]"
+                    className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white dark:bg-[#1a0a14] hover:bg-slate-50 dark:hover:bg-[#25101e] text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-[#97144d]/30 font-bold text-base transition-all flex items-center justify-center gap-2 shadow-sm hover:border-[#97144d]/40 hover:text-[#97144d] dark:hover:text-[#f43f5e]"
                   >
                     <span>Explore Services</span>
                     <ChevronRight className="w-4 h-4 text-slate-400" />
@@ -224,9 +224,9 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   {/* Supporting Trust & App Stat Card */}
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.08)] flex items-center justify-between">
+                  <div className="p-4 rounded-2xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_10px_30px_-5px_rgba(151,20,77,0.08)] flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
+                      <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] dark:bg-[#1f0d1b] border border-[#97144d]/20 dark:border-[#97144d]/30 flex items-center justify-center text-[#97144d]">
                         <Zap className="w-5 h-5" />
                       </div>
                       <div>
@@ -253,7 +253,7 @@ export const HomePage: React.FC = () => {
             {keyFeatures.map((feat, idx) => (
               <div
                 key={idx}
-                className="overflow-hidden rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 hover:-translate-y-2 group shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)] flex flex-col justify-between"
+                className="overflow-hidden rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 hover:border-[#97144d]/40 transition-all duration-300 hover:-translate-y-2 group shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)] flex flex-col justify-between"
               >
                 <div className="h-32 w-full overflow-hidden relative">
                   <img 
@@ -262,12 +262,12 @@ export const HomePage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <span className="absolute bottom-3 right-3 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#97144d] backdrop-blur-sm shadow-sm">
+                  <span className="absolute bottom-3 right-3 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 dark:bg-[#180a14]/90 text-[#97144d] dark:text-[#f43f5e] backdrop-blur-sm shadow-sm">
                     {feat.badge}
                   </span>
                 </div>
                 <div className="p-6">
-                  <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center transition-all duration-300 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#fdf2f6] dark:bg-[#1f0d1b] group-hover:bg-[#97144d] border border-[#97144d]/20 dark:border-[#97144d]/30 flex items-center justify-center transition-all duration-300 mb-3">
                     <span className="text-[#97144d] group-hover:text-white transition-colors">{feat.icon}</span>
                   </div>
                   <h3 className="text-lg font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
@@ -286,7 +286,7 @@ export const HomePage: React.FC = () => {
       {/* Dedicated Card Art & Metal Engineering Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="p-8 sm:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_-10px_rgba(151,20,77,0.1)] relative overflow-hidden">
+          <div className="p-8 sm:p-14 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_50px_-10px_rgba(151,20,77,0.1)] relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <div className="lg:col-span-6 space-y-5">
@@ -305,22 +305,22 @@ export const HomePage: React.FC = () => {
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
                     <Plane className="w-5 h-5 text-[#97144d]" />
                     <div className="text-xs font-black text-slate-900">Global Lounge Access</div>
                     <div className="text-[11px] text-slate-500">Over 1,400+ international airport lounges</div>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
                     <Percent className="w-5 h-5 text-amber-600" />
                     <div className="text-xs font-black text-slate-900">0% Forex Markup</div>
                     <div className="text-[11px] text-slate-500">True interbank exchange rates worldwide</div>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
                     <Shield className="w-5 h-5 text-emerald-600" />
                     <div className="text-xs font-black text-slate-900">Instant Kill-Switch</div>
                     <div className="text-[11px] text-slate-500">Freeze and unfreeze card with 1 tap</div>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-[#1d0e19] dark:border-[#97144d]/20 space-y-1">
                     <Award className="w-5 h-5 text-purple-600" />
                     <div className="text-xs font-black text-slate-900">5X Reward Edge</div>
                     <div className="text-[11px] text-slate-500">Points convertible to airline miles & hotels</div>
@@ -359,7 +359,7 @@ export const HomePage: React.FC = () => {
       {/* Core Banking Portals Grid with Real Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_40px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_40px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
               <div>
                 <span className="text-xs font-black uppercase tracking-wider text-[#97144d]">Comprehensive Solutions</span>
@@ -379,7 +379,7 @@ export const HomePage: React.FC = () => {
                 <div
                   key={idx}
                   onClick={() => navigate(service.path)}
-                  className="rounded-2xl bg-[#faf7f9] border border-slate-200/80 hover:border-[#97144d]/40 hover:bg-white cursor-pointer transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md overflow-hidden"
+                  className="rounded-2xl bg-[#faf7f9] dark:bg-[#190a16] border border-slate-200/80 dark:border-[#97144d]/25 hover:border-[#97144d]/40 hover:bg-white dark:hover:bg-[#220d1e] cursor-pointer transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md overflow-hidden"
                 >
                   <div className="h-36 w-full overflow-hidden relative">
                     <img 
@@ -388,7 +388,7 @@ export const HomePage: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <span className="absolute top-3 left-3 text-[10px] font-black px-2.5 py-0.5 rounded-full bg-white/90 text-[#97144d] shadow-sm">
+                    <span className="absolute top-3 left-3 text-[10px] font-black px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-[#1a0a16]/90 text-[#97144d] dark:text-[#f43f5e] shadow-sm">
                       {service.badge}
                     </span>
                   </div>
@@ -401,7 +401,7 @@ export const HomePage: React.FC = () => {
                         {service.subtitle}
                       </p>
                     </div>
-                    <div className="mt-5 pt-3 border-t border-slate-200/70 flex items-center text-xs font-bold text-slate-700 group-hover:text-[#97144d]">
+                    <div className="mt-5 pt-3 border-t border-slate-200/70 dark:border-[#97144d]/20 flex items-center text-xs font-bold text-slate-700 group-hover:text-[#97144d]">
                       <span>Explore Offerings</span>
                       <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#97144d]" />
                     </div>
@@ -425,7 +425,7 @@ export const HomePage: React.FC = () => {
             {clientReviews.map((rev, idx) => (
               <div 
                 key={idx}
-                className="p-7 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className="p-7 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4"
               >
                 <div className="flex items-center gap-1 text-amber-500">
                   {[...Array(5)].map((_, i) => (
@@ -435,7 +435,7 @@ export const HomePage: React.FC = () => {
                 <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
                   "{rev.comment}"
                 </p>
-                <div className="pt-3 border-t border-slate-100 flex items-center gap-3">
+                <div className="pt-3 border-t border-slate-100 dark:border-[#97144d]/20 flex items-center gap-3">
                   <img 
                     src={rev.avatar} 
                     alt={rev.name} 
@@ -473,7 +473,7 @@ export const HomePage: React.FC = () => {
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
                   onClick={() => navigate('/open-account')}
-                  className="btn-shimmer w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white text-[#97144d] hover:bg-slate-50 font-black text-base shadow-xl transition-all"
+                  className="btn-shimmer w-full sm:w-auto px-8 py-3.5 rounded-xl !bg-white !text-[#97144d] hover:brightness-105 font-black text-base shadow-xl transition-all"
                 >
                   Open Free Account Now
                 </button>

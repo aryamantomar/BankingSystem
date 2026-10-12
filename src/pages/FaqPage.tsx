@@ -58,7 +58,7 @@ export const FaqPage: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions (e.g. transfer charges, open account, security)..."
-              className="w-full bg-white border border-slate-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all"
+              className="w-full bg-white dark:bg-[#180a14] border border-slate-200 dark:border-[#97144d]/30 rounded-2xl pl-12 pr-4 py-3.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-[#97144d] shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all"
             />
           </div>
 
@@ -71,7 +71,7 @@ export const FaqPage: React.FC = () => {
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                   selectedCategory === cat
                     ? 'bg-[#97144d] text-white shadow-md shadow-[#97144d]/20'
-                    : 'bg-white text-slate-700 border border-slate-200 hover:border-[#97144d]/40'
+                    : 'bg-white dark:bg-[#180a14] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-[#97144d]/30 hover:border-[#97144d]/40'
                 }`}
               >
                 {cat}
@@ -93,27 +93,27 @@ export const FaqPage: React.FC = () => {
             return (
               <ScrollReveal key={idx} direction="up" delay={idx * 50}>
                 <div
-                  className="rounded-3xl bg-white border border-slate-200/90 overflow-hidden transition-all duration-200 shadow-sm hover:border-[#97144d]/30"
+                  className="rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 overflow-hidden transition-all duration-200 shadow-sm hover:border-[#97144d]/30"
                 >
                   <button
                     onClick={() => toggleAccordion(idx)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-rose-50/40 transition-colors"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-rose-50/40 dark:hover:bg-white/5 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-black px-2.5 py-0.5 rounded-full bg-[#fdf2f6] text-[#97144d] border border-[#97144d]/20 shrink-0">
+                      <span className="text-xs font-black px-2.5 py-0.5 rounded-full bg-[#fdf2f6] dark:bg-[#97144d]/25 text-[#97144d] dark:text-pink-300 border border-[#97144d]/20 shrink-0">
                         {faq.category}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                         {faq.question}
                       </h3>
                     </div>
-                    <div className="p-1.5 rounded-xl bg-[#fdf2f6] text-[#97144d] shrink-0">
+                    <div className="p-1.5 rounded-xl bg-[#fdf2f6] dark:bg-[#97144d]/25 text-[#97144d] dark:text-pink-300 shrink-0">
                       {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 pt-3 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-[#fdf8fa] animate-fadeIn font-normal">
+                    <div className="px-5 sm:px-6 pb-6 pt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-[#97144d]/20 bg-[#fdf8fa] dark:bg-[#180a14] animate-fadeIn font-normal">
                       <p>{faq.answer}</p>
                     </div>
                   )}

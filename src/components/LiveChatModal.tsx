@@ -85,9 +85,9 @@ export const LiveChatModal: React.FC = () => {
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-ping"></span>
       </button>
 
-      {/* Chat Window Modal in Light Mode */}
+      {/* Chat Window Modal */}
       {isChatOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[400px] h-[540px] bg-white border border-slate-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
+        <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[400px] h-[540px] bg-white dark:bg-[#140811] border border-slate-200 dark:border-[#97144d]/30 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
           
           {/* Header */}
           <div className="p-4 bg-[#97144d] text-white flex items-center justify-between shadow-md">
@@ -117,14 +117,14 @@ export const LiveChatModal: React.FC = () => {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#faf7f9]">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#faf7f9] dark:bg-[#0c0409]">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'bot' && (
-                  <div className="w-7 h-7 rounded-lg bg-[#97144d]/10 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] shrink-0 font-bold">
+                  <div className="w-7 h-7 rounded-lg bg-[#97144d]/10 dark:bg-[#97144d]/25 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] dark:text-pink-300 shrink-0 font-bold">
                     <Bot className="w-4 h-4" />
                   </div>
                 )}
@@ -132,7 +132,7 @@ export const LiveChatModal: React.FC = () => {
                   className={`max-w-[78%] px-4 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-sm ${
                     msg.sender === 'user'
                       ? 'bg-[#97144d] text-white rounded-tr-none'
-                      : 'bg-white text-slate-800 border border-slate-200/80 rounded-tl-none'
+                      : 'bg-white dark:bg-[#1b0d18] text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-[#97144d]/30 rounded-tl-none'
                   }`}
                 >
                   <p>{msg.text}</p>
@@ -150,12 +150,12 @@ export const LiveChatModal: React.FC = () => {
           </div>
 
           {/* Quick Prompts */}
-          <div className="p-2 border-t border-slate-200 bg-white flex gap-1.5 overflow-x-auto no-scrollbar">
+          <div className="p-2 border-t border-slate-200 dark:border-[#97144d]/20 bg-white dark:bg-[#140811] flex gap-1.5 overflow-x-auto no-scrollbar">
             {quickPrompts.map((prompt, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSend(prompt)}
-                className="whitespace-nowrap text-[11px] px-3 py-1 rounded-full bg-[#fdf2f6] hover:bg-[#97144d] text-[#97144d] hover:text-white border border-[#97144d]/20 transition-all font-semibold shrink-0"
+                className="whitespace-nowrap text-[11px] px-3 py-1 rounded-full bg-[#fdf2f6] dark:bg-[#97144d]/20 hover:bg-[#97144d] text-[#97144d] dark:text-pink-300 hover:text-white border border-[#97144d]/20 dark:border-[#97144d]/40 transition-all font-semibold shrink-0"
               >
                 {prompt}
               </button>
@@ -168,14 +168,14 @@ export const LiveChatModal: React.FC = () => {
               e.preventDefault();
               handleSend();
             }}
-            className="p-3 bg-white border-t border-slate-200 flex items-center gap-2"
+            className="p-3 bg-white dark:bg-[#140811] border-t border-slate-200 dark:border-[#97144d]/20 flex items-center gap-2"
           >
             <input
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder="Ask about card perks, FD rates, loans..."
-              className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
+              className="flex-1 bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/30 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[#97144d] transition-all"
             />
             <button
               type="submit"

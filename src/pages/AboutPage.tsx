@@ -119,21 +119,21 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {corePillars.map((pillar, idx) => (
             <ScrollReveal key={idx} direction="up" delay={idx * 100}>
-              <div className="h-full p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5 group">
+              <div className="h-full p-8 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_-5px_rgba(151,20,77,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(151,20,77,0.12)] hover:-translate-y-1.5 group">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-[#fdf2f6] group-hover:bg-[#97144d] border border-[#97144d]/20 flex items-center justify-center mb-6 transition-all group-hover:scale-110">
                     {React.cloneElement(pillar.icon, {
                       className: 'w-6 h-6 transition-colors group-hover:text-white'
                     })}
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-[#97144d] transition-colors">
+                  <h3 className="text-2xl font-black text-slate-900 group-hover:text-[#97144d] transition-colors">
                     {pillar.title}
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed font-normal">
                     {pillar.desc}
                   </p>
                 </div>
-                <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-bold text-slate-400">
+                <div className="mt-8 pt-4 border-t border-slate-100 dark:border-[#97144d]/20 text-xs font-bold text-slate-400">
                   Guaranteed by NexBank Governance
                 </div>
               </div>
@@ -154,7 +154,7 @@ export const AboutPage: React.FC = () => {
             {milestones.map((m, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-white border border-slate-200/90 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:border-[#97144d]/40 transition-colors shadow-sm"
+                className="p-5 rounded-2xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:border-[#97144d]/40 transition-colors shadow-sm"
               >
                 <div className="px-3.5 py-1.5 rounded-xl bg-[#fdf2f6] text-[#97144d] font-mono font-black text-sm shrink-0 border border-[#97144d]/20">
                   {m.year}
@@ -181,7 +181,7 @@ export const AboutPage: React.FC = () => {
             {leadership.map((person, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-3xl bg-white border border-slate-200/90 text-center space-y-3 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
+                className="p-6 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 text-center space-y-3 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden mx-auto border-3 border-[#97144d]/30 shadow-md">
                   <img 
@@ -192,7 +192,7 @@ export const AboutPage: React.FC = () => {
                 </div>
                 <h4 className="text-lg font-bold text-slate-900 pt-1">{person.name}</h4>
                 <div className="text-xs text-[#97144d] font-bold">{person.role}</div>
-                <p className="text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-100 font-normal">
+                <p className="text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-100 dark:border-[#97144d]/20 font-normal">
                   {person.bio}
                 </p>
               </div>

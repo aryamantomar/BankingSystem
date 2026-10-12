@@ -65,7 +65,7 @@ export const AuthPage: React.FC = () => {
 
       {/* Auth Card matching diagram in Light Mode */}
       <ScrollReveal direction="up">
-        <div className="w-full max-w-md bg-white border border-slate-200/90 rounded-3xl shadow-[0_20px_50px_-15px_rgba(151,20,77,0.12)] p-8 sm:p-10 relative space-y-6">
+        <div className="w-full max-w-md bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/30 rounded-3xl shadow-[0_20px_50px_-15px_rgba(151,20,77,0.12)] p-8 sm:p-10 relative space-y-6">
           
           {/* Logo and Brand */}
           <div className="text-center space-y-3">
@@ -84,7 +84,7 @@ export const AuthPage: React.FC = () => {
           {isLoginMode && (
             <div 
               onClick={handleDemoLogin}
-              className="p-3.5 rounded-2xl bg-[#fdf2f6] border border-[#97144d]/20 text-center cursor-pointer hover:bg-[#fae3ed] transition-all group shadow-sm"
+              className="p-3.5 rounded-2xl bg-[#fdf2f6] dark:bg-[#1e0d1a] border border-[#97144d]/20 dark:border-[#97144d]/30 text-center cursor-pointer hover:bg-[#fae3ed] dark:hover:bg-[#281123] transition-all group shadow-sm"
             >
               <div className="flex items-center justify-center gap-1.5 text-xs font-black text-[#97144d]">
                 <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-spin" style={{ animationDuration: '6s' }} />
@@ -191,14 +191,14 @@ export const AuthPage: React.FC = () => {
 
           {/* Divider matching diagram */}
           <div className="relative flex items-center justify-center">
-            <div className="border-t border-slate-200 w-full"></div>
-            <span className="bg-white px-3 text-xs text-slate-400 uppercase font-black">or</span>
+            <div className="border-t border-slate-200 dark:border-[#97144d]/25 w-full"></div>
+            <span className="bg-white dark:bg-[#150912] px-3 text-xs text-slate-400 uppercase font-black">or</span>
           </div>
 
           {/* Secondary toggle button */}
           <button
             onClick={() => setIsLoginMode(!isLoginMode)}
-            className="w-full py-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-200 font-bold text-xs transition-colors"
+            className="w-full py-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-200 font-bold text-xs transition-colors dark:bg-[#1c0d19] dark:hover:bg-[#251020] dark:text-slate-200 dark:border-[#97144d]/30"
           >
             {isLoginMode ? 'Sign Up for New Account' : 'Existing Customer? Back to Login'}
           </button>

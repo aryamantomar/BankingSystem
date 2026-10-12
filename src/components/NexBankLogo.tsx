@@ -51,7 +51,7 @@ export const NexBankLogo: React.FC<NexBankLogoProps> = ({
     <div
       className={`relative ${emblemSizes[size]} bg-gradient-to-tr from-[#97144d] via-[#c52e69] to-amber-400 shadow-md shadow-[#97144d]/25 group-hover:shadow-[#97144d]/40 group-hover:scale-105 transition-all duration-300 flex items-center justify-center shrink-0`}
     >
-      <div className="w-full h-full bg-white rounded-[inherit] flex items-center justify-center relative overflow-hidden">
+      <div className="w-full h-full bg-white dark:bg-[#180a14] rounded-[inherit] flex items-center justify-center relative overflow-hidden">
         <svg
           viewBox="0 0 100 100"
           className="w-[82%] h-[82%]"
@@ -171,10 +171,10 @@ export const NexBankLogo: React.FC<NexBankLogoProps> = ({
             className={`${textSizes[size]} font-black tracking-tight transition-colors ${
               inverted
                 ? 'text-white group-hover:text-amber-300'
-                : 'text-slate-900 group-hover:text-[#97144d]'
+                : 'text-slate-900 dark:text-white group-hover:text-[#97144d] dark:group-hover:text-amber-300'
             }`}
           >
-            Nex<span className="text-[#97144d]">Bank</span>
+            Nex<span className="text-[#97144d] dark:text-[#f43f5e]">Bank</span>
           </span>
 
           {showBadge && (
@@ -190,7 +190,7 @@ export const NexBankLogo: React.FC<NexBankLogoProps> = ({
         {showTagline && (
           <p
             className={`text-[11px] font-medium tracking-wide hidden sm:block ${
-              inverted ? 'text-slate-400' : 'text-slate-500'
+              inverted ? 'text-slate-400' : 'text-slate-500 dark:text-slate-400'
             }`}
           >
             Modern Banking for a Brighter Tomorrow

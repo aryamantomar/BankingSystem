@@ -199,7 +199,7 @@ export const SupportPage: React.FC = () => {
       {activeTab === 'raise' && (
         <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal direction="up">
-            <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
+            <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
               <div className="text-center mb-8">
                 <span className="text-xs font-extrabold uppercase tracking-wider text-[#97144d]">Grievance Redressal</span>
                 <h2 className="text-2xl font-black text-slate-900 mt-1">Raise an Official Complaint</h2>
@@ -207,11 +207,11 @@ export const SupportPage: React.FC = () => {
               </div>
 
               {createdTicketId ? (
-                <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4">
+                <div className="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/40 text-center space-y-4">
                   <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-                  <h3 className="text-lg font-bold text-emerald-900">Complaint Registered Successfully</h3>
-                  <p className="text-xs text-slate-700">
-                    Your tracking Ticket ID is <span className="font-mono font-bold text-emerald-800 px-2 py-1 rounded bg-white border border-emerald-300">{createdTicketId}</span>
+                  <h3 className="text-lg font-bold text-emerald-900 dark:text-emerald-300">Complaint Registered Successfully</h3>
+                  <p className="text-xs text-slate-700 dark:text-slate-300">
+                    Your tracking Ticket ID is <span className="font-mono font-bold text-emerald-800 dark:text-emerald-300 px-2 py-1 rounded bg-white dark:bg-[#180a14] border border-emerald-300 dark:border-emerald-700/60">{createdTicketId}</span>
                   </p>
                   <div className="pt-2 flex justify-center gap-3">
                     <button
@@ -225,7 +225,7 @@ export const SupportPage: React.FC = () => {
                     </button>
                     <button
                       onClick={() => setCreatedTicketId(null)}
-                      className="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 font-semibold text-xs hover:bg-slate-200"
+                      className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-[#1f0e1c] text-slate-700 dark:text-slate-200 font-semibold text-xs hover:bg-slate-200 dark:hover:bg-[#281324]"
                     >
                       Raise Another Issue
                     </button>
@@ -379,7 +379,7 @@ export const SupportPage: React.FC = () => {
 
                   <div className="text-xs">
                     <span className="text-slate-500 block mb-1">Issue Description</span>
-                    <p className="p-3 rounded-xl bg-white text-slate-700 border border-slate-200">
+                    <p className="p-3 rounded-xl bg-white dark:bg-[#180a14] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#97144d]/25">
                       {searchedTicket.message}
                     </p>
                   </div>
@@ -387,7 +387,7 @@ export const SupportPage: React.FC = () => {
               )}
 
               {/* Existing tickets list */}
-              <div className="pt-4 border-t border-slate-200">
+              <div className="pt-4 border-t border-slate-200 dark:border-[#97144d]/20">
                 <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-3">All Active Tickets ({tickets.length})</h4>
                 <div className="space-y-2">
                   {tickets.map((t) => (
@@ -397,13 +397,13 @@ export const SupportPage: React.FC = () => {
                         setSearchTicketId(t.id);
                         setSearchedTicket(t);
                       }}
-                      className="p-3.5 rounded-xl bg-slate-50 hover:bg-[#fdf2f6] border border-slate-200 flex items-center justify-between text-xs cursor-pointer transition-colors"
+                      className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#190a15] hover:bg-[#fdf2f6] dark:hover:bg-[#230d1d] border border-slate-200 dark:border-[#97144d]/25 flex items-center justify-between text-xs cursor-pointer transition-colors"
                     >
                       <div>
                         <span className="font-mono text-[#97144d] font-bold mr-2">{t.id}</span>
-                        <span className="text-slate-800 font-bold">{t.subject}</span>
+                        <span className="text-slate-800 dark:text-slate-200 font-bold">{t.subject}</span>
                       </div>
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white text-slate-700 border border-slate-200">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white dark:bg-[#1f0e1c] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#97144d]/25">
                         {t.status}
                       </span>
                     </div>
@@ -419,17 +419,17 @@ export const SupportPage: React.FC = () => {
       {/* Emergency Hotlines Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs shadow-sm">
+          <div className="p-6 rounded-3xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-rose-100 text-rose-700 border border-rose-300">
+              <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800/50">
                 <ShieldAlert className="w-5 h-5" />
               </div>
               <div>
-                <h5 className="font-bold text-rose-950 text-sm">Emergency Fraud & Card Blocking Hotline</h5>
-                <p className="text-rose-800/80 font-normal">Available 24/7/365 with immediate biometric freeze.</p>
+                <h5 className="font-bold text-rose-950 dark:text-rose-100 text-sm">Emergency Fraud & Card Blocking Hotline</h5>
+                <p className="text-rose-800/80 dark:text-rose-300/80 font-normal">Available 24/7/365 with immediate biometric freeze.</p>
               </div>
             </div>
-            <span className="text-base font-black text-rose-700 font-mono tracking-wider">
+            <span className="text-base font-black text-rose-700 dark:text-rose-300 font-mono tracking-wider">
               +1 800-555-LOCK (5625)
             </span>
           </div>

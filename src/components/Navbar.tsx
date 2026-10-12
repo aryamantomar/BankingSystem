@@ -126,12 +126,12 @@ export const Navbar: React.FC = () => {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all border ${
                     currentRoute === '/dashboard'
                       ? 'bg-[#97144d] text-white border-[#97144d] shadow-md shadow-[#97144d]/30'
-                      : 'bg-white hover:bg-slate-50 text-[#97144d] border-[#97144d]/30 hover:border-[#97144d]'
+                      : 'bg-white dark:bg-[#1a0b15] hover:bg-slate-50 dark:hover:bg-[#25101e] text-[#97144d] dark:text-[#f43f5e] border-[#97144d]/30 hover:border-[#97144d]'
                   }`}
                 >
                   <LayoutDashboard className="w-4 h-4 text-amber-500" />
                   <span>Dashboard</span>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700/50">
                     ${user.balance.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                   </span>
                 </button>
@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={logout}
                   title="Sign out"
-                  className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors border border-transparent hover:border-rose-200"
+                  className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-xl transition-colors border border-transparent hover:border-rose-200 dark:hover:border-rose-900/50"
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -148,7 +148,7 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <button
                   onClick={() => handleNavClick('/login')}
-                  className="px-4 py-2 text-sm font-bold text-slate-700 hover:text-[#97144d] bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#97144d]/40 rounded-xl transition-all shadow-sm"
+                  className="px-4 py-2 text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-[#97144d] dark:hover:text-[#f43f5e] bg-white dark:bg-[#1a0b15] hover:bg-slate-50 dark:hover:bg-[#25101e] border border-slate-200 dark:border-[#97144d]/30 hover:border-[#97144d]/40 rounded-xl transition-all shadow-sm"
                 >
                   Login / Sign Up
                 </button>
@@ -191,7 +191,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 animate-fadeIn shadow-xl">
+        <div className="md:hidden border-b border-slate-200 dark:border-[#97144d]/20 bg-white dark:bg-[#130711] px-4 pt-3 pb-6 space-y-2 animate-fadeIn shadow-xl">
           {navLinks.map((link) => {
             const active = isActive(link.path);
             return (
@@ -200,8 +200,8 @@ export const Navbar: React.FC = () => {
                 onClick={() => handleNavClick(link.path)}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-base font-bold ${
                   active
-                    ? 'bg-[#97144d]/10 text-[#97144d] border border-[#97144d]/20'
-                    : 'text-slate-700 hover:bg-slate-50'
+                    ? 'bg-[#97144d]/10 dark:bg-[#97144d]/25 text-[#97144d] dark:text-[#f43f5e] border border-[#97144d]/20'
+                    : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5'
                 }`}
               >
                 <span>{link.label}</span>
@@ -210,9 +210,9 @@ export const Navbar: React.FC = () => {
             );
           })}
 
-          <div className="pt-3 border-t border-slate-200 space-y-2">
-            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <span className="text-xs font-bold text-slate-700">Display Theme</span>
+          <div className="pt-3 border-t border-slate-200 dark:border-[#97144d]/20 space-y-2">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/30 text-slate-700 dark:text-slate-200">
+              <span className="text-xs font-bold">Display Theme</span>
               <ThemeToggle size="sm" showLabel />
             </div>
             {user ? (
@@ -226,7 +226,7 @@ export const Navbar: React.FC = () => {
                 </button>
                 <button
                   onClick={logout}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-rose-50 text-rose-700 font-bold text-sm border border-rose-200"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 font-bold text-sm border border-rose-200 dark:border-rose-900/50"
                 >
                   <LogOut className="w-4 h-4" />
                   <span>Sign Out ({user.name})</span>
@@ -242,7 +242,7 @@ export const Navbar: React.FC = () => {
                 </button>
                 <button
                   onClick={() => handleNavClick('/login')}
-                  className="w-full py-2.5 rounded-xl bg-slate-100 text-slate-700 font-bold text-sm text-center border border-slate-200"
+                  className="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-[#1c0d19] text-slate-700 dark:text-slate-200 font-bold text-sm text-center border border-slate-200 dark:border-[#97144d]/30"
                 >
                   Sign In to Online Banking
                 </button>

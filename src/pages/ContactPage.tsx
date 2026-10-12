@@ -231,27 +231,27 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 {/* Active branch spotlight */}
-                <div className="p-4 rounded-2xl bg-[#fdf8fa] border border-[#97144d]/15 space-y-2 text-xs">
-                  <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                <div className="p-4 rounded-2xl bg-[#fdf8fa] dark:bg-[#180b15] border border-[#97144d]/15 dark:border-[#97144d]/30 space-y-2 text-xs">
+                  <h4 className="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-[#97144d]" />
                     <span>{selectedBranch.city}</span>
                   </h4>
-                  <p className="text-slate-600 pl-6">{selectedBranch.address}</p>
-                  <div className="pl-6 pt-1 text-slate-500 space-y-1">
-                    <p>Direct: <span className="text-slate-900 font-mono font-bold">{selectedBranch.phone}</span></p>
-                    <p>Operating Hours: <span className="text-slate-900">{selectedBranch.hours}</span></p>
+                  <p className="text-slate-600 dark:text-slate-300 pl-6">{selectedBranch.address}</p>
+                  <div className="pl-6 pt-1 text-slate-500 dark:text-slate-400 space-y-1">
+                    <p>Direct: <span className="text-slate-900 dark:text-white font-mono font-bold">{selectedBranch.phone}</span></p>
+                    <p>Operating Hours: <span className="text-slate-900 dark:text-white">{selectedBranch.hours}</span></p>
                   </div>
                 </div>
 
                 {/* Stylized Modern Interactive Map representation */}
-                <div className="h-48 rounded-2xl bg-gradient-to-br from-[#fdf2f6] via-[#faeaef] to-[#f7e0e9] border border-[#97144d]/20 relative overflow-hidden flex items-center justify-center text-center p-4">
+                <div className="h-48 rounded-2xl bg-gradient-to-br from-[#fdf2f6] via-[#faeaef] to-[#f7e0e9] dark:from-[#1d0e19] dark:via-[#160a13] dark:to-[#11060e] border border-[#97144d]/20 dark:border-[#97144d]/35 relative overflow-hidden flex items-center justify-center text-center p-4">
                   <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#97144d_1px,transparent_1px)] [background-size:16px_16px]"></div>
                   <div className="relative z-10 space-y-2">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#97144d] to-[#b01c5d] text-white flex items-center justify-center mx-auto shadow-xl shadow-[#97144d]/30 animate-bounce">
                       <MapPin className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-black text-slate-900 block">GPS Location Spotlight</span>
-                    <p className="text-[10px] text-slate-600 max-w-xs">{selectedBranch.address}</p>
+                    <span className="text-xs font-black text-slate-900 dark:text-white block">GPS Location Spotlight</span>
+                    <p className="text-[10px] text-slate-600 dark:text-slate-300 max-w-xs">{selectedBranch.address}</p>
                   </div>
                 </div>
               </div>

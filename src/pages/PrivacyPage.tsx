@@ -36,7 +36,7 @@ export const PrivacyPage: React.FC = () => {
 
       {/* Structured Privacy Content */}
       <ScrollReveal direction="up">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 space-y-8 text-sm leading-relaxed shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 space-y-8 text-sm leading-relaxed shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)]">
           
           <section className="space-y-3">
             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">

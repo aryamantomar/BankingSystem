@@ -124,7 +124,7 @@ export const BusinessBankingPage: React.FC = () => {
               </button>
               <button
                 onClick={() => navigate('/contact')}
-                className="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm transition-all border border-slate-200 shadow-sm"
+                className="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm transition-all border border-slate-200 shadow-sm dark:bg-[#1a0a14] dark:hover:bg-[#251020] dark:text-slate-100 dark:border-[#97144d]/30"
               >
                 Contact Corporate Desk
               </button>
@@ -138,7 +138,7 @@ export const BusinessBankingPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {businessProducts.map((prod, idx) => (
             <ScrollReveal key={prod.id} direction="up" delay={idx * 100}>
-              <div className="rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)] hover:-translate-y-2 h-full overflow-hidden">
+              <div className="rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_35px_-8px_rgba(151,20,77,0.12)] hover:-translate-y-2 h-full overflow-hidden dark:bg-[#150912] dark:border-[#97144d]/25">
                 {/* Visual Imagery Header */}
                 <div className="h-44 w-full overflow-hidden relative">
                   <img 
@@ -150,10 +150,10 @@ export const BusinessBankingPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {prod.icon}
                   </div>
-                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 text-[#97144d] shadow-sm">
+                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 dark:bg-[#1a0b15]/95 text-[#97144d] dark:text-[#f43f5e] shadow-sm">
                     {prod.badge}
                   </span>
                 </div>
@@ -177,10 +177,10 @@ export const BusinessBankingPage: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="mt-6 pt-5 border-t border-slate-100">
+                  <div className="mt-6 pt-5 border-t border-slate-100 dark:border-[#97144d]/20">
                     <button
                       onClick={() => navigate('/open-account')}
-                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d]"
+                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d] dark:bg-[#1d0e19] dark:hover:bg-[#97144d] dark:text-slate-200 dark:border-[#97144d]/30"
                     >
                       <span>{prod.btnText}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -193,7 +193,7 @@ export const BusinessBankingPage: React.FC = () => {
 
           {/* Interactive Developer Banking Sandbox Feature Card */}
           <ScrollReveal direction="up" delay={500}>
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#fdf6f9] via-white to-[#faf2f6] border border-[#97144d]/30 flex flex-col justify-between shadow-[0_15px_35px_-5px_rgba(151,20,77,0.1)] relative overflow-hidden h-full">
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#fdf6f9] via-white to-[#faf2f6] dark:from-[#1c0d19] dark:via-[#140811] dark:to-[#190a16] border border-[#97144d]/30 flex flex-col justify-between shadow-[0_15px_35px_-5px_rgba(151,20,77,0.1)] relative overflow-hidden h-full">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#97144d]/5 rounded-full blur-xl pointer-events-none"></div>
               <div>
                 <div className="flex items-center justify-between mb-4">

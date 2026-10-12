@@ -122,7 +122,7 @@ export const LoansPage: React.FC = () => {
       {/* Interactive EMI Calculator Section with ScrollReveal */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_45px_-10px_rgba(151,20,77,0.08)] relative overflow-hidden dark:bg-[#150912] dark:border-[#97144d]/25">
             <div className="max-w-3xl mx-auto text-center mb-10">
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Axis-Style Loan EMI Calculator</h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium">
@@ -135,7 +135,7 @@ export const LoansPage: React.FC = () => {
               {/* Sliders Input Panel */}
               <div className="lg:col-span-7 space-y-6">
                 {/* Loan Amount */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Principal Loan Amount</span>
                     <span className="text-xl font-black text-[#97144d] font-mono">${loanAmount.toLocaleString()}</span>
@@ -157,7 +157,7 @@ export const LoansPage: React.FC = () => {
                 </div>
 
                 {/* Interest Rate */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Annual Interest Rate</span>
                     <span className="text-xl font-black text-amber-600 font-mono">{interestRate}% p.a.</span>
@@ -179,7 +179,7 @@ export const LoansPage: React.FC = () => {
                 </div>
 
                 {/* Loan Tenure */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1c0d19] dark:border-[#97144d]/20">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-bold text-slate-700">Loan Tenure</span>
                     <span className="text-xl font-black text-emerald-600 font-mono">{tenureYears} Years</span>
@@ -248,7 +248,7 @@ export const LoansPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loanTypes.map((loan, idx) => (
             <ScrollReveal key={loan.id} direction="up" delay={idx * 80}>
-              <div className="rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md hover:-translate-y-2 h-full overflow-hidden">
+              <div className="rounded-3xl bg-white border border-slate-200/90 hover:border-[#97144d]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md hover:-translate-y-2 h-full overflow-hidden dark:bg-[#150912] dark:border-[#97144d]/25">
                 {/* Visual Photography Header */}
                 <div className="h-44 w-full overflow-hidden relative">
                   <img 
@@ -257,10 +257,10 @@ export const LoansPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-white/90 dark:bg-[#180a14]/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     {loan.icon}
                   </div>
-                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 text-[#97144d] shadow-sm">
+                  <span className="absolute top-3 right-3 text-xs font-black px-2.5 py-1 rounded-full bg-white/95 dark:bg-[#1a0b15]/95 text-[#97144d] dark:text-[#f43f5e] shadow-sm">
                     {loan.rate}
                   </span>
                 </div>
@@ -271,14 +271,14 @@ export const LoansPage: React.FC = () => {
                       {loan.title}
                     </h3>
 
-                    <div className="mt-4 grid grid-cols-2 gap-2 text-xs p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
+                    <div className="mt-4 grid grid-cols-2 gap-2 text-xs p-3 rounded-2xl bg-slate-50 border border-slate-200/80 dark:bg-[#1a0b15] dark:border-[#97144d]/20">
                       <div>
                         <span className="text-[10px] text-slate-400 block font-bold">Max Limit</span>
-                        <span className="font-bold text-slate-900 font-mono">{loan.maxAmount}</span>
+                        <span className="font-bold text-slate-900 dark:text-slate-100 font-mono">{loan.maxAmount}</span>
                       </div>
                       <div>
                         <span className="text-[10px] text-slate-400 block font-bold">Tenure</span>
-                        <span className="font-bold text-[#97144d] font-mono">{loan.tenure}</span>
+                        <span className="font-bold text-[#97144d] dark:text-[#f43f5e] font-mono">{loan.tenure}</span>
                       </div>
                     </div>
 
@@ -292,10 +292,10 @@ export const LoansPage: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-slate-100">
+                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-[#97144d]/20">
                     <button
                       onClick={() => setAppliedModal(true)}
-                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d]"
+                      className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#97144d] text-slate-800 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-slate-200 hover:border-[#97144d] dark:bg-[#1d0e19] dark:hover:bg-[#97144d] dark:text-slate-200 dark:border-[#97144d]/30"
                     >
                       <span>Apply for {loan.title}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -310,8 +310,8 @@ export const LoansPage: React.FC = () => {
 
       {/* Quick Application Modal */}
       {appliedModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl animate-scaleUp">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl animate-scaleUp dark:bg-[#150912] dark:border-[#97144d]/30">
             <div className="text-center">
               <h3 className="text-xl font-black text-slate-900">Instant Loan Pre-Approval</h3>
               <p className="text-xs text-slate-500 mt-1 font-medium">Estimated monthly repayment: ${emi}/mo</p>
@@ -326,7 +326,7 @@ export const LoansPage: React.FC = () => {
                   onChange={(e) => setApplicantName(e.target.value)}
                   placeholder="e.g. Aryaman Tomar"
                   required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all dark:bg-[#1d0e19] dark:border-[#97144d]/30 dark:text-white"
                 />
               </div>
 
@@ -338,7 +338,7 @@ export const LoansPage: React.FC = () => {
                   onChange={(e) => setApplicantPhone(e.target.value)}
                   placeholder="+1 (555) 000-0000"
                   required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#97144d] focus:bg-white transition-all dark:bg-[#1d0e19] dark:border-[#97144d]/30 dark:text-white"
                 />
               </div>
 
@@ -346,7 +346,7 @@ export const LoansPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setAppliedModal(false)}
-                  className="flex-1 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors"
+                  className="flex-1 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors dark:bg-[#1f0e1c] dark:text-slate-300 dark:hover:bg-[#281324]"
                 >
                   Cancel
                 </button>

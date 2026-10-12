@@ -72,21 +72,21 @@ export const AccountOpeningPage: React.FC = () => {
           <div className="flex items-center justify-center gap-3 sm:gap-6 text-xs font-bold">
             <div className={`flex items-center gap-2 ${step >= 1 ? 'text-[#97144d]' : 'text-slate-400'}`}>
               <span className={`w-8 h-8 rounded-full flex items-center justify-center border font-black ${
-                step >= 1 ? 'bg-[#97144d] text-white border-[#97144d]' : 'bg-white text-slate-400 border-slate-300'
+                step >= 1 ? 'bg-[#97144d] text-white border-[#97144d]' : 'bg-white dark:bg-[#1a0b15] text-slate-400 dark:text-slate-500 border-slate-300 dark:border-[#97144d]/30'
               }`}>1</span>
               <span>Personal Details</span>
             </div>
-            <div className="w-8 sm:w-16 h-0.5 bg-slate-200"></div>
+            <div className="w-8 sm:w-16 h-0.5 bg-slate-200 dark:bg-[#97144d]/30"></div>
             <div className={`flex items-center gap-2 ${step >= 2 ? 'text-[#97144d]' : 'text-slate-400'}`}>
               <span className={`w-8 h-8 rounded-full flex items-center justify-center border font-black ${
-                step >= 2 ? 'bg-[#97144d] text-white border-[#97144d]' : 'bg-white text-slate-400 border-slate-300'
+                step >= 2 ? 'bg-[#97144d] text-white border-[#97144d]' : 'bg-white dark:bg-[#1a0b15] text-slate-400 dark:text-slate-500 border-slate-300 dark:border-[#97144d]/30'
               }`}>2</span>
               <span>Preferences</span>
             </div>
-            <div className="w-8 sm:w-16 h-0.5 bg-slate-200"></div>
+            <div className="w-8 sm:w-16 h-0.5 bg-slate-200 dark:bg-[#97144d]/30"></div>
             <div className={`flex items-center gap-2 ${step >= 3 ? 'text-[#97144d]' : 'text-slate-400'}`}>
               <span className={`w-8 h-8 rounded-full flex items-center justify-center border font-black ${
-                step >= 3 ? 'bg-[#97144d] text-white border-[#97144d]' : 'bg-white text-slate-400 border-slate-300'
+                step >= 3 ? 'bg-[#97144d] text-white border-[#97144d]' : 'bg-white dark:bg-[#1a0b15] text-slate-400 dark:text-slate-500 border-slate-300 dark:border-[#97144d]/30'
               }`}>3</span>
               <span>Verification</span>
             </div>
@@ -97,8 +97,8 @@ export const AccountOpeningPage: React.FC = () => {
       {/* Account Created Success View */}
       {createdUser ? (
         <ScrollReveal direction="up">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_-15px_rgba(151,20,77,0.12)] space-y-8 animate-scaleUp text-center relative overflow-hidden">
-            <div className="w-16 h-16 rounded-full bg-[#fdf2f6] text-[#97144d] flex items-center justify-center mx-auto border border-[#97144d]/20 shadow-md">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_50px_-15px_rgba(151,20,77,0.12)] space-y-8 animate-scaleUp text-center relative overflow-hidden">
+            <div className="w-16 h-16 rounded-full bg-[#fdf2f6] dark:bg-[#1f0d1b] text-[#97144d] flex items-center justify-center mx-auto border border-[#97144d]/20 shadow-md">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
@@ -111,17 +111,17 @@ export const AccountOpeningPage: React.FC = () => {
 
             {/* Generated Details Card */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto text-left">
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/20">
                 <span className="text-[10px] text-slate-500 uppercase block font-bold">Account Number</span>
                 <span className="font-mono text-sm font-black text-[#97144d]">{createdUser.accountNumber}</span>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/20">
                 <span className="text-[10px] text-slate-500 uppercase block font-bold">Routing / IFSC</span>
-                <span className="font-mono text-sm font-black text-slate-800">{createdUser.ifscCode}</span>
+                <span className="font-mono text-sm font-black text-slate-800 dark:text-slate-200">{createdUser.ifscCode}</span>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#1c0d19] border border-slate-200 dark:border-[#97144d]/20">
                 <span className="text-[10px] text-slate-500 uppercase block font-bold">Initial Balance</span>
-                <span className="font-mono text-sm font-black text-emerald-700">${createdUser.balance.toLocaleString()}</span>
+                <span className="font-mono text-sm font-black text-emerald-700 dark:text-emerald-400">${createdUser.balance.toLocaleString()}</span>
               </div>
             </div>
 
@@ -162,7 +162,7 @@ export const AccountOpeningPage: React.FC = () => {
               </button>
               <button
                 onClick={() => navigate('/services')}
-                className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-bold transition-colors"
+                className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-[#1f0e1c] dark:hover:bg-[#281324] dark:text-slate-200 text-sm font-bold transition-colors"
               >
                 Explore Services
               </button>
@@ -172,13 +172,13 @@ export const AccountOpeningPage: React.FC = () => {
       ) : (
         /* Form Wizard */
         <ScrollReveal direction="up" delay={150}>
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-[0_20px_50px_-15px_rgba(151,20,77,0.08)]">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#150912] border border-slate-200/90 dark:border-[#97144d]/25 shadow-[0_20px_50px_-15px_rgba(151,20,77,0.08)]">
             <form onSubmit={handleSubmit} className="space-y-6">
               
               {/* Step 1: Personal Details */}
               {step === 1 && (
                 <div className="space-y-4">
-                  <h3 className="text-lg font-black text-slate-900 border-b border-slate-100 pb-2">
+                  <h3 className="text-lg font-black text-slate-900 border-b border-slate-100 dark:border-[#97144d]/20 pb-2">
                     Step 1: Your Personal Information
                   </h3>
 
@@ -225,7 +225,7 @@ export const AccountOpeningPage: React.FC = () => {
               {/* Step 2: Account Preferences */}
               {step === 2 && (
                 <div className="space-y-4">
-                  <h3 className="text-lg font-black text-slate-900 border-b border-slate-100 pb-2">
+                  <h3 className="text-lg font-black text-slate-900 border-b border-slate-100 dark:border-[#97144d]/20 pb-2">
                     Step 2: Account Selection & Funding
                   </h3>
 
@@ -243,12 +243,12 @@ export const AccountOpeningPage: React.FC = () => {
                           onClick={() => setAccountType(item.type as any)}
                           className={`p-4 rounded-2xl border cursor-pointer text-center transition-all ${
                             accountType === item.type
-                              ? 'bg-[#fdf2f6] border-[#97144d] text-slate-900 shadow-sm'
-                              : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300'
+                              ? 'bg-[#fdf2f6] dark:bg-[#220e1d] border-[#97144d] text-slate-900 dark:text-slate-100 shadow-sm'
+                              : 'bg-slate-50 dark:bg-[#1a0b15] border-slate-200 dark:border-[#97144d]/25 text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-[#97144d]/40'
                           }`}
                         >
                           <h4 className="font-bold text-sm text-slate-900">{item.type}</h4>
-                          <span className="text-[10px] text-[#97144d] font-black">{item.rate}</span>
+                          <span className="text-[10px] text-[#97144d] dark:text-[#f43f5e] font-black">{item.rate}</span>
                         </div>
                       ))}
                     </div>

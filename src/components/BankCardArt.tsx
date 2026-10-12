@@ -256,7 +256,7 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
             className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${
               activeTheme === 'privilege'
                 ? 'bg-[#97144d] text-white shadow-sm'
-                : 'bg-white border border-slate-200 text-slate-600 hover:border-[#97144d]/40'
+                : 'bg-white dark:bg-[#1a0b15] border border-slate-200 dark:border-[#97144d]/30 text-slate-600 dark:text-slate-300 hover:border-[#97144d]/40'
             }`}
           >
             Privilege
@@ -266,8 +266,8 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
             onClick={() => setActiveTheme('obsidian')}
             className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${
               activeTheme === 'obsidian'
-                ? 'bg-slate-900 text-white shadow-sm'
-                : 'bg-white border border-slate-200 text-slate-600 hover:border-[#97144d]/40'
+                ? 'bg-slate-900 dark:bg-rose-950 dark:border dark:border-[#97144d] text-white shadow-sm'
+                : 'bg-white dark:bg-[#1a0b15] border border-slate-200 dark:border-[#97144d]/30 text-slate-600 dark:text-slate-300 hover:border-[#97144d]/40'
             }`}
           >
             Obsidian
@@ -278,7 +278,7 @@ export const BankCardArt: React.FC<BankCardArtProps> = ({
             className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${
               activeTheme === 'gold'
                 ? 'bg-amber-600 text-white shadow-sm'
-                : 'bg-white border border-slate-200 text-slate-600 hover:border-[#97144d]/40'
+                : 'bg-white dark:bg-[#1a0b15] border border-slate-200 dark:border-[#97144d]/30 text-slate-600 dark:text-slate-300 hover:border-[#97144d]/40'
             }`}
           >
             Gold

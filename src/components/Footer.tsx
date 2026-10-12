@@ -47,50 +47,50 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-slate-200 text-slate-600 text-sm relative overflow-hidden">
+    <footer className="bg-white dark:bg-[#0c0409] border-t border-slate-200 dark:border-[#97144d]/20 text-slate-600 dark:text-slate-400 text-sm relative overflow-hidden">
       
       {/* Trust & Guarantee Banner */}
-      <div className="border-b border-slate-100 bg-[#fdf9fb]">
+      <div className="border-b border-slate-100 dark:border-[#97144d]/20 bg-[#fdf9fb] dark:bg-[#11050e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ScrollReveal direction="up">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
-                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
-                  <ShieldCheck className="w-5 h-5 text-[#97144d]" />
+              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white dark:bg-[#180b15] border border-slate-200/80 dark:border-[#97144d]/25 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 dark:bg-[#97144d]/25 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] dark:text-pink-300">
+                  <ShieldCheck className="w-5 h-5 text-[#97144d] dark:text-pink-300" />
                 </div>
                 <div>
-                  <h4 className="text-slate-900 font-extrabold text-sm">Regulatory Insured</h4>
-                  <p className="text-xs text-slate-500">Deposits protected up to $250,000</p>
+                  <h4 className="text-slate-900 dark:text-white font-extrabold text-sm">Regulatory Insured</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Deposits protected up to $250,000</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
-                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
-                  <Lock className="w-5 h-5 text-[#97144d]" />
+              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white dark:bg-[#180b15] border border-slate-200/80 dark:border-[#97144d]/25 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 dark:bg-[#97144d]/25 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] dark:text-pink-300">
+                  <Lock className="w-5 h-5 text-[#97144d] dark:text-pink-300" />
                 </div>
                 <div>
-                  <h4 className="text-slate-900 font-extrabold text-sm">256-Bit SSL Encryption</h4>
-                  <p className="text-xs text-slate-500">Bank-grade end-to-end security</p>
+                  <h4 className="text-slate-900 dark:text-white font-extrabold text-sm">256-Bit SSL Encryption</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Bank-grade end-to-end security</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
-                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
-                  <Headphones className="w-5 h-5 text-[#97144d]" />
+              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white dark:bg-[#180b15] border border-slate-200/80 dark:border-[#97144d]/25 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 dark:bg-[#97144d]/25 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] dark:text-pink-300">
+                  <Headphones className="w-5 h-5 text-[#97144d] dark:text-pink-300" />
                 </div>
                 <div>
-                  <h4 className="text-slate-900 font-extrabold text-sm">24/7 Dedicated Support</h4>
-                  <p className="text-xs text-slate-500">Toll-free hotline & live chat help</p>
+                  <h4 className="text-slate-900 dark:text-white font-extrabold text-sm">24/7 Dedicated Support</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Toll-free hotline & live chat help</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
-                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 border border-[#97144d]/20 flex items-center justify-center text-[#97144d]">
-                  <Award className="w-5 h-5 text-[#97144d]" />
+              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white dark:bg-[#180b15] border border-slate-200/80 dark:border-[#97144d]/25 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-[#97144d]/10 dark:bg-[#97144d]/25 border border-[#97144d]/20 flex items-center justify-center text-[#97144d] dark:text-pink-300">
+                  <Award className="w-5 h-5 text-[#97144d] dark:text-pink-300" />
                 </div>
                 <div>
-                  <h4 className="text-slate-900 font-extrabold text-sm">Axis-Tier Excellence</h4>
-                  <p className="text-xs text-slate-500">Premier Digital Experience 2026</p>
+                  <h4 className="text-slate-900 dark:text-white font-extrabold text-sm">Axis-Tier Excellence</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Premier Digital Experience 2026</p>
                 </div>
               </div>
             </div>
