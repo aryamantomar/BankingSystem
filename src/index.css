@@ -85,3 +85,118 @@
 .btn-shimmer:hover::after {
   transform: rotate(30deg) translateY(100%);
 }
+
+/* ========================================================
+   LUXURY DARK MODE (Axis-inspired Velvet Maroon & Onyx)
+   ======================================================== */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0d050a;
+  color: #f1f5f9;
+}
+
+/* Page base backgrounds in Dark Mode */
+html.dark .bg-\[\#fbf9fa\],
+html.dark [class*="bg-[#fbf9fa]"] {
+  background-color: #0d050a !important;
+}
+
+html.dark .bg-white {
+  background-color: #160c13 !important;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #1e111a !important;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #261622 !important;
+}
+
+/* Axis soft tints in Dark Mode */
+html.dark .bg-\[\#fdf2f6\] {
+  background-color: rgba(151, 20, 77, 0.18) !important;
+}
+
+html.dark .bg-\[\#fdf3f6\] {
+  background-color: rgba(151, 20, 77, 0.22) !important;
+}
+
+html.dark .bg-\[\#fae3ed\] {
+  background-color: rgba(151, 20, 77, 0.28) !important;
+}
+
+/* Borders in Dark Mode */
+html.dark .border-slate-200,
+html.dark .border-slate-200\/90,
+html.dark .border-slate-100 {
+  border-color: rgba(151, 20, 77, 0.22) !important;
+}
+
+html.dark .border-slate-300 {
+  border-color: rgba(151, 20, 77, 0.35) !important;
+}
+
+/* Typography contrast in Dark Mode */
+html.dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+html.dark .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* Form Inputs, Selects, and Textareas */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #1b0e17 !important;
+  color: #f8fafc !important;
+  border-color: rgba(151, 20, 77, 0.3) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  background-color: #24131f !important;
+  border-color: #97144d !important;
+}
+
+/* Glass Panels in Dark Mode */
+html.dark .glass-panel-light {
+  background: rgba(22, 12, 19, 0.88) !important;
+  border-color: rgba(151, 20, 77, 0.25) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Dark Mode Scrollbar */
+html.dark ::-webkit-scrollbar-track {
+  background: #0d050a;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #470c26;
+  border-color: #0d050a;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #97144d;
+}

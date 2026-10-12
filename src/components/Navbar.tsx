@@ -10,6 +10,7 @@ import {
   PhoneCall
 } from 'lucide-react';
 import { NexBankLogo } from './NexBankLogo';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
   const { currentRoute, navigate, user, logout } = useBanking();
@@ -117,6 +118,7 @@ export const Navbar: React.FC = () => {
 
           {/* User Actions & Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle showLabel={false} />
             {user ? (
               <div className="flex items-center gap-2.5">
                 <button
@@ -166,6 +168,7 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile hamburger button */}
           <div className="flex md:hidden items-center gap-2">
+            <ThemeToggle size="sm" showLabel={false} />
             {user && (
               <button
                 onClick={() => handleNavClick('/dashboard')}
@@ -208,6 +211,10 @@ export const Navbar: React.FC = () => {
           })}
 
           <div className="pt-3 border-t border-slate-200 space-y-2">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
+              <span className="text-xs font-bold text-slate-700">Display Theme</span>
+              <ThemeToggle size="sm" showLabel />
+            </div>
             {user ? (
               <>
                 <button

@@ -20,6 +20,9 @@ interface BankingContextType {
   dismissToast: (id: string) => void;
   isChatOpen: boolean;
   setIsChatOpen: (open: boolean) => void;
+  theme: 'light' | 'dark';
+  setTheme: (theme: 'light' | 'dark') => void;
+  toggleTheme: () => void;
 }
 
 const BankingContext = createContext<BankingContextType | undefined>(undefined);
@@ -54,6 +57,35 @@ export const BankingProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const [toasts, setToasts] = useState<ToastNotification[]>([]);
   const [isChatOpen, setIsChatOpen] = useState(false);
+
+  // Theme management: persisted in localStorage and synced to documentElement
+  const [theme, setThemeState] = useState<'light' | 'dark'>(() => {
+    const saved = localStorage.getItem('nexbank_theme');
+    if (saved === 'dark' || saved === 'light') return saved;
+    return 'light';
+  });
+
+  const setTheme = (newTheme: 'light' | 'dark') => {
+    setThemeState(newTheme);
+    localStorage.setItem('nexbank_theme', newTheme);
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   // Simple, rock-solid Hash Route listener
   const getInitialRoute = () => {
@@ -261,7 +293,10 @@ export const BankingProvider: React.FC<{ children: React.ReactNode }> = ({ child
         showToast,
         dismissToast,
         isChatOpen,
-        setIsChatOpen
+        setIsChatOpen,
+        theme,
+        setTheme,
+        toggleTheme
       }}
     >
       {children}
