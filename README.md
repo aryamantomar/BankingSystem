@@ -9,6 +9,13 @@
   </p>
 
   <p align="center">
+    <a href="https://thenexbank.netlify.app" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/🌐_Live_Website-thenexbank.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
+    </a>
+  </p>
+
+  <p align="center">
+    <a href="https://thenexbank.netlify.app" target="_blank" rel="noopener noreferrer"><strong>🚀 Live Demo</strong></a> •
     <a href="#-key-features">Key Features</a> •
     <a href="#-live-ui-showcase">UI Showcase</a> •
     <a href="#-sitemap--route-architecture">Sitemap</a> •
@@ -22,6 +29,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
     <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify" />
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
   </p>
 
@@ -31,7 +39,9 @@
 
 ## 📖 Overview
 
-**NexBank** is an enterprise-grade digital banking web platform built from the ground up to showcase modern financial technology interfaces, real-time client-side banking simulation, and accessible responsive design. 
+**NexBank** is an enterprise-grade digital banking web platform built from the ground up to showcase modern financial technology interfaces, real-time client-side banking simulation, and accessible responsive design.
+
+> **🌐 Live Deployment:** NexBank is live and hosted at [**https://thenexbank.netlify.app**](https://thenexbank.netlify.app). You can explore the full application without any local setup.
 
 Built with **React 18**, **TypeScript**, and **Tailwind CSS**, NexBank features 15+ dedicated routes, interactive fund transfer simulators (IMPS, NEFT, RTGS, UPI), dynamic financial intelligence calculators (Loan EMI & SIP Wealth), a 3-step paperless KYC onboarding wizard, a logged-in user dashboard with interactive metal card controls, customer support ticket tracking, and seamless Dark/Light mode theme switching.
 
@@ -161,39 +171,42 @@ All 15 routes specified in the system design are fully functional:
 
 ```mermaid
 flowchart TD
-    User([User / Browser])
+    User(["User / Web Browser"])
     
     subgraph UI_Layer ["Presentation Layer (React 18 + Tailwind CSS)"]
-        Nav[Navbar & Theme Switcher]
-        Pages[15+ Dedicated Route Views]
-        Modals[Live Chat & Video Tour Modals]
+        Nav["Navbar & Theme Switcher"]
+        Pages["15+ Dedicated Route Views"]
+        Modals["Live Chat & Video Tour Modals"]
     end
 
     subgraph State_Layer ["State Management Layer (React Context)"]
-        BC[BankingContext Provider]
-        subgraph State_Stores ["State Stores"]
-            Auth[Authentication & Session]
-            Account[Account Balance & Profile]
-            Tx[Transaction Ledger]
-            Tickets[Support Tickets]
-            Theme[Theme Mode: Light / Dark]
-        end
+        BC["BankingContext Provider"]
+        Auth["Authentication & Session"]
+        Account["Account Balance & Profile"]
+        Tx["Transaction Ledger"]
+        Tickets["Support Tickets"]
+        Theme["Theme Mode (Light / Dark)"]
     end
 
-    subgraph Persistence ["Browser Persistence"]
-        LS[(HTML5 LocalStorage)]
+    subgraph Storage_Layer ["Persistence Layer"]
+        LS[("HTML5 LocalStorage")]
     end
 
-    User --> UI_Layer
+    User --> Nav
+    User --> Pages
+    User --> Modals
+
     Nav --> Pages
     Pages --> BC
     Modals --> BC
+
     BC --> Auth
     BC --> Account
     BC --> Tx
     BC --> Tickets
     BC --> Theme
-    State_Stores <--> LS
+
+    BC <-->|Read / Write| LS
 ```
 
 ---
@@ -256,14 +269,17 @@ npm run preview
 
 ## 🔑 Demo Access & Testing
 
+Try it live immediately on Netlify at [**https://thenexbank.netlify.app**](https://thenexbank.netlify.app).
+
 NexBank includes built-in mock accounts and a **1-Click Demo Login** button on the `/login` screen so you can immediately explore the logged-in dashboard and card features:
 
+- **Live URL**: [https://thenexbank.netlify.app/#/login](https://thenexbank.netlify.app/#/login)
 - **Customer ID / Email**: `alex.morgan@nexbank.com`
 - **Password**: `NexBank@2026`
 - **Or simply click**: `⚡ Fill Demo Credentials` on the Login page.
 
 > [!TIP]
-> You can also create a brand new account using the **[Open Account](/open-account)** wizard to experience the automated onboarding, virtual debit card allocation, and instant balance initialization.
+> You can also create a brand new account using the **[Open Account](https://thenexbank.netlify.app/#/open-account)** wizard to experience the automated onboarding, virtual debit card allocation, and instant balance initialization.
 
 ---
 
