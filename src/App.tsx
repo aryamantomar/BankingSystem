@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ToastContainer } from './components/Toast';
 import { LiveChatModal } from './components/LiveChatModal';
+import { VideoTourModal } from './components/VideoTourModal';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -76,6 +77,7 @@ export function App() {
         <Footer />
         <ToastContainer />
         <LiveChatModal />
+        <VideoTourModal />
       </div>
     </BankingProvider>
   );

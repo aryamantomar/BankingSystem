@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,DejaVu Sans,33,&H00FFFFFF,&H000000FF,&H00000000,&H900a0e17,-1,0,0,0,100,100,0.5,0,3,16,0,2,80,80,48,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:04.92,Default,,0,0,0,,Welcome to NexBank — modern banking re-engineered for a brighter tomorrow.
+Dialogue: 0,0:00:04.87,0:00:10.32,Default,,0,0,0,,Built with React, TypeScript, and high-performance glassmorphic design, NexBank delivers
+Dialogue: 0,0:00:10.32,0:00:15.10,Default,,0,0,0,,an ultra-fast, seamless digital banking experience directly in your browser.
+Dialogue: 0,0:00:15.24,0:00:18.17,Default,,0,0,0,,Opening an account takes under two minutes.
+Dialogue: 0,0:00:18.12,0:00:23.68,Default,,0,0,0,,Experience frictionless paperless onboarding with instant verification, automated account
+Dialogue: 0,0:00:23.68,0:00:27.81,Default,,0,0,0,,and IFSC allocation, and immediate virtual debit card activation.
+Dialogue: 0,0:00:27.96,0:00:31.87,Default,,0,0,0,,At the heart of the platform is the Online Banking Dashboard.
+Dialogue: 0,0:00:31.82,0:00:36.93,Default,,0,0,0,,Monitor real-time cashflow metrics, track transaction streams, and manage your
+Dialogue: 0,0:00:36.93,0:00:41.64,Default,,0,0,0,,virtual metal card with instant CVV reveal and security freeze toggles.
+Dialogue: 0,0:00:41.79,0:00:44.78,Default,,0,0,0,,NexBank makes moving money effortless.
+Dialogue: 0,0:00:44.73,0:00:50.93,Default,,0,0,0,,With live interactive simulators for IMPS, NEFT, RTGS, and instant UPI transfers, along
+Dialogue: 0,0:00:50.93,0:00:57.06,Default,,0,0,0,,with automated utility bill payments, your daily finances are always at your command.
+Dialogue: 0,0:00:57.22,0:01:01.07,Default,,0,0,0,,Plan for the future with integrated financial intelligence.
+Dialogue: 0,0:01:01.02,0:01:05.40,Default,,0,0,0,,Calculate loan EMIs dynamically with real-time sliders, and forecast
+Dialogue: 0,0:01:05.40,0:01:10.81,Default,,0,0,0,,long-term wealth accumulation using our interactive SIP and investment calculators.
+Dialogue: 0,0:01:10.97,0:01:13.97,Default,,0,0,0,,For enterprises, NexBank delivers trade
+Dialogue: 0,0:01:13.97,0:01:17.81,Default,,0,0,0,,finance, commercial accounts, and developer APIs.
+Dialogue: 0,0:01:17.77,0:01:21.85,Default,,0,0,0,,And with a comprehensive support portal, real-time ticket tracking,
+Dialogue: 0,0:01:21.85,0:01:25.99,Default,,0,0,0,,and twenty-four-seven live chat, assistance is always within reach.
+Dialogue: 0,0:01:26.14,0:01:31.99,Default,,0,0,0,,Engineered with AES-256 cryptographic standards, responsive design, and instant dark
+Dialogue: 0,0:01:31.99,0:01:37.42,Default,,0,0,0,,and light themes, NexBank sets the benchmark for next-generation web banking.
+Dialogue: 0,0:01:37.37,0:01:39.92,Default,,0,0,0,,Experience NexBank today!

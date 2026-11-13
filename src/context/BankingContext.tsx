@@ -20,6 +20,8 @@ interface BankingContextType {
   dismissToast: (id: string) => void;
   isChatOpen: boolean;
   setIsChatOpen: (open: boolean) => void;
+  isVideoTourOpen: boolean;
+  setIsVideoTourOpen: (open: boolean) => void;
   theme: 'light' | 'dark';
   setTheme: (theme: 'light' | 'dark') => void;
   toggleTheme: () => void;
@@ -57,6 +59,7 @@ export const BankingProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const [toasts, setToasts] = useState<ToastNotification[]>([]);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isVideoTourOpen, setIsVideoTourOpen] = useState(false);
 
   // Theme management: persisted in localStorage and synced to documentElement
   const [theme, setThemeState] = useState<'light' | 'dark'>(() => {
@@ -294,6 +297,8 @@ export const BankingProvider: React.FC<{ children: React.ReactNode }> = ({ child
         dismissToast,
         isChatOpen,
         setIsChatOpen,
+        isVideoTourOpen,
+        setIsVideoTourOpen,
         theme,
         setTheme,
         toggleTheme

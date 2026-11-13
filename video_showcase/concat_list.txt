@@ -1,0 +1,7 @@
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_1.mp4'
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_2.mp4'
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_3.mp4'
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_4.mp4'
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_5.mp4'
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_6.mp4'
+file '/home/aryaman-tomar/Desktop/nexbank/video_showcase/clip_7.mp4'

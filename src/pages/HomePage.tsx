@@ -10,6 +10,7 @@ import {
   TrendingUp, 
   CreditCard, 
   Sparkles,
+  Play,
   ChevronRight,
   Landmark,
   ArrowUpRight,
@@ -25,7 +26,7 @@ import { ScrollReveal } from '../components/ScrollReveal';
 import { BankCardArt } from '../components/BankCardArt';
 
 export const HomePage: React.FC = () => {
-  const { navigate, user } = useBanking();
+  const { navigate, user, setIsVideoTourOpen } = useBanking();
 
   const keyFeatures = [
     {
@@ -180,10 +181,18 @@ export const HomePage: React.FC = () => {
 
                   <button
                     onClick={() => navigate('/services')}
-                    className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white dark:bg-[#1a0a14] hover:bg-slate-50 dark:hover:bg-[#25101e] text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-[#97144d]/30 font-bold text-base transition-all flex items-center justify-center gap-2 shadow-sm hover:border-[#97144d]/40 hover:text-[#97144d] dark:hover:text-[#f43f5e]"
+                    className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white dark:bg-[#1a0a14] hover:bg-slate-50 dark:hover:bg-[#25101e] text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-[#97144d]/30 font-bold text-base transition-all flex items-center justify-center gap-2 shadow-sm hover:border-[#97144d]/40 hover:text-[#97144d] dark:hover:text-[#f43f5e]"
                   >
                     <span>Explore Services</span>
                     <ChevronRight className="w-4 h-4 text-slate-400" />
+                  </button>
+
+                  <button
+                    onClick={() => setIsVideoTourOpen(true)}
+                    className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-[#97144d]/10 hover:bg-[#97144d]/15 text-[#97144d] dark:text-[#ff7597] border border-[#97144d]/30 font-bold text-base transition-all flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-95"
+                  >
+                    <Play className="w-4 h-4 fill-current" />
+                    <span>Watch Video Tour (1:40)</span>
                   </button>
                 </div>
               </ScrollReveal>

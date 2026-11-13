@@ -7,13 +7,14 @@ import {
   ChevronRight, 
   LayoutDashboard,
   Sparkles,
-  PhoneCall
+  PhoneCall,
+  Play
 } from 'lucide-react';
 import { NexBankLogo } from './NexBankLogo';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
-  const { currentRoute, navigate, user, logout } = useBanking();
+  const { currentRoute, navigate, user, logout, setIsVideoTourOpen } = useBanking();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -75,6 +76,14 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-4 font-medium text-white/90">
           <span className="hover:text-amber-200 cursor-pointer transition-colors" onClick={() => navigate('/loans')}>EMI Calculator</span>
           <span>•</span>
+          <span 
+            className="hover:text-amber-200 cursor-pointer transition-colors flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded-md"
+            onClick={() => setIsVideoTourOpen(true)}
+          >
+            <Play className="w-2.5 h-2.5 fill-current" />
+            Watch Video Tour
+          </span>
+          <span>•</span>
           <span className="hover:text-amber-200 cursor-pointer transition-colors flex items-center gap-1" onClick={() => navigate('/contact')}>
             <PhoneCall className="w-3 h-3" />
             1800-NEX-BANK
@@ -118,6 +127,14 @@ export const Navbar: React.FC = () => {
 
           {/* User Actions & Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => setIsVideoTourOpen(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-black bg-[#97144d]/10 hover:bg-[#97144d]/20 text-[#97144d] dark:text-[#ff7597] border border-[#97144d]/25 transition-all hover:scale-105"
+              title="Watch Platform Overview Video"
+            >
+              <Play className="w-3 h-3 fill-current" />
+              <span>Video Tour</span>
+            </button>
             <ThemeToggle showLabel={false} />
             {user ? (
               <div className="flex items-center gap-2.5">
